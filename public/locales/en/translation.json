@@ -1,0 +1,1863 @@
+{
+  "common": {
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading...",
+    "submit": "Submit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "confirm": "Confirm",
+    "refresh": "Refresh",
+    "filter": "Filter",
+    "all": "All",
+    "active": "Active",
+    "inactive": "Inactive",
+    "actions": "Actions",
+    "status": "Status",
+    "date": "Date",
+    "details": "Details",
+    "viewDetails": "View Details",
+    "clearFilters": "Clear Filters",
+    "noResults": "No matching results found",
+    "emptyMessage": "No data available at this time",
+    "currency": "EGP",
+    "ton": "ton",
+    "km": "km",
+    "hour": "hr",
+    "minutes": "min",
+    "yes": "Yes",
+    "no": "No",
+    "or": "or",
+    "and": "and",
+    "errorOccurred": "An unexpected error occurred",
+    "success": "Operation completed successfully",
+    "optional": "Optional",
+    "required": "Required",
+    "brandName": "Diziel",
+    "toggleMenu": "Toggle menu",
+    "add": "Add",
+    "saveChanges": "Save Changes",
+    "reject": "Reject",
+    "submitting": "Submitting...",
+    "signingIn": "Signing in...",
+    "authenticating": "Authenticating...",
+    "loadingData": "Loading data...",
+    "loadingPlatform": "Initializing platform...",
+    "loadingMap": "Loading map...",
+    "noRecordsFound": "No records found",
+    "noMatchesFound": "No matching screens found",
+    "searchPlaceholder": "Search...",
+    "changeLanguage": "Change language",
+    "language": "Language",
+    "viewAll": "View all",
+    "justNow": "Just now",
+    "tenMinAgo": "10 min ago",
+    "days": "days",
+    "comingSoon": "Coming Soon",
+    "control": "Operations Control",
+    "tagline": "Realtime Freight & Telemetry",
+    "connected": "Connected",
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "pricingPolicy": "Pricing Policy",
+    "terms": "Terms & Conditions",
+    "login": "Sign In",
+    "companyPortal": "Enterprise Portal",
+    "adminPortal": "Admin Portal",
+    "getStarted": "Get Started",
+    "groups": {
+      "core": "Core Operations",
+      "operations": "Fleet & Dispatch",
+      "accounts": "Finance & Accounting",
+      "review": "Audits & Approvals",
+      "misc": "System Config"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "users": "Users Directory",
+      "orders": "Orders & Shipments",
+      "newOffers": "Live Offers",
+      "profile": "Admin Profile",
+      "fleet": "Fleet Management",
+      "orderManagement": "Dispatch Buckets",
+      "search": "Advanced Truck Search",
+      "track": "Live GPS Tracking",
+      "truckDetail": "Truck Specifications",
+      "waybills": "Digital Waybills",
+      "financial": "Financial Ledger",
+      "quotes": "Instant Quotes",
+      "pricing": "Pricing Matrix",
+      "dashboards": "Financial Analytics",
+      "paymentDetails": "Payment Channels",
+      "approvals": "Approvals Queue",
+      "documents": "Document KYC",
+      "ratings": "Quality & Ratings",
+      "complaints": "Complaints Inbox",
+      "categories": "Service Categories",
+      "vehicleTypes": "Vehicle Taxonomies",
+      "contracts": "Contracts & SLAs",
+      "contractNew": "Create New Contract",
+      "notifications": "Notification Center",
+      "audit": "System Audit Logs",
+      "admins": "Administrators"
+    }
+  },
+  "topbar": {
+    "searchPlaceholder": "Search orders, users, trucks (⌘K)...",
+    "notifications": "Notifications",
+    "markAllRead": "Mark all read",
+    "noNotifications": "No new notifications",
+    "viewProfile": "Profile Settings",
+    "logout": "Log Out",
+    "adminBadge": "System Administrator",
+    "quickNav": "Quick Nav",
+    "liveRadar": "Live Radar",
+    "themeLight": "Light Theme",
+    "themeDark": "Dark Theme",
+    "mockNotif1Title": "New Quote Request DZ-9021",
+    "mockNotif1Desc": "Alexandria → 6th October · 45t Steel Flatbed",
+    "mockNotif2Title": "Waybill Uploaded #WB-8492",
+    "mockNotif2Desc": "Driver Mahmoud uploaded signed weighbridge ticket",
+    "adminProfile": "Admin Profile",
+    "companyView": "Enterprise View",
+    "searchScreensPlaceholder": "Search screens and operations (⌘K)...",
+    "adminNavigation": "Admin Navigation",
+    "pressEscToExit": "Press ESC to exit",
+    "useArrowsToNavigate": "Use arrows to navigate"
+  },
+  "sidebar": {
+    "operationsCenter": "Operations Hub",
+    "platformOnline": "All Systems Operational",
+    "filterNavigation": "Filter sidebar...",
+    "quickSearchModal": "Global Quick Search",
+    "pressEsc": "Press ESC to close",
+    "noMatchingPages": "No matching screens found",
+    "version": "Diziel v2.4.0 — Logistics Platform",
+    "searchNavPlaceholder": "Search navigation..."
+  },
+  "status": {
+    "pending": "Pending",
+    "pending_admin_review": "Pending Admin Review",
+    "pending_admin_approval": "Pending Admin Approval",
+    "approved_unassigned": "Approved (Unassigned)",
+    "pending_assignment": "Pending Assignment",
+    "active": "Active",
+    "pending_owner_review": "Owner Approval",
+    "pending_driver_review": "Driver Approval",
+    "pending_truck_owner_approval": "Awaiting Owner Approval",
+    "pending_driver_approval": "Awaiting Driver Approval",
+    "en_route_to_pickup": "En Route to Pickup",
+    "driver_en_route_to_pickup": "Driver En Route to Pickup",
+    "at_pickup": "At Pickup Location",
+    "picked_up": "Loaded & Picked Up",
+    "loaded": "Loaded",
+    "in_transit": "In Transit",
+    "at_delivery": "At Delivery Location",
+    "arrived": "Arrived at Destination",
+    "delivered": "Delivered",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "reassign_needed": "Reassignment Needed",
+    "under_review": "Under Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "deactivated": "Deactivated",
+    "available": "Available",
+    "busy": "Busy / On Trip",
+    "hidden": "Hidden",
+    "unpaid": "Unpaid",
+    "partial": "Partially Paid",
+    "paid": "Fully Paid",
+    "open": "Open",
+    "in_review": "In Review",
+    "resolved": "Resolved",
+    "closed": "Closed",
+    "draft": "Draft",
+    "paused": "Paused",
+    "accepted": "Accepted"
+  },
+  "auth": {
+    "adminLoginTitle": "Admin Portal Login",
+    "adminLoginSubtitle": "Diziel Logistics & Supply Chain Operations Engine",
+    "companyLoginTitle": "Enterprise Portal Login",
+    "companyLoginSubtitle": "Realtime fleet visibility, GPS dispatch & digital freight management",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "010XXXXXXXX",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Sign In",
+    "signingIn": "Authenticating...",
+    "invalidCredentials": "Invalid phone number or password",
+    "sessionExpired": "Session expired, please sign in again",
+    "loginSuccess": "Signed in successfully",
+    "backToHome": "Back to Home"
+  },
+  "marketing": {
+    "nav": {
+      "aboutUs": "About Us",
+      "howItWorks": "How It Works",
+      "truckTypes": "Truck Types",
+      "driverEarnings": "Driver Earnings",
+      "instantQuote": "Instant Quote",
+      "appDownload": "App Download",
+      "login": "Login",
+      "companyLogin": "Company Login",
+      "adminLogin": "Admin Login",
+      "companyDesc": "Manage shipments, live tracking & invoices",
+      "adminDesc": "Operations control & platform management",
+      "downloadApp": "Download App",
+      "downloadForIos": "Download for iPhone (iOS)",
+      "downloadForAndroid": "Download for Android",
+      "features": "Features",
+      "testimonials": "Testimonials",
+      "blog": "Blog & Insights",
+      "download": "Download App",
+      "pricing": "Pricing Policy",
+      "terms": "Terms & Conditions",
+      "contactTeam": "Contact & Team",
+      "trackShipment": "Track Shipment"
+    },
+    "about": {
+      "badge": "About Us & Vision",
+      "title": "Pioneering the Digital Transformation of Freight Logistics",
+      "description": "Diziel is an end-to-end digital freight platform seamlessly connecting enterprises and shippers with certified fleet owners and vetted drivers across Egypt, delivering transparent, instant, and reliable road logistics.",
+      "stats": {
+        "trips": "Completed Shipments",
+        "tripsCount": "+50,000",
+        "trucks": "Verified Trucks",
+        "trucksCount": "+12,000",
+        "governorates": "Governorates Covered",
+        "governoratesCount": "27",
+        "uptime": "On-Time Dispatch Rate",
+        "uptimeCount": "99.4%"
+      },
+      "whoWeAre": {
+        "title": "About Us",
+        "subtitle": "Smart Logistics Marketplace",
+        "description": "A state-of-the-art logistics ecosystem engineered to transform heavy and commercial cargo transport in Egypt, utilizing algorithmic pricing, live GPS telemetry, and a verified carrier network across the nation."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "subtitle": "Future of Smart Logistics",
+        "description": "To be the premier digital freight infrastructure across Egypt and the Middle East, leading the transformation of supply chain efficiency through transparency, intelligence, and sustainable innovation."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "subtitle": "Empowering Supply Chains",
+        "description": "Empowering shippers, enterprises, and drivers with smart tools that ensure instant fair pricing, guaranteed vehicle capacity, live tracking, and frictionless automated digital settlements."
+      },
+      "values": {
+        "badge": "Pillars of Excellence",
+        "title": "Values Guiding Every Single Shipment",
+        "safety": {
+          "title": "Safety & Reliability",
+          "desc": "Rigorous KYC driver checks, comprehensive cargo insurance coverage, and verified vehicle roadworthiness."
+        },
+        "speed": {
+          "title": "Speed & Guaranteed Capacity",
+          "desc": "Fast truck dispatch across all categories within minutes while reducing empty return trips."
+        },
+        "transparency": {
+          "title": "Total Transparency & Fair Tariffs",
+          "desc": "Instant algorithmic pricing with zero hidden fees and direct, automated digital wallet settlements."
+        }
+      }
+    },
+    "howItWorks": {
+      "badge": "Simple & Fast",
+      "heading": "How Diziel Works",
+      "subheading": "Move your cargo seamlessly in four straightforward steps",
+      "step1Title": "1. Request a Quote",
+      "step1Desc": "Enter pickup, destination, and cargo specifications to receive instant verified rates.",
+      "step2Title": "2. Matched with Trusted Carrier",
+      "step2Desc": "Certified trucks and vetted drivers are matched and dispatched immediately.",
+      "step3Title": "3. Live Satellite GPS Tracking",
+      "step3Desc": "Follow shipment journey with realtime ETA and waybill milestones.",
+      "step4Title": "4. Instant Settlement",
+      "step4Desc": "Secure digital proof of delivery and direct wallet clearance upon arrival."
+    },
+    "truckTypes": {
+      "badge": "Diverse Fleet",
+      "heading": "Supported Truck Types",
+      "subheading": "Whatever your cargo scale, Diziel connects you with the exact vehicle required.",
+      "trela": "Heavy Trela & Flatbeds",
+      "trelaDesc": "Standard flatbeds, side walls, and high capacity 40-50t trailers.",
+      "jumbo": "Jumbo & Box Trucks",
+      "jumboDesc": "Enclosed box trucks, jumbo dry vans for FMCG and retail goods.",
+      "refrigerated": "Refrigerated & Insulated",
+      "refrigeratedDesc": "Temperature-controlled reefers for food, produce & pharma.",
+      "tankers": "Fuel & Chemical Tankers",
+      "tankersDesc": "Certified bulk liquid tankers with safety containment."
+    },
+    "driverEarnings": {
+      "badge": "Join the Network",
+      "heading": "Transparent Driver Earnings",
+      "subheading": "Empowering drivers and fleet owners with consistent trips and fast payouts.",
+      "guaranteeTitle": "Guaranteed Fast Payouts",
+      "guaranteeDesc": "Direct digital wallet deposits with zero unnecessary settlement delays.",
+      "consistentTitle": "Continuous Trip Flow",
+      "consistentDesc": "Access Egypt's largest shipper network and reduce empty return trips.",
+      "fairPricingTitle": "Fair Mileage Tariffs",
+      "fairPricingDesc": "Clear price breakdown based on exact distance, weight, and road tiers."
+    },
+    "quote": {
+      "badge": "Instant Calculation",
+      "heading": "Instant Shipment Quote",
+      "subheading": "Calculate precise trip costs dynamically with verified distance algorithms.",
+      "pickupLabel": "Pickup Governorate / City",
+      "dropoffLabel": "Delivery Destination",
+      "weightLabel": "Cargo Weight (Tons)",
+      "truckTypeLabel": "Vehicle Category",
+      "calculateBtn": "Calculate Tariff",
+      "estimatedCost": "Estimated Shipment Cost",
+      "getQuoteNow": "Book This Trip"
+    },
+    "hero": {
+      "badge": "Live Network Tracking",
+      "titleLine1": "Move Cargo",
+      "titleLine2": "Anywhere in",
+      "titleLine3": "Seconds.",
+      "titleLine4": "Right From Your",
+      "titleLine5": "Phone.",
+      "description": "Book a Jumbo, Tipper, Flatbed or Refrigerated truck instantly. Total transparency, guaranteed capacity.",
+      "ctaDownload": "Download App",
+      "scan": "Scan to Install",
+      "bookingAccepted": "New Booking Accepted!",
+      "routeEta": "Route ETA",
+      "from": "Alexandria Port",
+      "to": "6th of October",
+      "mapAlt": "Diziel live radar telemetry map",
+      "routeDuration": "45 mins · Live Route"
+    },
+    "process": {
+      "label": "The Process",
+      "title": "Three Steps to Seamless Shipping",
+      "step1": {
+        "title": "Select Type",
+        "description": "Choose from our diverse fleet of Jumbos, Tippers, Flatbeds, or Refrigerated trucks based on your cargo.",
+        "footerLabel": "Popular:",
+        "footerValue": "Jumbo Box / Winch"
+      },
+      "step2": {
+        "title": "Get Instant Quote",
+        "description": "Enter your pickup and drop-off locations to receive a transparent, upfront price with zero hidden fees.",
+        "footerLabel": "Est. Time:",
+        "footerValue": "Under 30s"
+      },
+      "step3": {
+        "title": "Track & Settle",
+        "description": "Monitor your cargo in real-time. Automated settlements ensure secure and prompt payments upon delivery.",
+        "footerLabel": "Tracking:",
+        "footerValue": "Live"
+      }
+    },
+    "coverage": {
+      "label": "Coverage",
+      "title": "Regional Footprint",
+      "description": "Connecting Egypt and the MENA region with a reliable, expansive logistics network.",
+      "stats": {
+        "trips": {
+          "value": "50k+",
+          "label": "Trips Completed"
+        },
+        "kilometers": {
+          "value": "2.5M+",
+          "label": "Kilometers Covered"
+        },
+        "drivers": {
+          "value": "12k+",
+          "label": "Active Drivers"
+        },
+        "cities": {
+          "value": "25+",
+          "label": "Cities Covered"
+        }
+      }
+    },
+    "driverSpotlight": {
+      "label": "Driver Spotlight",
+      "topRated": "Top Rated",
+      "title": "\"Diziel transformed my business.\"",
+      "quote": "\"Before joining the network, finding consistent loads was a daily struggle. Now, my truck is always moving, and payments are settled instantly. It's the best decision I've made for my logistics career.\"",
+      "name": "Ahmed Hassan",
+      "role": "Jumbo Truck Owner-Operator, Cairo",
+      "cta": "Join the Fleet"
+    },
+    "business": {
+      "label": "Enterprise Logistics Solutions",
+      "title": "Scale Your Enterprise Logistics & Fleet Contracts",
+      "description": "Designed for manufacturers, distributors, and enterprises. Streamline complex supply chains with multi-truck dispatch, verified weighbridge integration, and flexible credit terms.",
+      "features": {
+        "credit": "Flexible credit lines & unified tax invoicing",
+        "dashboard": "Multi-user role access & multi-branch portal",
+        "reporting": "Custom analytics, live SLA metrics & enterprise API"
+      },
+      "cta": "Contact Enterprise Sales",
+      "mockup": {
+        "enterpriseHub": "Enterprise Portal",
+        "liveActive": "Live Active",
+        "activeDispatches": "Active Corporate Dispatches",
+        "totalCredit": "Monthly Credit Line",
+        "utilized": "Utilized",
+        "corporateOrders": "Weekly Corporate Orders",
+        "inTransit": "In Transit",
+        "delivered": "Delivered",
+        "scaleMatched": "Scale Tickets Verified",
+        "electronicInvoice": "Certified E-Invoice",
+        "fastDispatch": "Instant Multi-Truck Dispatch (40+)",
+        "downloadInvoice": "Download Tax E-Invoice"
+      }
+    },
+    "features": {
+      "heading": "Everything freight needs in one app",
+      "subheading": "From quoting to delivery to settlement, Diziel connects shippers, agents, drivers, and truck owners on a single reliable platform.",
+      "quoteTitle": "Instant Shipment Quotes",
+      "quoteDesc": "Enter your pickup and drop-off points and get a transparent, distance-based quote in seconds — no back-and-forth calls.",
+      "trackTitle": "Live GPS Trip Tracking",
+      "trackDesc": "Watch every shipment move in real time on the map, from dispatch to delivery, with instant status and ETA updates.",
+      "fleetTitle": "Fleet, Driver & Agent Management",
+      "fleetDesc": "Onboard trucks, drivers, and agents with document verification, coded IDs, and full operational visibility for every fleet.",
+      "financeTitle": "Financial Settlement & Wallets",
+      "financeDesc": "Automated invoicing, per-truck financial centers, and transparent wallet settlement between clients, agents, and drivers."
+    },
+    "testimonials": {
+      "badge": "Client Stories & Reviews",
+      "title": "What Leading Shippers Say About Diziel",
+      "subtitle": "Trusted by major manufacturers, supply chain leaders, retailers, and fleet owners across Egypt.",
+      "stats": {
+        "rating": "4.9 / 5",
+        "ratingLabel": "Average Service Rating",
+        "verifiedClients": "+1,200",
+        "verifiedClientsLabel": "Enterprise Partners",
+        "satisfaction": "99.2%",
+        "satisfactionLabel": "Client Satisfaction Rate",
+        "onTime": "99.4%",
+        "onTimeLabel": "On-Time Delivery Rate"
+      },
+      "categories": {
+        "all": "All",
+        "enterprises": "Enterprises & Factories",
+        "fmcg": "FMCG & Retail",
+        "construction": "Building & Heavy Industry",
+        "fleetOwners": "Fleet Owners"
+      },
+      "items": {
+        "c1": {
+          "quote": "Diziel revolutionized our outbound logistics. Sourcing 40+ heavy flatbeds daily during peak harvest used to be chaotic; now it's done in minutes with verified tax electronic invoices.",
+          "author": "Eng. Tarek Abdel Aziz",
+          "role": "Head of Supply Chain & Logistics",
+          "company": "Al-Ahram Food Industries Group",
+          "metric": "22% Freight Cost Savings",
+          "tag": "Reefer & Heavy Freight"
+        },
+        "c2": {
+          "quote": "Live satellite GPS tracking and millimeter-accurate ETAs gave our clients complete shipment certainty. Weighbridge e-ticket matching eliminated delivery discrepancy disputes completely.",
+          "author": "Ahmed El-Shennawy",
+          "role": "Director of Operations",
+          "company": "International Building Materials & Cement Co.",
+          "metric": "Zero Delivery Delays",
+          "tag": "Trela & Side Walls"
+        },
+        "c3": {
+          "quote": "Transparent algorithmic pricing is Diziel's strongest value. No protracted negotiations or hidden charges. The drivers are professional, verified, and punctual.",
+          "author": "Sara El-Kady",
+          "role": "Procurement & Logistics Manager",
+          "company": "Delta Egypt Engineering & Export",
+          "metric": "Booking Time Cut to 3 Mins",
+          "tag": "Containers & Jumbo"
+        },
+        "c4": {
+          "quote": "We manage 25 trucks, and joining Diziel eradicated empty deadhead return trips. Trip payouts arrive in our digital wallet instantly upon POD sign-off without delays.",
+          "author": "Ibrahim Mansour",
+          "role": "Fleet Owner & Operator",
+          "company": "Mansour Heavy Haulage (Alexandria)",
+          "metric": "+35% Monthly Revenue Growth",
+          "tag": "Certified Fleet Owner"
+        },
+        "c5": {
+          "quote": "Transporting temperature-sensitive pharmaceuticals demands flawless cold-chain integrity. Diziel's certified reefer units and live temperature logs have been exceptional.",
+          "author": "Dr. Hany Youssef",
+          "role": "Pharma Distribution Manager",
+          "company": "PharmaCare Medical Logistics",
+          "metric": "100% Cold Chain Integrity",
+          "tag": "Refrigerated Fleet"
+        },
+        "c6": {
+          "quote": "Round-the-clock operations support and flexible monthly credit terms made integrating Diziel into our corporate ERP an effortless decision.",
+          "author": "Marwan Khalil",
+          "role": "Chief Financial Officer",
+          "company": "Nile International Trading",
+          "metric": "Corporate Credit Facilities",
+          "tag": "Enterprise Solutions"
+        }
+      }
+    },
+    "blog": {
+      "badge": "Logistics Knowledge Hub",
+      "title": "Latest Insights, Industry Trends & Logistics Intelligence",
+      "subtitle": "Discover forward-thinking strategies, technological advancements, and operational best practices transforming road freight in Egypt and the MENA region.",
+      "readTime": "{{mins}} min read",
+      "readMore": "Read Full Article",
+      "allArticles": "View All Articles",
+      "featured": "Featured",
+      "reads": "reads",
+      "newsletter": {
+        "badge": "Diziel Monthly Logistics Brief",
+        "title": "Stay Ahead with Exclusive Egypt Freight & Logistics Intelligence",
+        "desc": "Subscribe for monthly insights on road freight tariffs, corridor volume analytics, and regulatory logistics updates.",
+        "placeholder": "Enter your corporate email...",
+        "button": "Subscribe"
+      },
+      "categories": {
+        "all": "All",
+        "tech": "Digital Freight Tech",
+        "supplyChain": "Supply Chain Strategy",
+        "drivers": "Fleet & Driver Operations",
+        "regulations": "Regulations & Tariffs"
+      },
+      "articles": {
+        "a1": {
+          "title": "How Algorithmic Pricing and Live Telemetry Are Reshaping Egypt's Heavy Freight",
+          "excerpt": "An in-depth analysis of how digital freight matching platforms eliminate unseen supply chain friction and cut empty return miles by over 40%.",
+          "category": "Digital Logistics",
+          "date": "March 12, 2026",
+          "readTime": "5"
+        },
+        "a2": {
+          "title": "Supply Chain Playbook: 5 Proven Tactics to Reduce Road Freight Costs in 2026",
+          "excerpt": "Practical techniques for enterprise logistics managers to optimize load distribution, select ideal truck categories, and leverage digital tax e-invoicing.",
+          "category": "Supply Chain",
+          "date": "March 08, 2026",
+          "readTime": "6"
+        },
+        "a3": {
+          "title": "The Strategic Value of Digital Waybills and Weighbridge Integration",
+          "excerpt": "How encrypted QR-coded waybills and direct weighbridge ticket logging protect shipper cargo rights and eradicate weight dispute friction.",
+          "category": "Compliance & Security",
+          "date": "March 01, 2026",
+          "readTime": "4"
+        }
+      }
+    },
+    "technicalBackbone": {
+      "label": "Technical Backbone",
+      "title": "Global-Scale Infrastructure",
+      "cards": {
+        "warehousing": {
+          "title": "Secure Warehousing",
+          "description": "24/7 monitoring and climate-controlled facilities ensure optimal safety and preservation."
+        },
+        "fleet": {
+          "title": "Smart Fleet Management",
+          "description": "Predictive maintenance and real-time fuel optimization for unmatched operational efficiency."
+        },
+        "compliance": {
+          "title": "Customs & Compliance",
+          "description": "Seamless MENA-region border crossings and automated documentation for rapid clearance."
+        }
+      }
+    },
+    "appShowcase": {
+      "sectionBadge": "Mobile App Preview",
+      "heading": "Next-Gen Freight Logistics in the Palm of Your Hand",
+      "subheading": "State-of-the-art tools designed for shippers, fleet owners, and drivers. Instant dispatch, live GPS radar, and guaranteed digital settlements.",
+      "ctaDownload": "Download App Free",
+      "mockup": {
+        "newTrip": "New Trip",
+        "pickup": "Pickup Point",
+        "pickupLoc": "Ain Sokhna Port",
+        "dropoff": "Drop-off Destination",
+        "dropoffLoc": "6th of October City",
+        "selectVehicle": "Select Vehicle Category",
+        "trelaFlatbed": "Trela Flatbed",
+        "jumboBox": "Jumbo Box",
+        "estTariff": "Estimated Total Tariff",
+        "instantMatch": "15% Savings",
+        "dispatchNow": "Confirm & Dispatch Truck",
+        "inTransit": "In Transit",
+        "speedLabel": "84 km/h · Sokhna Highway",
+        "driverName": "Mahmoud Sayed",
+        "tripsCount": "140+ trips",
+        "etaLabel": "Route ETA:",
+        "etaValue": "42 mins (65 km)",
+        "digitalWaybill": "Digital Waybill",
+        "statusVerified": "VERIFIED",
+        "cargoWeight": "Certified Cargo Weight:",
+        "cargoWeightVal": "42.50 Tons",
+        "scaleTicket": "Scale Ticket:",
+        "scaleTicketVal": "Verified & Matched",
+        "waybillStatus": "Status:",
+        "signedAtDelivery": "Delivered & Signed",
+        "digitalPod": "Digital Proof of Delivery",
+        "walletTitle": "Diziel Wallet",
+        "liveSettled": "Live Settled",
+        "availableBalance": "Available Balance for Payout",
+        "instantPayout": "Instant Bank / InstaPay Payout",
+        "withdrawNow": "Withdraw",
+        "recentSettlements": "Recent Completed Settlements",
+        "liveFreightRadar": "Live Freight Radar",
+        "availableLoads": "+18 Available Loads",
+        "highPriority": "High Priority",
+        "offer1Title": "Damietta → Assiut (50t Steel)",
+        "offer1Subtitle": "480 km · Ready for immediate loading",
+        "offer2Title": "Suez → Cairo (Cement)",
+        "offer2Subtitle": "Trela Sided Required",
+        "acceptDispatch": "Submit Offer / Accept Dispatch"
+      },
+      "slides": {
+        "booking": {
+          "badge": "Instant Cargo Booking",
+          "title": "Algorithmic Pricing & Rapid Vehicle Dispatch",
+          "subtitle": "Set routes and select truck categories in seconds",
+          "desc": "Enter pickup and delivery locations to instantly unlock transparent, distance-based pricing with immediate matching to certified nearby carriers.",
+          "feat1": "Automated tariff calculation based on exact road distance and cargo weight",
+          "feat2": "Full support across Trela flatbeds, Jumbo vans, Reefers, and Tankers",
+          "feat3": "Instant dispatch confirmation with verified KYC driver credentials"
+        },
+        "tracking": {
+          "badge": "Live Satellite GPS Telemetry",
+          "title": "Real-time Radar & Journey Monitoring",
+          "subtitle": "Complete trip visibility with live speed and accurate ETA",
+          "desc": "Track every shipment step-by-step from truck departure and loading site check-in to final destination delivery with milestone alerts.",
+          "feat1": "Continuous live GPS position updates with zero signal dead zones",
+          "feat2": "Dynamic ETA calculations accounting for real-time traffic conditions",
+          "feat3": "Direct one-tap communication with driver and platform operations"
+        },
+        "waybill": {
+          "badge": "Digital Waybill & Proof of Delivery",
+          "title": "Encrypted Digital Waybills & Scale Verification",
+          "subtitle": "Paperless workflow with instant weighbridge ticket logging",
+          "desc": "Eliminate paper waybills with tamper-proof QR credentials, weight verification tickets, and digital proof-of-delivery signatures.",
+          "feat1": "Unique encrypted QR codes per shipment preventing unauthorized handling",
+          "feat2": "Digital weighbridge ticket capture at both loading and unloading sites",
+          "feat3": "Authenticated digital recipient sign-off on cargo arrival"
+        },
+        "wallet": {
+          "badge": "Digital Wallet & Instant Payouts",
+          "title": "Guaranteed Fast Settlements & Instant Cashout",
+          "subtitle": "Direct integration with InstaPay, e-wallets, and banking channels",
+          "desc": "Immediate earnings clearance into driver and owner wallets upon delivery sign-off, ready for instant bank or InstaPay withdrawal.",
+          "feat1": "Zero-delay clearance of trip dues upon verified waybill sign-off",
+          "feat2": "Comprehensive financial statement with transparent expense breakdowns",
+          "feat3": "Instant payout options via InstaPay, bank transfers, and local wallets"
+        },
+        "offers": {
+          "badge": "Freight Radar & Live Bidding",
+          "title": "Explore & Accept High-Value Shipments 24/7",
+          "subtitle": "Non-stop freight volume for truck owners across all 27 governorates",
+          "desc": "Browse hundreds of verified active shipment requests, submit competitive bids, and eliminate empty return miles to maximize fleet utilization.",
+          "feat1": "Instant notifications for loads matching your truck type and preferred route",
+          "feat2": "Reduce empty return trips with connected backhaul freight matching",
+          "feat3": "Direct digital load acceptance with upfront rate guarantees"
+        }
+      }
+    },
+    "download": {
+      "heading": "Download the Diziel app",
+      "subheading": "Request shipments, track trips, and manage your account on the go. Available soon for iOS and Android.",
+      "appStore": "Download on the App Store",
+      "googlePlay": "Get it on Google Play"
+    },
+    "footer": {
+      "tagline": "Revolutionizing the freight marketplace with modern logistics technology.",
+      "desc": "The freight marketplace connecting shippers, fleets, and drivers across Egypt — instant quotes, live tracking, and transparent settlement.",
+      "quickLinks": "Quick Links",
+      "carrierPortal": "Carrier Portal",
+      "shipperSolutions": "Shipper Solutions",
+      "safetyCompliance": "Safety & Compliance",
+      "contactTeam": "Contact & Team",
+      "trackShipment": "Track Shipment",
+      "getTheApp": "Get the App",
+      "appStore": "App Store",
+      "playStore": "Play Store",
+      "connect": "Connect",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "copyright": "© {{year}} Diziel Logistics. All rights reserved."
+    },
+    "contactTeam": {
+      "badge": "Diziel Team & Support",
+      "title": "We're Here to Power Your Logistics 24/7",
+      "subtitle": "A dedicated team of technical and logistics specialists ensuring your freight moves seamlessly across Egypt.",
+      "channels": {
+        "title": "Direct Contact Channels",
+        "phone": "Operations Hotline",
+        "phoneNumber": "+20 100 000 9988",
+        "email": "Enterprise Inquiries",
+        "emailAddress": "operations@diziel.com",
+        "location": "Headquarters",
+        "locationAddress": "New Cairo, 5th Settlement, Logistics Business Park",
+        "hours": "Operating Hours",
+        "hoursDetails": "24/7 Operations & Carrier Dispatch Support"
+      },
+      "form": {
+        "title": "Send Us a Message or Request Partnership",
+        "subtitle": "Fill out the inquiry form and our logistics operations lead will contact you within two hours.",
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "e.g. Eng. Ahmed Abdullah",
+        "companyName": "Company / Organization",
+        "companyNamePlaceholder": "e.g. Delta Industrial Group",
+        "phone": "Phone / WhatsApp",
+        "phonePlaceholder": "010XXXXXXXX",
+        "email": "Business Email",
+        "emailPlaceholder": "name@company.com",
+        "topic": "Inquiry Topic",
+        "topicGeneral": "General Inquiry",
+        "topicEnterprise": "Enterprise & Recurring Freight Contracts",
+        "topicCarrier": "Fleet & Carrier Onboarding",
+        "topicSupport": "Technical & Operational Support",
+        "message": "Message / Shipment Requirements",
+        "messagePlaceholder": "Tell us about your cargo scale, routes, or questions...",
+        "submit": "Send Message",
+        "submitting": "Sending...",
+        "successTitle": "Message Received Successfully!",
+        "successDesc": "Thank you for reaching out to Diziel. Our operations team will respond promptly."
+      },
+      "team": {
+        "badge": "Leadership & Core Team",
+        "title": "The Team Behind the Logistics Transformation",
+        "subtitle": "Engineers, supply chain operators, and logistics visionaries building Egypt's smartest freight network.",
+        "roles": {
+          "ceo": "Founder & Chief Executive Officer",
+          "coo": "Chief Operating Officer & Fleet Lead",
+          "cto": "Chief Technology Officer",
+          "headLogistics": "Head of Freight & Supply Chain",
+          "headCustomer": "Head of Partner Success & Support",
+          "headCompliance": "Head of Safety & Legal Compliance"
+        }
+      }
+    },
+    "tracking": {
+      "badge": "Real-Time Telemetry",
+      "title": "Live Shipment Tracking & ETA",
+      "subtitle": "Enter your Order Code or Waybill number to inspect real-time truck position, cargo specs, and accurate ETA.",
+      "inputPlaceholder": "Enter Order Code (e.g. DZ-84920 or DZ-1029)...",
+      "trackBtn": "Track Shipment",
+      "searching": "Locating shipment telemetry...",
+      "demoCodes": "Try sample shipment codes:",
+      "notFound": "No shipment matching this code was found. Please check the code or contact support.",
+      "liveTelemetry": "Live Satellite GPS Active",
+      "orderCode": "Order Code",
+      "lastUpdate": "Last Live Ping",
+      "origin": "Pickup Origin",
+      "destination": "Delivery Destination",
+      "estArrival": "Estimated Arrival (ETA)",
+      "carrierInfo": "Driver & Vehicle Details",
+      "driverName": "Assigned Driver",
+      "truckPlate": "Truck Plate",
+      "truckType": "Vehicle Class",
+      "cargoDetails": "Cargo Specifications",
+      "cargoWeight": "Certified Weight",
+      "cargoCategory": "Cargo Type",
+      "waybillNumber": "Waybill Number",
+      "milestones": {
+        "created": "Order Created & Confirmed",
+        "assigned": "Truck & Driver Assigned",
+        "pickup": "At Pickup & Loading Completed",
+        "inTransit": "In Transit to Destination (Live)",
+        "delivered": "Delivered & Waybill Authenticated"
+      }
+    },
+    "privacy": {
+      "title": "Privacy & Data Protection Policy",
+      "subtitle": "How Diziel collects, protects, and handles shipper and carrier data.",
+      "sections": {
+        "collection": {
+          "title": "1. Information We Collect",
+          "body": "We collect necessary information to facilitate freight operations including: contact details, commercial registrations, driver licenses, vehicle specs, and pickup/drop-off coordinates."
+        },
+        "telemetry": {
+          "title": "2. GPS Telemetry & Live Geo-Tracking",
+          "body": "Diziel utilizes live satellite telemetry during active shipments to ensure cargo safety, verify route milestones, and provide accurate ETAs to verified parties."
+        },
+        "usage": {
+          "title": "3. How Data Is Used",
+          "body": "Data is used solely to execute freight dispatches, process digital waybills, compute transparent tariffs, and comply with Egyptian transport regulations."
+        },
+        "sharing": {
+          "title": "4. Authorized Information Sharing",
+          "body": "Trip details are only shared between authorized shipment parties (Shipper, Assigned Driver, Fleet Agent). We never sell user data to third-party advertisers."
+        },
+        "security": {
+          "title": "5. Data Security & Encryption",
+          "body": "We implement bank-grade encryption protocols to safeguard all documents, financial settlements, and digital waybill records against unauthorized access."
+        },
+        "rights": {
+          "title": "6. User Rights & Updates",
+          "body": "Users may request corrections or updates to their stored profile data by contacting our operations support team or via their account portal."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Pricing Policy",
+      "subtitle": "How shipment prices are computed inside Diziel.",
+      "sections": {
+        "basis": {
+          "title": "Basis of Pricing",
+          "body": "The indicative price is computed from distance (km) × weight (t) using a Diziel-approved tariff table, with adjustments based on truck type and service category."
+        },
+        "distance": {
+          "title": "Distance",
+          "body": "A unified Google route is used to measure distance from pickup to drop-off and is the source of truth for the invoice."
+        },
+        "margin": {
+          "title": "Diziel Margin & VAT",
+          "body": "A 5% Diziel margin is added on top of the base price; 14% VAT is then added when applicable to the order."
+        },
+        "extra": {
+          "title": "Extra Expenses",
+          "body": "Road, loading, unloading, government, port, and customs fees are tracked separately, and the payer (Client or Diziel) is selected per order."
+        },
+        "downPayments": {
+          "title": "Down Payments",
+          "body": "New clients: 10% deposit before truck dispatch. Trusted clients: 50% on loading, balance on unloading. Long-term contracts: deposit handed to the driver."
+        },
+        "insurance": {
+          "title": "Insurance",
+          "body": "If insurance is requested, an insurance premium is added to the total based on the declared cargo value."
+        },
+        "adjustments": {
+          "title": "Adjustments & Discounts",
+          "body": "Any discount or adjustment is admin-only and is recorded on the order with a reason."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "subtitle": "Diziel app — terms and conditions. Please read carefully.",
+      "footnote": "Contact us through the app's official support channels.",
+      "sections": {
+        "s1": {
+          "title": "1. Definitions",
+          "body": "Application: the Diziel app and all its associated services.\nUser: any person using the app, whether a client or service provider.\nAgent: an accredited transport company that provides trucks and is the operational manager for its fleet.\nDriver: any person registered in the app to provide transport services."
+        },
+        "s2": {
+          "title": "2. Eligibility",
+          "body": "Users must be at least 18 years old to have legal capacity to contract.\nUsers are required to provide accurate, up-to-date data; they alone bear responsibility for any errors."
+        },
+        "s3": {
+          "title": "3. Account Creation",
+          "body": "A personal account must be created before using the app.\nThe user is responsible for keeping their account credentials confidential.\nThe app reserves the right to reject or suspend any account.\nNo account is activated until provided data is verified.\nForged or incorrect documents result in immediate suspension and referral to authorities."
+        },
+        "s4": {
+          "title": "4. Nature of Service",
+          "body": "The app provides a smart platform connecting clients with service providers for cargo transport.\nPrices and delivery times may vary based on trip conditions."
+        },
+        "s5": {
+          "title": "5. Pricing & Payment",
+          "body": "Trip value is calculated according to the published tariff inside the app.\nPayment may be made in cash or electronically via available means.\nThe client must settle trip dues without delay; otherwise financial penalties apply.\nThe app may adjust prices before a trip starts based on market variables.\nA 1% per-day late-payment penalty applies to any overdue balance.\nThe app may freeze any account's balance during a dispute until the issue is resolved."
+        },
+        "s6": {
+          "title": "6. User Obligations",
+          "body": "Respect service providers (driver, technical support, customer service).\nPreserve the truck at loading and unloading sites."
+        },
+        "s7": {
+          "title": "7. Driver Obligations",
+          "body": "Comply with traffic laws.\nAbide by user conditions at loading and unloading sites.\nFollow user instructions to ensure everyone's safety.\nAdhere to departure and arrival schedules.\nMaintain vehicle cleanliness and personal appearance.\nFollow the route shown on the app map.\nProtect cargo integrity throughout the journey."
+        },
+        "s8": {
+          "title": "8. Cargo Liability (Insurance & Compensation)",
+          "body": "The app provides cargo insurance policies for users.\nIf the user opts out of insurance, they bear full responsibility with no claims against the app.\nAny damage must be reported within 24 hours — later reports will not be accepted.\nReporting must be done via the app or the officially recognised email."
+        },
+        "s9": {
+          "title": "9. App Liability",
+          "body": "The app is a technical and operational intermediary, not the primary carrier.\nThe app bears no direct responsibility for events beyond its control.\nThe app is not liable for driver violations or illegal cargo during a trip."
+        },
+        "s10": {
+          "title": "10. Amendment of Terms",
+          "body": "The app may amend these terms at any time. Continued use constitutes acceptance of amendments."
+        },
+        "s11": {
+          "title": "11. Agent Obligations",
+          "body": "Agents must provide high-quality vehicles and qualified drivers.\nAgents must monitor trip execution on the app and coordinate at all stages."
+        },
+        "s12": {
+          "title": "12. Cancellation or Postponement",
+          "body": "Cancellation before truck dispatch: no charge.\nCancellation or postponement after dispatch: EGP 75 per kilometre.\nDelay at loading or unloading: EGP 500 per 6 hours of delay."
+        },
+        "s13": {
+          "title": "13. Tracking",
+          "body": "The user must consent to geo-tracking of the shipment during the trip.\nThe user must consent to storage of shipment data.\nCalls and chats may be recorded for quality and security purposes."
+        },
+        "s14": {
+          "title": "14. Privacy & Responsibilities",
+          "body": "The app is committed to protecting user data and not using it for any unauthorised purpose.\nThe user is solely responsible for the contents of cargo being transported and ensuring it does not violate Egyptian law.\nThe app does not transport pets, cash, gold, alcohol, or any otherwise prohibited items.\nViolating these rules makes the user solely responsible before Egyptian law."
+        },
+        "s15": {
+          "title": "15. Ratings & Penalties",
+          "body": "A rating system applies to drivers, agents, and clients.\nWarning first, then account suspension.\nImmediate suspension for fraud, forgery, manipulation, abuse, or financial evasion."
+        },
+        "s16": {
+          "title": "16. Governing Law",
+          "body": "These terms are governed by the laws of the Arab Republic of Egypt."
+        },
+        "s17": {
+          "title": "17. Force Majeure",
+          "body": "Includes accidents, natural disasters, earthquakes, revolutions, wars, political decisions, road closures, and similar events. In such cases the app bears no obligations toward users."
+        },
+        "s18": {
+          "title": "18. Intellectual Property",
+          "body": "Everything related to the app — logo, systems, operational rules, and visual identity — is the exclusive property of Diziel and may not be contested by anyone."
+        },
+        "s19": {
+          "title": "19. Contact & Support",
+          "body": "You can reach support via: Email — Facebook — WhatsApp."
+        }
+      }
+    },
+    "stats": {
+      "tripsLabel": "Completed Trips"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin Overview & Analytics",
+      "subtitle": "Realtime monitoring of platform orders, carrier logistics, and KYC verification queues.",
+      "operationsActive": "Operations Center Active",
+      "openLiveMap": "Open Live Map",
+      "reviewAlert": "{{count}} Orders require immediate administrative review and price validation.",
+      "platformMetrics": "Platform Metrics",
+      "realtimeUpdated": "Updated in Realtime",
+      "quickActions": "Quick Operations & Shortcuts",
+      "quickActionsDesc": "Direct navigation to critical platform hubs",
+      "dispatchOrders": "Dispatch Orders",
+      "dispatchOrdersDesc": "Manage assignments and review dispatches",
+      "liveTracking": "Live Tracking",
+      "liveTrackingDesc": "Realtime GPS radar",
+      "verifyDocs": "Verify Documents",
+      "verifyDocsDesc": "Pending KYC approvals",
+      "newOffers": "New Offers",
+      "newOffersDesc": "Review price bids"
+    },
+    "users": {
+      "title": "Users Directory",
+      "subtitle": "Total active & pending accounts registered: {{count}}",
+      "searchPlaceholder": "Search name, phone, or code...",
+      "roleTabs": {
+        "all": "All Roles",
+        "pending_review": "Pending Review",
+        "client": "Clients",
+        "driver": "Drivers",
+        "truck_owner": "Truck Owners",
+        "agent": "Agents"
+      },
+      "clientFilter": "Client Filter:",
+      "driverFilter": "Driver Filter:",
+      "clientTypes": {
+        "all": "All Clients",
+        "company": "Enterprise / Companies",
+        "individual": "Individuals"
+      },
+      "driverFilters": {
+        "all": "All Drivers",
+        "approved_no_orders": "Approved (No Trips)",
+        "linked": "Vehicle Assigned",
+        "unlinked": "Unassigned Vehicle"
+      },
+      "columns": {
+        "account": "User Account",
+        "role": "System Role",
+        "status": "Account Status",
+        "specifications": "Specifications",
+        "registeredAt": "Registration",
+        "controls": "Controls"
+      },
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "reject": "Reject",
+      "rejectModal": {
+        "title": "Reject Account: {{name}}",
+        "desc": "Please specify the precise reason for rejecting this user registration. An SMS / push notification will be sent to the user.",
+        "placeholder": "e.g. Incomplete identification documents, invalid commercial registration, or mismatched phone number.",
+        "confirm": "Confirm Rejection"
+      }
+    },
+    "userDetail": {
+      "back": "Back to Users",
+      "accountReview": "Account Review",
+      "rejectionReason": "Rejection reason:",
+      "approveAccount": "Approve Account",
+      "rejectAccount": "Reject Account",
+      "accountManager": "Account Manager",
+      "documentsReview": "Document Review",
+      "linkedAccounts": "Linked Accounts",
+      "fleet": "Fleet",
+      "addFullTruck": "+ Add Full Truck",
+      "recentOrders": "Recent Orders",
+      "tripHistory": "Trip History",
+      "noTrucks": "No trucks linked to this user yet.",
+      "noDocs": "No documents uploaded.",
+      "noOrders": "No orders found.",
+      "noTrips": "No trip history recorded.",
+      "approveDoc": "Approve Document",
+      "rejectDoc": "Reject Document",
+      "rejectionReasonRequired": "Rejection reason required"
+    },
+    "orders": {
+      "title": "Orders & Shipments",
+      "subtitle": "{{count}} total orders matching current filter criteria",
+      "searchPlaceholder": "Search order ID, client name...",
+      "tabs": {
+        "all": "All Shipments",
+        "pending_admin_review": "Pending Review",
+        "approved_unassigned": "Approved (Unassigned)",
+        "pending_assignment": "Pending Assignment",
+        "active": "Active Dispatches",
+        "pending_owner_review": "Owner Approval",
+        "pending_driver_review": "Driver Approval",
+        "completed": "Delivered",
+        "cancelled": "Cancelled",
+        "reassign_needed": "Reassign Needed"
+      },
+      "columns": {
+        "orderCode": "Order Code",
+        "client": "Client / Shipper",
+        "route": "Origin → Destination",
+        "cargo": "Cargo Specs",
+        "offers": "Offers Summary",
+        "price": "Price (EGP)",
+        "dispatchStatus": "Dispatch Status"
+      }
+    },
+    "orderDetail": {
+      "back": "Back to Orders",
+      "orderTitle": "Order {{code}}",
+      "routeChangePending": "Route change request pending administrative approval",
+      "approve": "Approve",
+      "reject": "Reject",
+      "confirmDeposit": "Confirm Deposit",
+      "confirmBalance": "Confirm Balance",
+      "publishOrder": "Publish Order",
+      "assignTruckDriver": "Assign Truck & Driver",
+      "forceStart": "Force Start Trip",
+      "setFeePrice": "Set Fee / Price",
+      "closeOrder": "Close Order",
+      "releaseTruck": "Release Truck",
+      "cancelOrder": "Cancel Order",
+      "agentOffers": "Agent Offers ({{count}})",
+      "priceNegotiations": "Price Negotiations",
+      "paymentConfirmation": "Payment Confirmation",
+      "paymentStatus": "Payment Status",
+      "pricing": "Pricing & Fees",
+      "paymentBreakdown": "Payment Breakdown",
+      "route": "Route",
+      "cargo": "Cargo Specs",
+      "parties": "Parties",
+      "truck": "Truck Specs",
+      "notes": "Special Instructions & Notes",
+      "orderStatement": "Certified Order Statement",
+      "partyRatings": "Party Ratings",
+      "assignModal": {
+        "title": "Assign Truck & Driver",
+        "roleAll": "All",
+        "roleAgents": "Agents",
+        "roleOwners": "Owners",
+        "priceLabel": "Order Price (EGP)",
+        "feeLabel": "Admin Fee (EGP)",
+        "assignButton": "Assign"
+      },
+      "feeModal": {
+        "title": "Update Pricing & Commission",
+        "price": "Order Price (EGP)",
+        "fee": "Admin Fee (EGP)"
+      },
+      "cancelModal": {
+        "title": "Cancel Order",
+        "reason": "Cancellation Reason"
+      },
+      "depositModal": {
+        "title": "Confirm Deposit",
+        "amount": "Amount received (EGP)"
+      },
+      "balanceModal": {
+        "title": "Confirm Balance",
+        "amount": "Amount received (EGP)"
+      }
+    },
+    "newOffers": {
+      "title": "New Offers & Live Bidding",
+      "subtitle": "{{count}} orders with active price offers",
+      "searchPlaceholder": "Search order code or client...",
+      "recentOffers": "Recent Offers Feed",
+      "newOfferBadge": "New Offer",
+      "negotiationRounds": "{{count}} negotiation rounds",
+      "bidsCount": "{{count}} bids",
+      "newBids": "{{count}} new"
+    },
+    "profile": {
+      "title": "Admin Profile",
+      "masterAdmin": "Master Administrator",
+      "accountSection": "Admin Account Details",
+      "fullName": "Full Name",
+      "saveChanges": "Save Changes",
+      "changePassword": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmNewPassword": "Confirm New Password",
+      "updatePassword": "Update Password",
+      "logoutAdmin": "Log out of Admin Portal"
+    },
+    "fleet": {
+      "title": "Fleet Vehicles",
+      "subtitle": "{{count}} Total Registered Vehicles",
+      "advancedSearch": "Advanced Search",
+      "liveMap": "Live GPS Map",
+      "searchPlaceholder": "Plate number or truck code...",
+      "tabs": {
+        "approved": "Approved Fleet",
+        "pending_review": "KYC Pending",
+        "rejected": "Rejected"
+      },
+      "columns": {
+        "plate": "Plate & Serial Code",
+        "type": "Vehicle Class",
+        "owner": "Owner",
+        "agent": "Managing Agent",
+        "driver": "Assigned Driver",
+        "status": "Fleet Status"
+      }
+    },
+    "truckSearch": {
+      "title": "Truck Search",
+      "clearFilters": "Clear filters ({{count}})",
+      "searchPlaceholder": "Code, plate, brand, agent, owner...",
+      "category": "Category",
+      "subType": "Sub-type",
+      "bodyType": "Body Type",
+      "minLength": "Min length (m)",
+      "maxLength": "Max length (m)",
+      "minLoad": "Min load (t)",
+      "maxLoad": "Max load (t)",
+      "minAxles": "Min axles",
+      "maxHeight": "Max height (m)",
+      "agentName": "Agent name",
+      "ownerName": "Owner name",
+      "plate": "Plate number",
+      "truckCode": "Truck code",
+      "apply": "Apply filters",
+      "resultsCount": "{{count}} matching trucks"
+    },
+    "track": {
+      "title": "Active GPS Tracking",
+      "subtitle": "Realtime satellite positioning and route diversion request control.",
+      "activeUnits": "{{count}} Active Units",
+      "destChanges": "{{count}} Destination Changes",
+      "tabs": {
+        "active": "Active Shipments",
+        "dest_changes": "Route Diversions",
+        "all": "All Registered"
+      },
+      "waitingSignals": "Waiting for telemetry signals...",
+      "liveUnitsFeed": "Live Units Feed ({{count}})",
+      "destChangeRequested": "Destination Change Requested",
+      "newAddress": "New Destination:",
+      "approveModal": {
+        "title": "Approve Destination Change",
+        "costLabel": "Additional Fare Adjustment (EGP)",
+        "confirm": "Confirm Approval"
+      }
+    },
+    "orderManagement": {
+      "title": "Order Management & Dispatch",
+      "subtitle": "Jump straight into any order bucket that needs attention.",
+      "newOrders": "New Orders",
+      "pendingAssignment": "Pending Assignment",
+      "active": "Active",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled",
+      "reassignNeeded": "Reassign Needed"
+    },
+    "truckDetail": {
+      "backToFleet": "Back to fleet",
+      "vehiclePhotos": "Truck Photos",
+      "tractorDetails": "Tractor Details",
+      "trailerDetails": "Trailer Details",
+      "tripHistory": "Trip History",
+      "noTrips": "No trip history for this truck yet.",
+      "truckReview": "Truck Review",
+      "reviewPrompt": "Review documents then approve or reject this truck registration.",
+      "approveTruck": "Approve Truck",
+      "rejectTruck": "Reject Truck",
+      "rejectModalTitle": "Reject Truck",
+      "rejectReason": "Rejection Reason",
+      "rejectPlaceholder": "Enter rejection reason...",
+      "plateNumber": "Plate Number",
+      "brand": "Brand",
+      "model": "Model",
+      "color": "Color",
+      "axles": "Axles",
+      "length": "Length",
+      "engineNumber": "Engine Number",
+      "chassisNumber": "Chassis Number",
+      "inspectionDate": "Inspection Date",
+      "licenseStart": "License Start",
+      "licenseEnd": "License End",
+      "ownerDetails": "Owner Details",
+      "name": "Name",
+      "phone": "Phone",
+      "nationalId": "National ID",
+      "address": "Address",
+      "documents": "Documents",
+      "driver": "Driver",
+      "truckOwner": "Truck Owner",
+      "agent": "Managing Agent",
+      "notes": "Notes",
+      "registrationRejected": "Registration Rejected",
+      "reasonLabel": "Reason:",
+      "viewOrderDetails": "View order details →"
+    },
+    "waybills": {
+      "title": "Digital Waybills",
+      "subtitle": "Track trip stages linked to waybill statuses and approve pending waybill actions.",
+      "pendingActionsNotice": "{{count}} waybill action(s) awaiting approval.",
+      "noTrips": "No trips with waybill activity yet.",
+      "tripStage": "Trip stage:",
+      "waybill": "Waybill:",
+      "driver": "Driver:",
+      "truck": "Truck:",
+      "completed": "Completed:",
+      "approval": "Approval:",
+      "recipient": "Recipient:",
+      "notes": "Notes:",
+      "shortageQty": "Shortage qty:",
+      "requestUpload": "Request Waybill Upload",
+      "openFile": "Open Waybill File",
+      "markDeliveredToDiziel": "Mark Delivered to Diziel",
+      "markDeliveredToCompany": "Delivered to Company (final)",
+      "statusReceived": "Received",
+      "statusRequested": "Requested",
+      "statusPendingRequest": "Pending request",
+      "stages": {
+        "pending": "Shipment Accepted",
+        "en_route_to_pickup": "En Route to Pickup",
+        "at_pickup": "At Loading Point",
+        "loaded": "Loaded",
+        "in_transit": "In Transit to Delivery",
+        "at_delivery": "At Unloading Point",
+        "completed": "Shipment Finished"
+      },
+      "driverStatuses": {
+        "received_from_client": "Waybill Received",
+        "signed_at_unloading": "Waybill Signed",
+        "delivered_to_client": "Delivered to Customer",
+        "delivered_to_diziel": "Delivered to Diziel",
+        "unloaded_shortage": "Shortage Reported",
+        "unloaded_signed_match": "Signed (legacy)",
+        "delivered_to_company": "Delivered to Company"
+      }
+    },
+    "approvals": {
+      "hubBadge": "Verification & Approvals Hub",
+      "title": "Operational Approvals Queue",
+      "subtitle": "Action items requiring administrative verification and authorization · {{count}} Pending",
+      "allCaughtUp": "All Caught Up!",
+      "allCaughtUpDesc": "No pending reviews or authorizations at this time.",
+      "reviewProfile": "Review Profile",
+      "inspectDocument": "Inspect Document",
+      "approve": "Approve",
+      "reject": "Reject",
+      "approvePrice": "Approve Price",
+      "vehicleProfile": "Profile",
+      "newDestination": "New Destination:",
+      "rejectPromptTitle": "Reject {{label}}",
+      "rejectReasonPlaceholder": "Specify the reason for this rejection...",
+      "confirmReject": "Confirm Reject",
+      "sections": {
+        "all": "All Requests",
+        "registrations": "Registrations",
+        "documents": "Documents",
+        "agentChanges": "Agent Changes",
+        "managerChanges": "Manager Changes",
+        "routeChanges": "Route Changes",
+        "priceEdits": "Price Edits",
+        "financialAdjustments": "Financial",
+        "truckApprovals": "Truck Approvals"
+      }
+    },
+    "categories": {
+      "title": "Client Categories",
+      "subtitle": "Service categories and subcategories offered to clients",
+      "addCategory": "Add category",
+      "key": "Key",
+      "nameAr": "Arabic name",
+      "nameEn": "English name",
+      "add": "Add",
+      "adding": "Adding…",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "subcategories": "Subcategories",
+      "addSubcategory": "Add subcategory",
+      "confirmDelete": "Delete this category?",
+      "subKey": "Sub-key",
+      "fillAll": "Fill all fields",
+      "fillSubAll": "Fill all subcategory fields"
+    },
+    "complaints": {
+      "title": "Complaints Inbox",
+      "subtitle": "Client and staff complaint inbox and resolution workflow",
+      "subject": "Subject",
+      "from": "From",
+      "order": "Order",
+      "resolve": "Resolve",
+      "inReview": "In Review",
+      "close": "Close",
+      "resolutionNote": "Resolution note (optional)",
+      "noComplaints": "No complaints yet"
+    },
+    "documents": {
+      "title": "Document Review",
+      "subtitle": "{{count}} user(s) with documents pending review",
+      "userSubtitle": "{{count}} document(s) pending review",
+      "backToUsers": "← Back to users",
+      "columns": {
+        "name": "Name",
+        "role": "Role",
+        "phone": "Phone",
+        "pendingDocs": "Pending Docs",
+        "type": "Type",
+        "preview": "Preview",
+        "uploaded": "Uploaded",
+        "status": "Status"
+      },
+      "confirmReview": "Confirm review",
+      "rejectionReasonPlaceholder": "Rejection reason",
+      "rejectionReasonRequired": "Rejection reason required",
+      "approve": "Approve",
+      "reject": "Reject",
+      "noDocs": "No pending documents"
+    },
+    "ratings": {
+      "title": "Quality & Ratings",
+      "subtitle": "Leaderboard of top-rated drivers, trucks, and agents",
+      "tabs": {
+        "driver": "Drivers",
+        "truck": "Trucks",
+        "agent": "Agents"
+      },
+      "reviewsCount": "{{count}} review{{plural}}",
+      "noRatings": "No ratings yet"
+    },
+    "dashboards": {
+      "badge": "Financial Accounting",
+      "title": "Revenue & Profit Dashboards",
+      "subtitle": "Platform profit breakdown, corporate taxes, agent commissions, and settled transaction logs.",
+      "periods": {
+        "daily": "Daily Analytics",
+        "weekly": "Weekly Summary",
+        "monthly": "Monthly Report"
+      },
+      "kpis": {
+        "payments": "Total Payments Received",
+        "paymentsHint": "{{count}} processed transactions",
+        "netProfit": "Net Platform Profit",
+        "tax": "Estimated VAT & Taxes",
+        "commissions": "Agent Commissions Paid"
+      },
+      "commissionsTable": "Agent Commission Disbursements",
+      "paymentsTable": "Recent Confirmed Payments",
+      "columns": {
+        "agent": "Agent Partner",
+        "commissionType": "Commission Type",
+        "volume": "Volume",
+        "totalEarnings": "Total Earnings",
+        "orderId": "Order ID",
+        "client": "Client Shipper",
+        "confirmedAt": "Confirmation Date",
+        "settledAmount": "Settled Amount"
+      },
+      "kinds": {
+        "accepted_offer": "Accepted Offer Fee",
+        "app_requested": "App Requested"
+      },
+      "noCommissions": "No commission transactions recorded for this period.",
+      "noPayments": "No payments confirmed in this period."
+    },
+    "financial": {
+      "title": "Financial Ledger",
+      "subtitle": "Platform revenue, costs and pending ledger approvals.",
+      "periods": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly"
+      },
+      "kpis": {
+        "revenue": "Revenue",
+        "driverPay": "Driver Pay",
+        "truckCost": "Truck Cost",
+        "depreciation": "Depreciation",
+        "agentCommission": "Agent Commission",
+        "profit": "Profit",
+        "tax": "Tax",
+        "adjustments": "Adjustments"
+      },
+      "pendingApprovals": "Pending approvals",
+      "columns": {
+        "category": "Category",
+        "description": "Description",
+        "amount": "Amount",
+        "actions": "Actions"
+      },
+      "approve": "Approve",
+      "reject": "Reject",
+      "settle": "Settle",
+      "noPending": "No pending approvals"
+    },
+    "paymentDetails": {
+      "title": "Payment Details",
+      "subtitle": "Company payment methods clients transfer to (bank, e-wallet, etc).",
+      "addMethod": "+ Add payment method",
+      "editMethod": "Edit payment method",
+      "columns": {
+        "label": "Label",
+        "type": "Type",
+        "account": "Account",
+        "bank": "Bank",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "types": {
+        "bank": "Bank",
+        "ewallet": "E-wallet",
+        "instapay": "Instapay",
+        "vodafone_cash": "Vodafone Cash"
+      },
+      "form": {
+        "label": "Label",
+        "labelPlaceholder": "e.g. Main bank account",
+        "accountName": "Account name",
+        "accountNumber": "Account number",
+        "bankName": "Bank name (optional)",
+        "phone": "Phone number",
+        "instapayId": "Instapay ID",
+        "notes": "Notes",
+        "isDefault": "Set as default",
+        "isActive": "Active",
+        "type": "Payment Method Type"
+      },
+      "setDefault": "Set default",
+      "defaultBadge": "Default",
+      "inactiveBadge": "Inactive",
+      "confirmDelete": "Remove payment method \"{{label}}\"?",
+      "noMethods": "No payment methods yet"
+    },
+    "pricing": {
+      "title": "Pricing Engine",
+      "subtitle": "Formula: pricePerKm × distance × weight (ton) + Diziel commission (%) + admin fee (%) (+ VAT if applicable).",
+      "globalConfig": "Global config",
+      "dizielMargin": "Diziel commission (%)",
+      "adminFee": "Admin fee (%)",
+      "vat": "VAT (%)",
+      "saveConfig": "Save config",
+      "withVat": "With VAT",
+      "withoutVat": "Without VAT",
+      "addRow": "+ Add row",
+      "weight": "Weight (T)",
+      "upToKm": "Up to km",
+      "pricePerKm": "Price/km (EGP)",
+      "label": "Label",
+      "saveAllTiers": "Save all tiers",
+      "noTiers": "No tiers yet"
+    },
+    "quotes": {
+      "title": "Quotes",
+      "subtitle": "Custom quote requests — filter by status, review details, and set a price.",
+      "setPrice": "Set price",
+      "providerPrice": "Provider price",
+      "dizielPrice": "Diziel price *",
+      "adminNotes": "Admin notes",
+      "sendToClient": "Send to client",
+      "autoCalculation": "Auto calculation",
+      "basePrice": "Base price",
+      "commission": "Commission",
+      "vat": "VAT",
+      "total": "Total",
+      "noQuotes": "No quotes found",
+      "ton": "ton",
+      "truck": "Truck",
+      "autoCalc": "Auto Calculation",
+      "status": {
+        "pricing": "Under Pricing",
+        "sent_to_client": "Sent to Client"
+      },
+      "details": {
+        "cargoType": "Cargo Type",
+        "truckCount": "Trucks Required",
+        "cargoWeight": "Cargo Weight",
+        "cargoDescription": "Cargo Description",
+        "tripDuration": "Estimated Duration",
+        "insuranceValue": "Declared Insurance Value",
+        "loadingExpenses": "Loading Expenses",
+        "unloadingExpenses": "Unloading Expenses",
+        "waybillLocation": "Waybill Handover Location",
+        "notes": "Special Instructions",
+        "providerPrice": "Carrier Tariff",
+        "basePrice": "Base Price",
+        "commission": "Platform Commission",
+        "vat": "VAT (14%)",
+        "total": "Total Amount"
+      },
+      "form": {
+        "providerPrice": "Carrier / Driver Price (EGP)",
+        "dizielPrice": "Diziel Base Price (EGP)",
+        "adminNotes": "Internal Admin Notes"
+      }
+    },
+    "admins": {
+      "title": "Admins Management",
+      "subtitle": "Manage admin accounts and their sub-role permissions.",
+      "addAdmin": "+ Add Admin",
+      "columns": {
+        "admin": "Admin",
+        "subRoles": "Sub-roles",
+        "created": "Created"
+      },
+      "roles": {
+        "super": "Super",
+        "accounts": "Accounts",
+        "documents": "Documents",
+        "operations": "Operations",
+        "review": "Review",
+        "account_manager": "Account Manager"
+      },
+      "form": {
+        "fullName": "Full name",
+        "phone": "Phone number",
+        "password": "Password (min 6 chars)",
+        "subRoles": "Sub-roles",
+        "show": "Show",
+        "hide": "Hide",
+        "submit": "Add Admin",
+        "phoneNumber": "Phone Number",
+        "passwordPlaceholder": "Enter secure password..."
+      },
+      "keepOneRole": "An admin must keep at least one sub-role.",
+      "noAdmins": "No admins found",
+      "keepOneRoleError": "An administrator must retain at least one operational role.",
+      "nameRequired": "Full name is required.",
+      "phoneRequired": "Phone number is required.",
+      "passwordMinChars": "Password must be at least 6 characters.",
+      "selectSubRole": "Please select at least one role."
+    },
+    "audit": {
+      "title": "Audit Log",
+      "subtitle": "Track every sensitive action taken across the platform.",
+      "filterByAction": "Filter by action (e.g. contract.created)",
+      "types": {
+        "all": "All",
+        "order": "Order",
+        "payment": "Payment",
+        "document": "Document",
+        "trip": "Trip",
+        "contract": "Contract",
+        "ledger": "Ledger",
+        "user": "User"
+      },
+      "amount": "Amount:",
+      "actor": "Actor:",
+      "noEntries": "No audit entries found.",
+      "from": "From:",
+      "filterByActionPlaceholder": "Filter by action (e.g. contract.created, trip.started)...",
+      "entities": {
+        "order": "Orders",
+        "payment": "Payments",
+        "document": "KYC Documents",
+        "trip": "Trips",
+        "contract": "Contracts",
+        "ledger": "Financial Ledger",
+        "user": "Users"
+      }
+    },
+    "contracts": {
+      "title": "Contracts",
+      "subtitle": "Manage recurring client contracts and auto-generated orders.",
+      "newContract": "+ New Contract",
+      "columns": {
+        "contract": "Contract",
+        "status": "Status",
+        "rate": "Rate",
+        "valid": "Valid",
+        "nextRun": "Next run",
+        "orders": "Orders"
+      },
+      "pause": "Pause",
+      "activate": "Activate",
+      "runNow": "Run now",
+      "noContracts": "No contracts found"
+    },
+    "contractNew": {
+      "title": "New Contract",
+      "subtitle": "Set up a recurring contract for a client.",
+      "selectClient": "Select a client…",
+      "titleLabel": "Title",
+      "rateLabel": "Rate (EGP)",
+      "category": "Service category",
+      "cadence": "Cadence",
+      "validFrom": "Valid from",
+      "validTo": "Valid to",
+      "pickup": "Pickup address",
+      "dropoff": "Dropoff address",
+      "notes": "Notes",
+      "submit": "Save Contract",
+      "categories": {
+        "domestic": "Domestic",
+        "international": "International",
+        "fuel": "Fuel"
+      },
+      "cadences": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "biweekly": "Biweekly",
+        "monthly": "Monthly",
+        "on_demand": "On demand"
+      },
+      "pickerTitle": "Select client",
+      "validationError": "Please fill in all required contract fields.",
+      "client": "Client Shipper",
+      "contractTitle": "Contract Title",
+      "contractTitlePlaceholder": "e.g. Daily Cement Haulage - Sinai Plant",
+      "rate": "Agreed Rate (EGP)",
+      "serviceCategory": "Freight Category",
+      "pickupAddress": "Origin / Loading Site",
+      "pickupAddressPlaceholder": "Enter exact pickup warehouse or facility address...",
+      "dropoffAddress": "Destination / Delivery Site",
+      "dropoffAddressPlaceholder": "Enter exact delivery depot or store address...",
+      "saveContract": "Create & Activate Contract",
+      "selectClientTitle": "Select Client Company",
+      "noClients": "No client accounts found."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Stay on top of platform activity in real time.",
+      "markAllRead": "Mark all read",
+      "clearAll": "Clear all",
+      "confirmClear": "Delete all notifications?",
+      "noNotifications": "No notifications yet.",
+      "confirmClearAll": "Are you sure you want to clear all platform notifications?"
+    },
+    "vehicleTypes": {
+      "title": "Vehicle Types",
+      "subtitle": "Edit the vehicle taxonomy used across booking and fleet screens.",
+      "saveChanges": "Save changes",
+      "sections": {
+        "categories": "Vehicle categories",
+        "truckBodyTypes": "Body types",
+        "fleetOperations": "Fleet operations",
+        "headTypes": "Head types",
+        "trailerTypes": "Trailer types"
+      },
+      "addItem": "Add item",
+      "key": "Key",
+      "nameAr": "Arabic name",
+      "nameEn": "English name",
+      "add": "Add",
+      "disabled": "Disabled",
+      "savedSuccess": "Taxonomy saved.",
+      "fillAllFields": "Please fill in all vehicle taxonomy fields.",
+      "keyExists": "A vehicle taxonomy with this key already exists.",
+      "enable": "Enable",
+      "disable": "Disable",
+      "noItems": "No vehicle taxonomies registered in this category.",
+      "keyPlaceholder": "Unique slug (e.g. reefer_jumbo)",
+      "nameArPlaceholder": "Arabic name (e.g. جامبو براد)",
+      "nameEnPlaceholder": "English name (e.g. Jumbo Reefer)"
+    },
+    "comingSoon": {
+      "title": "Coming Soon",
+      "subtitle": "This page is under construction and will be released soon."
+    },
+    "login": {
+      "adminBadge": "Diziel Operations Engine",
+      "securitySubtitle": "Authorized logistics personnel and dispatch management only.",
+      "title": "Admin Operations Portal",
+      "subtitle": "Sign in with your verified administrator credentials to access the logistics command center.",
+      "phoneLabel": "Admin Phone Number",
+      "passwordLabel": "Master Password",
+      "twoFa": "2FA Protected Session",
+      "submit": "Access Command Center",
+      "encryptedSession": "256-bit SSL encrypted administrative connection"
+    }
+  },
+  "company": {
+    "title": "Live Fleet Tracking",
+    "subtitle": "Dispatch monitor — all active shipments",
+    "activeTrips": "{{count}} active trip{{plural}}",
+    "loadingMap": "Loading map...",
+    "tripsList": "Trips",
+    "viewDetails": "View details →",
+    "backToFleet": "← Back to fleet view",
+    "liveTracking": "Live Tracking",
+    "statusTimeline": "Status timeline",
+    "routeChangeRequest": "Route change request",
+    "pickupChecks": "Pickup checks",
+    "deliveryChecks": "Delivery checks",
+    "confirmedWeight": "Confirmed weight:",
+    "depositReceived": "Deposit received:",
+    "unloadingShortage": "Unloading shortage:",
+    "shipmentInfo": "Shipment",
+    "pickup": "Pickup:",
+    "delivery": "Delivery:",
+    "cargo": "Cargo:",
+    "waitingDriverLocation": "Waiting for driver location…",
+    "noTripsFound": "No trips found.",
+    "tripNotFound": "Trip not found.",
+    "eta": "ETA",
+    "fleetTrack": {
+      "title": "Live Fleet Tracking",
+      "subtitle": "Real-time GPS visibility for your entire active fleet",
+      "activeTrips": "{{count}} active trips",
+      "trips": "Active Trips",
+      "noTrips": "No active trips at the moment",
+      "eta": "ETA: {{hours}} hrs ({{km}} km)",
+      "viewDetails": "View details & tracking",
+      "failedMaps": "Failed to load Google Maps",
+      "waitingDrivers": "Waiting for driver location updates...",
+      "mapsCheckKey": "Google Maps API key configuration error.",
+      "signalsActive": "Realtime GPS Telemetry Active",
+      "waitingDispatches": "Waiting for active trip telemetry signals..."
+    },
+    "tripDetail": {
+      "notFound": "Trip data not found",
+      "backToFleet": "← Back to Fleet Track",
+      "orderTracking": "Tracking Order {{code}}",
+      "live": "Live tracking active",
+      "timeline": "Trip Timeline",
+      "routeChange": "Destination Change",
+      "routeStatus": {
+        "approved": "Change Approved",
+        "rejected": "Change Rejected",
+        "pending": "Pending Review"
+      },
+      "newAddress": "New Destination",
+      "reason": "Reason",
+      "pickupChecks": "Pickup Point Verification",
+      "confirmedPickupWeight": "Verified Weight at Pickup",
+      "depositReceived": "Deposit Received",
+      "cash": "Cash",
+      "cargo": "Cargo",
+      "truck": "Truck",
+      "weighbridge": "Weighbridge Ticket",
+      "deliveryChecks": "Delivery Point Verification",
+      "confirmedDeliveryWeight": "Verified Weight at Delivery",
+      "shortage": "Reported Shortage",
+      "unloaded": "Unloaded Cargo",
+      "shipment": "Shipment & Route Details"
+    },
+    "login": {
+      "fillAllFields": "Please provide both your registered phone number and password.",
+      "companyOnly": "This portal is reserved for verified enterprise and client shipper accounts.",
+      "title": "Enterprise Logistics Portal",
+      "subtitle": "Sign in to track real-time dispatches, manage digital waybills, and view corporate freight statements.",
+      "phoneLabel": "Corporate Phone Number",
+      "passwordLabel": "Password",
+      "submit": "Access Enterprise Portal",
+      "needHelp": "Need enterprise support? Contact your dedicated Diziel account manager."
+    }
+  },
+  "trucks": {
+    "types": {
+      "flatbed": "Flatbed",
+      "flat_surface": "Flat Surface",
+      "container": "Container",
+      "refrigerated": "Refrigerated",
+      "insulated": "Insulated",
+      "preserved": "Preserved",
+      "sided": "Sided",
+      "side_walls": "Side Walls",
+      "tanker": "Tanker",
+      "fuel_tank": "Fuel Tank",
+      "alcohol_tank": "Alcohol Tank",
+      "water_tank": "Water Tank",
+      "bulk": "Bulk",
+      "curtainsider": "Curtainsider",
+      "curtain": "Curtain",
+      "tipper": "Tipper",
+      "recovery_winch": "Recovery Winch",
+      "car_carrier": "Car Carrier",
+      "box": "Box",
+      "jumbo": "Jumbo",
+      "single": "Single",
+      "truck": "Truck / Trela",
+      "crane": "Crane",
+      "pump": "Pump",
+      "mixer": "Mixer",
+      "silo": "Silo",
+      "sweeper": "Sweeper",
+      "telescopic": "Telescopic"
+    },
+    "heads": {
+      "fardany": "Single (Fardany)",
+      "ras": "Tractor Head (Ras)",
+      "jambo": "Jumbo"
+    },
+    "trailers": {
+      "dail": "Semi-Trailer (Dail)",
+      "maqtoura": "Full Trailer (Maqtoura)"
+    },
+    "cargo": {
+      "electronics": "Electronics",
+      "furniture": "Furniture",
+      "food": "Food & Beverages",
+      "machinery": "Machinery & Equipment",
+      "construction": "Construction Materials",
+      "chemicals": "Chemicals",
+      "grain": "Grains & Agriculture",
+      "general": "General Freight",
+      "packages": "Packaged Cargo",
+      "other": "Other"
+    }
+  },
+  "theme": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "companyTrack": {
+    "loading": "Loading live telemetry data...",
+    "tripNotFound": "Shipment Not Found",
+    "notFoundDesc": "The requested shipment could not be located or telemetry is unavailable.",
+    "backToMap": "Back to Live Radar",
+    "orderTitle": "Shipment #{{code}}",
+    "liveTrackingHeader": "Live Satellite Telemetry",
+    "statusFlow": "Milestone Progression",
+    "lastSignal": "Last Signal: {{time}}",
+    "mapLoadError": "Unable to initialize Google Maps satellite view.",
+    "loadingMap": "Connecting to GPS satellites...",
+    "pickup": "Pickup Origin",
+    "delivery": "Delivery Destination",
+    "truckLocation": "Current Vehicle Location",
+    "liveGPSActive": "Live Satellite GPS Ping Active",
+    "pickupVerification": "Pickup & Loading Verification",
+    "verified": "Verified",
+    "verifiedWeight": "Verified Weight at Pickup",
+    "depositAmount": "Deposit Collected",
+    "egp": "EGP",
+    "paymentMethod": "Payment Channel",
+    "verificationPhotos": "Loading Inspection Photos",
+    "cargoPhoto": "Cargo Photo",
+    "truckPhoto": "Truck Photo",
+    "weighbridgePhoto": "Weighbridge Ticket",
+    "driverInformation": "Assigned Driver & Carrier",
+    "callDriver": "Direct Call Driver",
+    "noDriverAssigned": "Driver pending assignment",
+    "truckType": "Vehicle Class",
+    "plateNumber": "Plate Number",
+    "capacity": "Payload Capacity",
+    "routeDetails": "Transit Corridor & Addresses",
+    "pickupLocation": "Pickup Origin",
+    "deliveryLocation": "Delivery Destination",
+    "notSpecified": "Not specified",
+    "cargoInformation": "Freight & Consignment Details",
+    "cargoType": "Cargo Classification",
+    "cargoWeight": "Certified Weight",
+    "description": "Manifest Description"
+  }
+}

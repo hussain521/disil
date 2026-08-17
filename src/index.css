@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+  --admin-bg-rgb: 248 250 252;
+  --admin-card-rgb: 255 255 255;
+  --admin-card-hover-rgb: 241 245 249;
+  --admin-border-rgb: 226 232 240;
+  --admin-text-rgb: 15 23 42;
+  --admin-subtext-rgb: 71 85 105;
+  --admin-muted-rgb: 100 116 139;
+  --admin-surface-rgb: 241 245 249;
+}
+
+html.dark,
+body.dark,
+.dark {
+  --admin-bg-rgb: 10 14 23;
+  --admin-card-rgb: 17 24 39;
+  --admin-card-hover-rgb: 24 34 53;
+  --admin-border-rgb: 40 50 68;
+  --admin-text-rgb: 248 250 252;
+  --admin-subtext-rgb: 148 163 184;
+  --admin-muted-rgb: 100 116 139;
+  --admin-surface-rgb: 21 31 50;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #f8fafc;
+}
+
+html.dark {
+  background-color: #000000;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-sans antialiased transition-colors duration-200 dark:bg-black dark:text-slate-100;
+}
+
+html.dark body,
+body.dark,
+.dark {
+  background-color: #000000;
+  color: #f8fafc;
+}
+
+/* Hide scrollbar utility across all browsers */
+html.no-scrollbar,
+body.no-scrollbar,
+.no-scrollbar,
+.no-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar.no-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html.no-scrollbar,
+body.no-scrollbar,
+.no-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Glowing text and borders */
+.glow-accent-sm {
+  box-shadow: 0 0 15px -3px rgba(244, 63, 94, 0.3);
+}
+
+.glow-accent-lg {
+  box-shadow: 0 0 25px -2px rgba(244, 63, 94, 0.4);
+}

@@ -17,7 +17,7 @@ export default function MarketingNav() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center justify-center flex-1 px-6 xl:px-12">
+          <div className="hidden lg:flex items-center justify-center flex-1 px-6 xl:px-1">
             <NavLinks />
           </div>
 

@@ -108,18 +108,18 @@ export default function Sidebar({
       {(!collapsed || mobileOpen) && (
         <div className="px-4 pt-3 pb-1 shrink-0">
           <div className="relative">
-            <Search className="pointer-events-none absolute left-3 rtl:left-auto rtl:right-3 top-2.5 h-3.5 w-3.5 text-admin-muted" />
+            <Search className="pointer-events-none absolute left-3 top-2.5 h-3.5 w-3.5 text-admin-muted" />
             <input
               type="text"
               value={filterQuery}
               onChange={(e) => setFilterQuery(e.target.value)}
               placeholder={t('sidebar.searchNavPlaceholder', 'Search navigation...')}
-              className="w-full rounded-lg border border-admin-border bg-admin-card/70 py-1.5 pl-8 rtl:pl-3 rtl:pr-8 pr-3 text-xs text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:bg-admin-card focus:outline-none focus:ring-1 focus:ring-admin-accent transition"
+              className="w-full rounded-lg border border-admin-border bg-admin-card/70 py-1.5 pl-8 pr-3 text-xs text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:bg-admin-card focus:outline-none focus:ring-1 focus:ring-admin-accent transition"
             />
             {filterQuery && (
               <button
                 onClick={() => setFilterQuery('')}
-                className="absolute right-2.5 rtl:right-auto rtl:left-2.5 top-2 text-xs text-admin-muted hover:text-admin-text"
+                className="absolute right-2.5 top-2 text-xs text-admin-muted hover:text-admin-text"
               >
                 ✕
               </button>
@@ -267,8 +267,8 @@ export default function Sidebar({
 
       {/* Mobile Drawer */}
       <aside
-        className={`fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-50 w-72 max-w-[85vw] border-r rtl:border-r-0 rtl:border-l border-admin-border bg-admin-bg/95 backdrop-blur-xl transition-transform duration-300 ease-in-out lg:hidden ${
-          mobileOpen ? 'translate-x-0 shadow-2xl' : 'ltr:-translate-x-full rtl:translate-x-full'
+        className={`fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] border-r border-admin-border bg-admin-bg/95 backdrop-blur-xl transition-transform duration-300 ease-in-out lg:hidden ${
+          mobileOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'
         }`}
       >
         {sidebarContent}
@@ -276,7 +276,7 @@ export default function Sidebar({
 
       {/* Desktop Sticky Sidebar */}
       <aside
-        className={`hidden lg:flex sticky top-0 h-screen max-h-screen shrink-0 flex-col border-r rtl:border-r-0 rtl:border-l border-admin-border bg-admin-bg/95 backdrop-blur-xl text-admin-text transition-all duration-300 select-none z-30 ${
+        className={`hidden lg:flex sticky top-0 h-screen max-h-screen shrink-0 flex-col border-r border-admin-border bg-admin-bg/95 backdrop-blur-xl text-admin-text transition-all duration-300 select-none z-30 ${
           collapsed ? 'w-20' : 'w-72'
         } ${className}`}
       >

@@ -7,7 +7,7 @@
   --admin-bg-rgb: 248 250 252;
   --admin-card-rgb: 255 255 255;
   --admin-card-hover-rgb: 241 245 249;
-  --admin-border-rgb: 226 232 240;
+  --admin-border-rgb: 241 245 249;
   --admin-text-rgb: 15 23 42;
   --admin-subtext-rgb: 71 85 105;
   --admin-muted-rgb: 100 116 139;
@@ -125,4 +125,21 @@ body.no-scrollbar,
 
 .glow-accent-lg {
   box-shadow: 0 0 25px -2px rgba(244, 63, 94, 0.4);
+}
+
+/* Light mode page cards: subtle border and no shadows */
+html:not(.dark) main .shadow-subtle-dark,
+html:not(.dark) main .shadow-subtle-light,
+html:not(.dark) main .shadow-xl,
+html:not(.dark) main .shadow-2xl,
+html:not(.dark) main .shadow-lg,
+html:not(.dark) main .shadow-md,
+html:not(.dark) main .shadow-sm,
+html:not(.dark) main .shadow-xs,
+html:not(.dark) main .shadow {
+  box-shadow: none !important;
+}
+
+html:not(.dark) main div[class*="border-admin-border"] {
+  border-color: rgba(226, 232, 240, 0.6) !important;
 }

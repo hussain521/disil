@@ -42,8 +42,8 @@ export function StatCard({
     <div
       className={`group relative overflow-hidden rounded-2xl border p-5 transition-all duration-300 ${
         isAdmin
-          ? 'border-admin-border bg-admin-card hover:border-admin-accent/40 hover:bg-admin-card-hover shadow-subtle-dark'
-          : 'border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-brand-primary/40 dark:hover:border-blue-500/40 shadow-subtle-light'
+          ? 'border-transparent shadow-none dark:border-admin-border bg-admin-card hover:border-transparent dark:hover:border-admin-accent/40 hover:bg-admin-card-hover dark:shadow-subtle-dark'
+          : 'border-transparent shadow-none dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-transparent dark:hover:border-blue-500/40 dark:shadow-subtle-light'
       } ${className}`}
     >
       {/* Glow highlight in corner */}

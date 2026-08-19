@@ -281,13 +281,13 @@ export default function Users() {
         </div>
 
         <div className="relative w-full sm:w-80">
-          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-admin-muted rtl:left-auto rtl:right-3.5" />
+          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-admin-muted" />
           <input
             type="search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t('admin.users.searchPlaceholder')}
-            className="w-full rounded-xl border border-admin-border bg-admin-card/80 py-2 pl-10 pr-4 rtl:pl-4 rtl:pr-10 text-xs font-medium text-admin-text placeholder:text-admin-muted backdrop-blur-md transition focus:border-admin-accent focus:outline-none focus:ring-2 focus:ring-admin-accent/20"
+            className="w-full rounded-xl border border-admin-border bg-admin-card/80 py-2 pl-10 pr-4 text-xs font-medium text-admin-text placeholder:text-admin-muted backdrop-blur-md transition focus:border-admin-accent focus:outline-none focus:ring-2 focus:ring-admin-accent/20"
           />
         </div>
       </div>
@@ -305,7 +305,7 @@ export default function Users() {
 
       {/* Sub-Filters */}
       {activeTab === 'client' ? (
-        <div className="flex items-center gap-2 pl-1 rtl:pl-0 rtl:pr-1">
+        <div className="flex items-center gap-2 pl-1">
           <span className="text-xs font-bold uppercase tracking-wider text-admin-muted">{t('admin.users.clientFilter')}</span>
           <FilterTabs
             tabs={clientTypeTabs}
@@ -316,7 +316,7 @@ export default function Users() {
       ) : null}
 
       {activeTab === 'driver' ? (
-        <div className="flex items-center gap-2 pl-1 rtl:pl-0 rtl:pr-1">
+        <div className="flex items-center gap-2 pl-1">
           <span className="text-xs font-bold uppercase tracking-wider text-admin-muted">{t('admin.users.driverFilter')}</span>
           <FilterTabs
             tabs={driverTruckTabs}

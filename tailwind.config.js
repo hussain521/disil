@@ -53,8 +53,8 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        'subtle-dark': '0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 2px 6px -1px rgba(0, 0, 0, 0.3)',
-        'subtle-light': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02)',
+        'subtle-dark': '0 0 0 0 transparent',
+        'subtle-light': '0 0 0 0 transparent',
         'glow-accent': '0 0 20px -3px rgba(244, 63, 94, 0.35)',
         'glow-primary': '0 0 20px -3px rgba(59, 130, 246, 0.35)',
         'glow-success': '0 0 20px -3px rgba(16, 185, 129, 0.35)',

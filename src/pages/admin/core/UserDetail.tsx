@@ -311,7 +311,7 @@ export default function UserDetail() {
                   setDocDecision(null);
                   setDocReason('');
                 }}
-                className="flex w-full items-center justify-between rounded-md border border-admin-border bg-admin-bg px-3 py-2 text-left rtl:text-right text-sm hover:border-admin-accent"
+                className="flex w-full items-center justify-between rounded-md border border-admin-border bg-admin-bg px-3 py-2 text-left text-sm hover:border-admin-accent"
               >
                 <div>
                   <div className="font-medium text-admin-text capitalize">{doc.type.replace(/_/g, ' ')}</div>

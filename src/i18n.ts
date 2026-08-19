@@ -6,7 +6,8 @@ import HttpBackend from 'i18next-http-backend';
 // Function to update document direction and language attribute
 export function applyDocumentLanguage(lng: string) {
   const language = lng?.startsWith('ar') ? 'ar' : 'en';
-  document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+  // Keep direction always LTR across all languages
+  document.documentElement.dir = 'ltr';
   document.documentElement.lang = language;
 }
 

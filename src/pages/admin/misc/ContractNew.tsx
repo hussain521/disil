@@ -107,7 +107,7 @@ export default function ContractNew() {
           <button
             type="button"
             onClick={() => setClientPickerOpen(true)}
-            className={`${inputClass} text-left rtl:text-right ${clientLabel ? '' : 'text-admin-subtext'}`}
+            className={`${inputClass} text-left ${clientLabel ? '' : 'text-admin-subtext'}`}
           >
             {clientLabel || t('admin.contractNew.selectClient')}
           </button>
@@ -203,7 +203,7 @@ export default function ContractNew() {
                   setClientLabel(c.fullName);
                   setClientPickerOpen(false);
                 }}
-                className="block w-full border-b border-admin-border px-1 py-2.5 text-left rtl:text-right text-sm text-admin-text last:border-0 hover:text-admin-accent"
+                className="block w-full border-b border-admin-border px-1 py-2.5 text-left text-sm text-admin-text last:border-0 hover:text-admin-accent"
               >
                 {c.fullName}
                 <span className="mx-2 text-xs text-admin-subtext">{c.phone}</span>

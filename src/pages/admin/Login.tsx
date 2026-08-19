@@ -60,7 +60,7 @@ export default function AdminLogin() {
   return (
     <main className="relative flex min-h-screen items-center justify-center bg-admin-bg text-admin-text px-6 py-12 overflow-hidden transition-colors duration-200">
       {/* Top right language switch and theme switch */}
-      <div className="absolute top-6 right-6 rtl:right-auto rtl:left-6 z-20 flex items-center gap-3">
+      <div className="absolute top-6 right-6 z-20 flex items-center gap-3">
         <LanguageSwitcher variant="topbar" />
         <ThemeToggle variant="topbar" />
       </div>
@@ -99,7 +99,7 @@ export default function AdminLogin() {
               {t('admin.login.phoneLabel', 'Phone number')}
             </label>
             <div className="relative">
-              <Phone className="pointer-events-none absolute left-3.5 rtl:left-auto rtl:right-3.5 top-3 h-4 w-4 text-admin-muted" />
+              <Phone className="pointer-events-none absolute left-3.5 top-3 h-4 w-4 text-admin-muted" />
               <input
                 id="admin-phone"
                 type="tel"
@@ -107,7 +107,7 @@ export default function AdminLogin() {
                 required
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
-                className="w-full rounded-xl border border-admin-border bg-admin-bg/80 py-2.5 pl-10 rtl:pl-3.5 rtl:pr-10 pr-3.5 text-sm text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:bg-admin-card focus:outline-none focus:ring-1 focus:ring-admin-accent transition"
+                className="w-full rounded-xl border border-admin-border bg-admin-bg/80 py-2.5 pl-10 pr-3.5 text-sm text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:bg-admin-card focus:outline-none focus:ring-1 focus:ring-admin-accent transition"
                 placeholder="+20 100 000 0000"
               />
             </div>
@@ -121,7 +121,7 @@ export default function AdminLogin() {
               <span className="text-[11px] text-admin-muted">{t('admin.login.twoFa', '2FA Protected')}</span>
             </div>
             <div className="relative">
-              <Lock className="pointer-events-none absolute left-3.5 rtl:left-auto rtl:right-3.5 top-3 h-4 w-4 text-admin-muted" />
+              <Lock className="pointer-events-none absolute left-3.5 top-3 h-4 w-4 text-admin-muted" />
               <input
                 id="admin-password"
                 type="password"
@@ -129,7 +129,7 @@ export default function AdminLogin() {
                 required
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
-                className="w-full rounded-xl border border-admin-border bg-admin-bg/80 py-2.5 pl-10 rtl:pl-3.5 rtl:pr-10 pr-3.5 text-sm text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:bg-admin-card focus:outline-none focus:ring-1 focus:ring-admin-accent transition"
+                className="w-full rounded-xl border border-admin-border bg-admin-bg/80 py-2.5 pl-10 pr-3.5 text-sm text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:bg-admin-card focus:outline-none focus:ring-1 focus:ring-admin-accent transition"
                 placeholder="••••••••"
               />
             </div>
@@ -147,7 +147,7 @@ export default function AdminLogin() {
             className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-admin-accent py-3 text-sm font-bold text-white shadow-lg glow-accent-sm transition hover:bg-admin-accent-dark disabled:cursor-not-allowed disabled:opacity-60"
           >
             <span>{submitting ? t('common.authenticating', 'Authenticating…') : t('admin.login.submit', 'Sign in to Admin Console')}</span>
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180" />
+            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
           </button>
         </form>
 

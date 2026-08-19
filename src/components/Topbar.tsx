@@ -163,7 +163,7 @@ export default function Topbar({
           </button>
 
           {notificationsOpen && (
-            <div className="absolute right-0 rtl:right-auto rtl:left-0 mt-2 w-80 rounded-2xl border border-admin-border bg-admin-card p-3 shadow-xl backdrop-blur-2xl animation-slide-up z-50">
+            <div className="absolute right-0 mt-2 w-80 rounded-2xl border border-admin-border bg-admin-card p-3 shadow-xl backdrop-blur-2xl animation-slide-up z-50">
               <div className="flex items-center justify-between border-b border-admin-border pb-2.5 px-2">
                 <span className="text-xs font-bold uppercase tracking-wider text-admin-text">{t('topbar.notifications', 'Notifications')}</span>
                 <Link
@@ -209,7 +209,7 @@ export default function Topbar({
                   {user.name.charAt(0).toUpperCase()}
                 </div>
               )}
-              <div className="hidden ltr:text-left rtl:text-right sm:block">
+              <div className="hidden text-left sm:block">
                 <div className="text-xs font-bold leading-tight text-admin-text truncate max-w-[120px]">
                   {user.name}
                 </div>
@@ -221,7 +221,7 @@ export default function Topbar({
             </button>
 
             {userDropdownOpen && (
-              <div className="absolute right-0 rtl:right-auto rtl:left-0 mt-2 w-56 rounded-2xl border border-admin-border bg-admin-card p-2 shadow-xl backdrop-blur-2xl z-50 animation-slide-up">
+              <div className="absolute right-0 mt-2 w-56 rounded-2xl border border-admin-border bg-admin-card p-2 shadow-xl backdrop-blur-2xl z-50 animation-slide-up">
                 <div className="px-3 py-2 border-b border-admin-border mb-1">
                   <p className="text-xs font-bold text-admin-text">{user.name}</p>
                   <p className="text-[11px] text-admin-muted font-mono">{user.subtitle || 'Admin'}</p>

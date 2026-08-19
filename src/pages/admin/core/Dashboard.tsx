@@ -118,7 +118,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-8 animation-fade-in">
       {/* Top Banner with greeting and system status */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between rounded-2xl sm:rounded-3xl border border-admin-border bg-gradient-to-r from-admin-card via-admin-card to-admin-surface p-4 sm:p-6 shadow-subtle-dark">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between rounded-2xl sm:rounded-3xl border border-transparent dark:border-admin-border bg-gradient-to-r from-admin-card via-admin-card to-admin-surface p-4 sm:p-6 shadow-none dark:shadow-subtle-dark">
         <div>
           <div className="flex items-center gap-2">
             <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -156,7 +156,7 @@ export default function Dashboard() {
           <div className="flex-1">
             {t('admin.dashboard.reviewAlert', { count: stats.pendingAdminReview })}
           </div>
-          <ArrowRight className="h-4 w-4 shrink-0 transition rtl:rotate-180" />
+          <ArrowRight className="h-4 w-4 shrink-0 transition" />
         </Link>
       ) : null}
 
@@ -197,7 +197,7 @@ export default function Dashboard() {
       </div>
 
       {/* Quick Access Control Grid */}
-      <div className="rounded-2xl sm:rounded-3xl border border-admin-border bg-admin-card p-4 sm:p-6 shadow-subtle-dark">
+      <div className="rounded-2xl sm:rounded-3xl border border-transparent dark:border-admin-border bg-admin-card p-4 sm:p-6 shadow-none dark:shadow-subtle-dark">
         <div className="mb-4 flex items-center justify-between">
           <div>
             <h2 className="text-sm font-bold tracking-tight text-admin-text">
@@ -213,7 +213,7 @@ export default function Dashboard() {
               <Link
                 key={action.href}
                 to={action.href}
-                className="group flex items-center gap-3.5 rounded-2xl border border-admin-border bg-admin-bg/60 p-4 transition-all duration-200 hover:border-admin-accent/40 hover:bg-admin-card-hover hover:shadow-xs"
+                className="group flex items-center gap-3.5 rounded-2xl border border-transparent dark:border-admin-border bg-admin-bg/60 p-4 transition-all duration-200 hover:border-admin-accent/40 hover:bg-admin-card-hover shadow-none"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-admin-surface text-admin-subtext group-hover:bg-admin-accent/15 group-hover:text-admin-accent transition duration-200">
                   <Icon className="h-5 w-5" />
@@ -224,7 +224,7 @@ export default function Dashboard() {
                   </div>
                   <div className="text-[11px] text-admin-muted truncate">{action.desc}</div>
                 </div>
-                <ArrowRight className="h-3.5 w-3.5 text-admin-muted opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition rtl:rotate-180" />
+                <ArrowRight className="h-3.5 w-3.5 text-admin-muted opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
               </Link>
             );
           })}

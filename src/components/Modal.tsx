@@ -88,7 +88,7 @@ export default function Modal({
         <div className="px-4 py-4 sm:px-6 sm:py-5 overflow-y-auto max-h-[calc(90vh-8rem)] scrollbar-thin">{children}</div>
         {footer ? (
           <div
-            className={`flex flex-wrap items-center justify-end rtl:justify-start gap-2 sm:gap-2.5 border-t px-4 py-3 sm:px-6 sm:py-4 shrink-0 ${
+            className={`flex flex-wrap items-center justify-end gap-2 sm:gap-2.5 border-t px-4 py-3 sm:px-6 sm:py-4 shrink-0 ${
               isAdmin ? 'border-admin-border bg-admin-bg/40' : 'border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50'
             }`}
           >

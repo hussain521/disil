@@ -84,7 +84,7 @@ export default function Orders() {
             <div>
               <div className="font-extrabold text-admin-text text-xs sm:text-sm flex items-center gap-1">
                 <span>{orderSerial(order)}</span>
-                <ArrowUpRight className="h-3 w-3 text-admin-muted opacity-0 group-hover:opacity-100 transition rtl:rotate-180" />
+                <ArrowUpRight className="h-3 w-3 text-admin-muted opacity-0 group-hover:opacity-100 transition" />
               </div>
               <div className="text-[11px] font-mono text-admin-muted">
                 {order.createdAt ? new Date(order.createdAt).toLocaleDateString() : ''}
@@ -183,13 +183,13 @@ export default function Orders() {
         </div>
 
         <div className="relative w-full sm:w-80">
-          <Search className="pointer-events-none absolute left-3.5 top-2.5 h-4 w-4 text-admin-muted rtl:left-auto rtl:right-3.5" />
+          <Search className="pointer-events-none absolute left-3.5 top-2.5 h-4 w-4 text-admin-muted" />
           <input
             type="search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t('admin.orders.searchPlaceholder')}
-            className="w-full rounded-2xl border border-admin-border bg-admin-card py-2 pl-10 pr-4 rtl:pl-4 rtl:pr-10 text-xs text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:outline-none focus:ring-1 focus:ring-admin-accent shadow-subtle-dark transition"
+            className="w-full rounded-2xl border border-admin-border bg-admin-card py-2 pl-10 pr-4 text-xs text-admin-text placeholder:text-admin-muted focus:border-admin-accent focus:outline-none focus:ring-1 focus:ring-admin-accent shadow-subtle-dark transition"
           />
         </div>
       </div>

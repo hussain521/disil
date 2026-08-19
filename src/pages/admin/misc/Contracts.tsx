@@ -116,9 +116,9 @@ export default function Contracts() {
     {
       key: 'actions',
       header: '',
-      className: 'text-right rtl:text-left',
+      className: 'text-right',
       render: (c) => (
-        <div className="flex justify-end rtl:justify-start gap-2">
+        <div className="flex justify-end gap-2">
           <button
             type="button"
             disabled={busyId === c.id}

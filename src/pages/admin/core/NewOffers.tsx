@@ -28,7 +28,7 @@ function RecentOfferCard({ offer, onClick }: { offer: RecentOfferItem; onClick: 
     <button
       type="button"
       onClick={onClick}
-      className="w-full rounded-[14px] border border-admin-border bg-admin-card p-4 text-left rtl:text-right transition hover:border-admin-accent/40"
+      className="w-full rounded-[14px] border border-admin-border bg-admin-card p-4 text-left transition hover:border-admin-accent/40"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">

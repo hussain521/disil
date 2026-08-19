@@ -37,7 +37,7 @@ export default function LanguageSwitcher({ variant = 'topbar', className = '' }:
   };
 
   const languages = [
-    { code: 'ar', label: 'العربية', flag: '🇪🇬', dir: 'rtl' },
+    { code: 'ar', label: 'العربية', flag: '🇪🇬', dir: 'ltr' },
     { code: 'en', label: 'English', flag: '🇬🇧', dir: 'ltr' },
   ];
 
@@ -95,7 +95,7 @@ export default function LanguageSwitcher({ variant = 'topbar', className = '' }:
       </button>
 
       {open && (
-        <div className="absolute right-0 rtl:right-auto rtl:left-0 mt-2 w-40 rounded-2xl border border-admin-border bg-admin-card p-1.5 shadow-xl backdrop-blur-2xl animation-slide-up z-50">
+        <div className="absolute right-0 mt-2 w-40 rounded-2xl border border-admin-border bg-admin-card p-1.5 shadow-xl backdrop-blur-2xl animation-slide-up z-50">
           <div className="px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-admin-muted border-b border-admin-border mb-1">
             {t('common.language', 'Language')}
           </div>

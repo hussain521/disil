@@ -44,14 +44,14 @@ export default function DataTable<T>({
 
   return (
     <div
-      className={`overflow-hidden rounded-2xl border shadow-sm transition-colors duration-200 ${
+      className={`overflow-hidden rounded-2xl border transition-colors duration-200 ${
         isAdmin
-          ? 'border-admin-border bg-admin-card shadow-subtle-dark'
-          : 'border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-subtle-light'
+          ? 'border-admin-border bg-admin-card shadow-none dark:shadow-subtle-dark'
+          : 'border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-none dark:shadow-subtle-light'
       } ${className}`}
     >
       <div className="overflow-x-auto scrollbar-thin">
-        <table className="w-full min-w-[600px] sm:min-w-full text-left rtl:text-right text-xs sm:text-sm">
+        <table className="w-full min-w-[600px] sm:min-w-full text-left text-xs sm:text-sm">
           <thead
             className={`border-b text-[10px] sm:text-[11px] font-bold uppercase tracking-wider ${
               isAdmin

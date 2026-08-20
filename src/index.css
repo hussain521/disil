@@ -7,7 +7,7 @@
   --admin-bg-rgb: 248 250 252;
   --admin-card-rgb: 255 255 255;
   --admin-card-hover-rgb: 241 245 249;
-  --admin-border-rgb: 241 245 249;
+  --admin-border-rgb: 226 232 240;
   --admin-text-rgb: 15 23 42;
   --admin-subtext-rgb: 71 85 105;
   --admin-muted-rgb: 100 116 139;
@@ -17,14 +17,14 @@
 html.dark,
 body.dark,
 .dark {
-  --admin-bg-rgb: 10 14 23;
-  --admin-card-rgb: 17 24 39;
-  --admin-card-hover-rgb: 24 34 53;
-  --admin-border-rgb: 40 50 68;
+  --admin-bg-rgb: 8 12 20;
+  --admin-card-rgb: 15 23 42;
+  --admin-card-hover-rgb: 30 41 59;
+  --admin-border-rgb: 30 41 59;
   --admin-text-rgb: 248 250 252;
   --admin-subtext-rgb: 148 163 184;
   --admin-muted-rgb: 100 116 139;
-  --admin-surface-rgb: 21 31 50;
+  --admin-surface-rgb: 17 24 39;
 }
 
 html {
@@ -33,7 +33,7 @@ html {
 }
 
 html.dark {
-  background-color: #000000;
+  background-color: #030712;
   color-scheme: dark;
 }
 
@@ -47,14 +47,27 @@ body,
   overflow-x: hidden;
 }
 
+html,
 body {
-  @apply bg-slate-50 text-slate-900 font-sans antialiased transition-colors duration-200 dark:bg-black dark:text-slate-100;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-sans antialiased transition-colors duration-200 dark:bg-gray-950 dark:text-slate-100;
 }
 
 html.dark body,
 body.dark,
 .dark {
-  background-color: #000000;
+  background-color: #030712;
   color: #f8fafc;
 }
 
@@ -125,6 +138,149 @@ body.no-scrollbar,
 
 .glow-accent-lg {
   box-shadow: 0 0 25px -2px rgba(244, 63, 94, 0.4);
+}
+
+/* 3D Perspective & Motion Utilities for Mobile Mockups */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@keyframes floatSmooth {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.5deg);
+  }
+}
+
+@keyframes floatSmoothRev {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-0.5deg);
+  }
+}
+
+@keyframes floatTilted {
+  0%, 100% {
+    transform: translateY(0px) rotateY(-12deg) rotateX(6deg);
+  }
+  50% {
+    transform: translateY(-14px) rotateY(-8deg) rotateX(4deg);
+  }
+}
+
+@keyframes floatTiltedRtl {
+  0%, 100% {
+    transform: translateY(0px) rotateY(12deg) rotateX(6deg);
+  }
+  50% {
+    transform: translateY(-14px) rotateY(8deg) rotateX(4deg);
+  }
+}
+
+@keyframes floatIsometric {
+  0%, 100% {
+    transform: translateY(0px) rotate(-6deg) rotateX(10deg) rotateY(-10deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-4deg) rotateX(8deg) rotateY(-8deg);
+  }
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmerGlass {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes badgeBob {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.03);
+  }
+}
+
+.animate-float-smooth {
+  animation: floatSmooth 6s ease-in-out infinite;
+}
+
+.animate-float-smooth-rev {
+  animation: floatSmoothRev 7s ease-in-out infinite;
+}
+
+.animate-float-tilted {
+  animation: floatTilted 8s ease-in-out infinite;
+}
+
+.animate-float-tilted-rtl {
+  animation: floatTiltedRtl 8s ease-in-out infinite;
+}
+
+.animate-float-isometric {
+  animation: floatIsometric 7s ease-in-out infinite;
+}
+
+.animate-radar-ping {
+  animation: radarPing 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-shimmer-glass {
+  animation: shimmerGlass 4.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-badge-bob {
+  animation: badgeBob 4s ease-in-out infinite;
+}
+
+.mockup-3d-shadow {
+  box-shadow:
+    0 25px 60px -15px rgba(0, 0, 0, 0.65),
+    0 15px 25px -10px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(245, 166, 35, 0.12);
+}
+
+.mockup-subtle-glare {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.05) 35%,
+    rgba(255, 255, 255, 0) 60%
+  );
 }
 
 /* Light mode page cards: subtle border and no shadows */

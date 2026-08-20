@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { ArrowDownToLine, QrCode, Apple, Smartphone } from "lucide-react";
+import { ArrowDownToLine, QrCode, Apple, Smartphone, Sparkles, Activity } from "lucide-react";
 import { useAppDownload } from "../../../lib/appDownload";
+import MultiDeviceMockup from "./MultiDeviceMockup";
+import AnimatedPhoneMockup from "./AnimatedPhoneMockup";
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -16,242 +18,125 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden rounded-b-[60px] sm:rounded-b-[86px] bg-[#102746] dark:bg-[#0b1b30] text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-          {/* ================= LEFT CONTENT ================= */}
-          <div className="max-w-2xl text-center lg:text-left rtl:lg:text-right">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.08] px-4 py-2 text-[10px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur-sm sm:text-[11px]">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
-
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-10">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.25fr_1fr] lg:gap-8 xl:gap-12">
+          {/* ================= LEFT CONTENT: WIDER HORIZONTAL BALANCED TYPOGRAPHY ================= */}
+          <div className="w-full text-center lg:text-left rtl:lg:text-right z-10 flex flex-col items-center lg:items-start">
+            {/* Live Tracking Capsule Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.08] px-3.5 py-1.5 text-[11.5px] font-semibold uppercase tracking-wider text-white backdrop-blur-md shadow-inner">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
               <span>
-                {t("marketing.hero.badge", "Live Network Tracking")}
+                {t("marketing.hero.badge", "منظومة النقل الذكية الأولى في مصر")}
               </span>
             </div>
 
-            {/* Heading */}
-            <h1 className="mt-8 text-[46px] font-medium leading-[1.03] tracking-[-0.035em] sm:text-[56px] md:text-[64px] lg:text-[62px] xl:text-[68px]">
-              <span className="block">
-                {t("marketing.hero.titleLine1", "Move Cargo")}
+            {/* Harmonious Headline */}
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[42px] xl:text-[46px] leading-[1.2] text-white">
+              <span className="inline font-black">
+                {t("marketing.hero.titleMain", "انقل بضائعك وشحناتك")}{" "}
               </span>
-
-              <span className="block">
-                {t("marketing.hero.titleLine2", "Anywhere in")}
+              <span className="inline font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">
+                {t("marketing.hero.titleHighlight", "خلال ثوانٍ وبضغطة واحدة")}
               </span>
-
-              <span className="block">
-                {t("marketing.hero.titleLine3", "Seconds.")}
-              </span>
-
-              <span className="mt-1 block text-[#FFAA1D]">
-                {t("marketing.hero.titleLine4", "Right From Your")}
-              </span>
-
-              <span className="block text-[#FFAA1D]">
-                {t("marketing.hero.titleLine5", "Phone.")}
+              <span className="block text-lg sm:text-xl lg:text-2xl font-medium text-slate-200 mt-1.5">
+                {t("marketing.hero.titleSub", "مباشرة من هاتفك المحمول")}
               </span>
             </h1>
 
-            {/* Description */}
-            <p className="mx-auto mt-8 max-w-xl text-base leading-7 text-white/75 sm:text-lg lg:mx-0">
+            {/* Refined Subtitle */}
+            <p className="mt-3.5 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
               {t(
                 "marketing.hero.description",
-                "Book a Jumbo, Tipper, Flatbed or Refrigerated truck instantly. Total transparency, guaranteed capacity.",
+                "احجز شاحنتك (تريلا، جامبو، قلاب، مبرد) بأسعار خوارزمية معتمدة، وتتبع خط السير مباشرة بنظام GPS مع تسوية مالية فورية وبوليصة شحن رقمية.",
               )}
             </p>
 
             {/* ================= CTA BUTTONS ================= */}
-            <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-              {/* Download App (Detects iOS/Android/Desktop) */}
+            <div className="mt-8 flex flex-col items-center gap-3.5 sm:flex-row sm:justify-start w-full sm:w-auto">
+              {/* Primary Download App Button */}
               <a
                 href={downloadUrl}
                 onClick={handleDownload}
                 title={downloadCtaText}
                 aria-label={downloadCtaText}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#FFAA1D] px-7 py-3.5 text-sm font-semibold text-[#102746] shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffb52f] cursor-pointer sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-400 px-8 py-4 text-sm font-black text-[#102746] shadow-xl shadow-amber-500/25 transition-all duration-300 hover:scale-105 hover:shadow-amber-500/40 cursor-pointer sm:w-auto"
               >
                 {platform === "ios" ? (
-                  <Apple className="h-4 w-4 shrink-0 text-[#102746]" />
-                ) : platform === "android" ? (
-                  <Smartphone className="h-4 w-4 shrink-0 text-[#102746]" />
+                  <Apple className="h-5 w-5 shrink-0 text-[#102746]" />
                 ) : (
-                  <ArrowDownToLine className="h-4 w-4 shrink-0 text-[#102746]" />
+                  <Smartphone className="h-5 w-5 shrink-0 text-[#102746]" />
                 )}
-
                 <span>{downloadCtaText}</span>
               </a>
 
-              {/* Scan to preview / scroll */}
+              {/* Secondary Instant Preview Button */}
               <a
                 href="#app-download"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToAppSection();
                 }}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white/[0.10] px-7 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.16] cursor-pointer sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[0.08] px-7 py-4 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/[0.16] hover:border-white/40 cursor-pointer sm:w-auto"
               >
-                <QrCode className="h-4 w-4" />
-
-                <span>{t("marketing.hero.scan", "Scan to Install")}</span>
+                <QrCode className="h-4 w-4 text-amber-400" />
+                <span>{t("marketing.hero.scan", "استعراض التطبيق")}</span>
               </a>
+            </div>
+
+            {/* Trust Badges Row */}
+            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-300 flex-wrap">
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="font-bold text-white">
+                  {t("marketing.hero.stats.trucksVal", "+12,000")}
+                </span>
+                <span className="text-slate-400">
+                  {t("marketing.hero.stats.trucksLabel", "شاحنة جاهزة")}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-amber-400" />
+                <span className="font-bold text-white">
+                  {t("marketing.hero.stats.speedVal", "< 30s")}
+                </span>
+                <span className="text-slate-400">
+                  {t("marketing.hero.stats.speedLabel", "سرعة الإسناد")}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-blue-400" />
+                <span className="font-bold text-white">
+                  {t("marketing.hero.stats.podVal", "100%")}
+                </span>
+                <span className="text-slate-400">
+                  {t("marketing.hero.stats.podLabel", "بوالص رقمية موثقة")}
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* ================= RIGHT PHONE MOCKUP ================= */}
-          <div className="relative flex items-center justify-center lg:justify-end">
-            {/* Background Glow */}
-            <div className="absolute h-[420px] w-[320px] rounded-full bg-cyan-400/[0.08] blur-3xl" />
+          {/* ================= RIGHT COMPACT 3D MULTI-DEVICE MOCKUP ================= */}
+          <div className="relative flex flex-col items-center justify-center w-full">
+            {/* Scaled 3D Multi-Device Trio */}
+            <div className="w-full max-w-md lg:max-w-none flex justify-center scale-90 sm:scale-95 lg:scale-90 xl:scale-95 origin-center">
+              <MultiDeviceMockup layout="trio" className="py-0" />
+            </div>
 
-            {/* Phone */}
-            <div
-              className="
-            relative
-            h-[500px]
-            w-[250px]
-            max-w-[85vw]
-            overflow-hidden
-            rounded-[40px]
-            border-[7px]
-            border-white/[0.18]
-            bg-white
-            dark:bg-slate-900
-            shadow-[0_30px_80px_rgba(0,0,0,0.35)]
-            sm:h-[540px]
-            sm:w-[270px]
-          "
-            >
-              {/* ================= MAP IMAGE ================= */}
-              <img
-                src="/map.png"
-                alt={t("marketing.hero.mapAlt", "Diziel cargo tracking map")}
-                className="absolute inset-0 h-full w-full object-cover"
+            {/* Interactive Badge Hint */}
+            <div className="mt-2 flex items-center gap-1.5 rounded-full bg-white/[0.08] px-3.5 py-1 text-[11px] text-white/80 backdrop-blur-md border border-white/15 shadow-md">
+              <Sparkles
+                className="h-3 w-3 text-[#FFAA1D] animate-spin"
+                style={{ animationDuration: "4s" }}
               />
-
-              {/* ================= TOP PHONE OVERLAY ================= */}
-
-              {/* Phone Top Gradient */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-20 bg-gradient-to-b from-black/10 to-transparent" />
-
-              {/* Phone Speaker */}
-              <div className="absolute left-1/2 top-2 z-30 h-1.5 w-12 -translate-x-1/2 rounded-full bg-black/20" />
-
-              {/* ================= BOOKING NOTIFICATION ================= */}
-              <div
-                className="
-              absolute
-              left-1/2
-              top-12
-              z-20
-              flex
-              -translate-x-1/2
-              items-center
-              gap-1.5
-              whitespace-nowrap
-              rounded-full
-              bg-[#65F28A]
-              px-3.5
-              py-2
-              text-[8px]
-              font-semibold
-              text-[#075B24]
-              shadow-[0_5px_20px_rgba(0,0,0,0.15)]
-              sm:text-[9px]
-            "
-              >
-                <span className="flex h-3 w-3 items-center justify-center rounded-full bg-[#19C957] text-[8px] text-white">
-                  ✓
-                </span>
-
-                <span>
-                  {t(
-                    "marketing.hero.bookingAccepted",
-                    "New Booking Accepted!",
-                  )}
-                </span>
-              </div>
-
-              {/* ================= ROUTE DOT ================= */}
-              <div
-                className="
-              absolute
-              bottom-[31%]
-              left-[22%]
-              z-20
-              flex
-              h-5
-              w-5
-              items-center
-              justify-center
-              rounded-full
-              bg-[#102746]
-              ring-4
-              ring-white
-            "
-              >
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              </div>
-
-              {/* ================= ETA CARD ================= */}
-              <div
-                className="
-              absolute
-              bottom-2
-              left-2
-              right-2
-              z-20
-              rounded-[22px]
-              bg-white
-              dark:bg-gray-900
-              px-4
-              py-4
-              text-gray-900
-              dark:text-white
-              shadow-[0_8px_30px_rgba(0,0,0,0.18)]
-              border
-              border-transparent
-              dark:border-gray-800
-            "
-              >
-                {/* ETA Header */}
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-medium text-gray-600 dark:text-gray-400">
-                    {t("marketing.hero.routeEta", "Route ETA")}
-                  </span>
-
-                  <span className="text-sm font-bold text-[#986300] dark:text-amber-400">
-                    {t("marketing.hero.routeDuration", "1h 45m")}
-                  </span>
-                </div>
-
-                {/* Progress */}
-                <div className="mt-3 h-1.5 rounded-full bg-gray-200 dark:bg-gray-700">
-                  <div className="relative h-full w-[68%] rounded-full bg-[#946200] dark:bg-amber-500">
-                    <span
-                      className="
-                    absolute
-                    right-0
-                    top-1/2
-                    h-2.5
-                    w-2.5
-                    -translate-y-1/2
-                    rounded-full
-                    border-2
-                    border-white
-                    dark:border-gray-900
-                    bg-[#946200]
-                    dark:bg-amber-500
-                  "
-                    />
-                  </div>
-                </div>
-
-                {/* Locations */}
-                <div className="mt-3 flex items-center justify-between text-[7px] font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                  <span>{t("marketing.hero.from", "Alexandria Port")}</span>
-
-                  <span>{t("marketing.hero.to", "6th of October")}</span>
-                </div>
-              </div>
+              <span className="font-medium">
+                {t(
+                  "marketing.hero.interactiveMockupHint",
+                  "واجهة تطبيق ديزيل التفاعلية ثلاثية الأبعاد 3D",
+                )}
+              </span>
             </div>
           </div>
         </div>

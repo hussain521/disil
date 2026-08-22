@@ -443,7 +443,15 @@ export default function UserDetail() {
             onClick={() => setZoomSrc(resolveFileUrl(reviewingDoc.fileUrl))}
             className="mb-3 block w-full overflow-hidden rounded-md border border-admin-border"
           >
-            <img src={resolveFileUrl(reviewingDoc.fileUrl) ?? undefined} alt="document" className="max-h-56 w-full object-contain bg-black" />
+            <img
+              src={resolveFileUrl(reviewingDoc.fileUrl) ?? undefined}
+              alt="document"
+              width={500}
+              height={224}
+              loading="lazy"
+              decoding="async"
+              className="max-h-56 w-full object-contain bg-black"
+            />
           </button>
         ) : null}
         <div className="mb-3 flex gap-2">

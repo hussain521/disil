@@ -184,6 +184,10 @@ export default function AnimatedPhoneMockup({
                 <img
                   src="/map.png"
                   alt="Diziel Live Map"
+                  width={300}
+                  height={500}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/90" />
@@ -576,11 +580,11 @@ export default function AnimatedPhoneMockup({
             {interactive && (
               <div className="mt-1 flex items-center justify-center gap-1 pt-1 border-t border-white/10">
                 {[
-                  { id: "live-map", icon: MapPin },
-                  { id: "select-truck", icon: Truck },
-                  { id: "instant-quote", icon: Sparkles },
-                  { id: "driver-radar", icon: Zap },
-                  { id: "wallet", icon: Wallet },
+                  { id: "live-map", label: isRtl ? "تتبع مباشر" : "Live Map", icon: MapPin },
+                  { id: "select-truck", label: isRtl ? "اختيار شاحنة" : "Select Truck", icon: Truck },
+                  { id: "instant-quote", label: isRtl ? "تسعير فوري" : "Instant Quote", icon: Sparkles },
+                  { id: "driver-radar", label: isRtl ? "رادار السائقين" : "Driver Radar", icon: Zap },
+                  { id: "wallet", label: isRtl ? "المحفظة" : "Wallet", icon: Wallet },
                 ].map((item) => {
                   const Icon = item.icon;
                   const isActive = activeTab === item.id;
@@ -588,6 +592,8 @@ export default function AnimatedPhoneMockup({
                     <button
                       key={item.id}
                       type="button"
+                      aria-label={item.label}
+                      title={item.label}
                       onClick={() => setActiveTab(item.id as MockupScreenType)}
                       className={`h-6 w-6 rounded-lg flex items-center justify-center transition-all ${
                         isActive

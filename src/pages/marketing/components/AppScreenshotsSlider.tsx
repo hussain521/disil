@@ -241,10 +241,10 @@ export default function AppScreenshotsSlider() {
                 <div className="h-10 w-10 mx-auto rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
                   <Truck className="h-5 w-5" />
                 </div>
-                <h4 className="font-bold text-white text-base">
+                <h3 className="font-bold text-white text-base">
                   {isRtl ? "حجز وإسناد فوري" : "Instant Fleet Dispatch"}
-                </h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
                   {isRtl
                     ? "اختر نوع الشاحنة (تريلا، جامبو، مبرد) واحصل على تسعير فوري وإسناد خلال ٣٠ ثانية."
                     : "Choose vehicle specs, get automated algorithm rates, and dispatch within 30 seconds."}
@@ -255,10 +255,10 @@ export default function AppScreenshotsSlider() {
                 <div className="h-10 w-10 mx-auto rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
                   <Navigation className="h-5 w-5" />
                 </div>
-                <h4 className="font-bold text-white text-base">
+                <h3 className="font-bold text-white text-base">
                   {isRtl ? "تتبع GPS حي على الخريطة" : "Real-Time Telemetry"}
-                </h4>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
                   {isRtl
                     ? "مراقبة مسار الشاحنة بدقة فائقة مع حساب السرعة، الوقت المتبقي، والتواصل المباشر."
                     : "Track exact cargo GPS coordinates, speed, and real-time remaining arrival ETA."}
@@ -269,9 +269,9 @@ export default function AppScreenshotsSlider() {
                 <div className="h-10 w-10 mx-auto rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
-                <h4 className="font-bold text-white text-base">
+                <h3 className="font-bold text-white text-base">
                   {isRtl ? "بوليصة رقمية وتسوية فورية" : "Digital POD & Payouts"}
-                </h4>
+                </h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   {isRtl
                     ? "إثبات تسليم إلكتروني بالباركود وتفريغ أوتوماتيكي للأموال في المحفظة عبر إنستاباي."

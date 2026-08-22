@@ -30,6 +30,10 @@ export default function MarketingFooter() {
               <img
                 src="/logo.png"
                 alt="Diziel"
+                width={36}
+                height={36}
+                loading="lazy"
+                decoding="async"
                 className="h-9 w-auto object-contain brightness-110 drop-shadow-sm"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).style.display = "none";
@@ -39,7 +43,7 @@ export default function MarketingFooter() {
                 {t("common.brandName", "Diziel")}
               </span>
             </Link>
-            <p className="text-[14px] leading-relaxed text-slate-300/85 max-w-xs font-normal">
+            <p className="text-[14px] leading-relaxed text-slate-200 max-w-xs font-normal">
               {t(
                 "marketing.footer.tagline",
                 "Revolutionizing the freight marketplace with modern logistics technology.",
@@ -56,7 +60,7 @@ export default function MarketingFooter() {
               <li>
                 <Link
                   to="/contact-team"
-                  className="text-slate-300/85 hover:text-white transition-colors duration-150 block"
+                  className="text-slate-200 hover:text-white transition-colors duration-150 block"
                 >
                   {t("marketing.footer.contactTeam", "Contact & Team")}
                 </Link>
@@ -64,7 +68,7 @@ export default function MarketingFooter() {
               <li>
                 <Link
                   to="/track"
-                  className="text-slate-300/85 hover:text-white transition-colors duration-150 block"
+                  className="text-slate-200 hover:text-white transition-colors duration-150 block"
                 >
                   {t("marketing.footer.trackShipment", "Track Shipment")}
                 </Link>
@@ -72,7 +76,7 @@ export default function MarketingFooter() {
               <li>
                 <Link
                   to="/company/login"
-                  className="text-slate-300/85 hover:text-white transition-colors duration-150 block"
+                  className="text-slate-200 hover:text-white transition-colors duration-150 block"
                 >
                   {t("marketing.footer.carrierPortal", "Carrier Portal")}
                 </Link>
@@ -80,7 +84,7 @@ export default function MarketingFooter() {
               <li>
                 <a
                   href="/#business"
-                  className="text-slate-300/85 hover:text-white transition-colors duration-150 block"
+                  className="text-slate-200 hover:text-white transition-colors duration-150 block"
                 >
                   {t("marketing.footer.shipperSolutions", "Shipper Solutions")}
                 </a>
@@ -88,7 +92,7 @@ export default function MarketingFooter() {
               <li>
                 <Link
                   to="/terms"
-                  className="text-slate-300/85 hover:text-white transition-colors duration-150 block"
+                  className="text-slate-200 hover:text-white transition-colors duration-150 block"
                 >
                   {t("marketing.footer.safetyCompliance", "Safety & Compliance")}
                 </Link>
@@ -189,7 +193,7 @@ export default function MarketingFooter() {
         </div>
 
         {/* Bottom Bar: Divider, Copyright & Legal Links */}
-        <div className="mt-16 pt-8 border-t border-[#183256] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-slate-400">
+        <div className="mt-16 pt-8 border-t border-[#183256] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-slate-300">
           <div>
             {t(
               "marketing.footer.copyright",
@@ -200,13 +204,13 @@ export default function MarketingFooter() {
           <div className="flex items-center gap-8">
             <Link
               to="/privacy-policy"
-              className="text-slate-400 hover:text-slate-200 transition-colors"
+              className="text-slate-300 hover:text-white transition-colors"
             >
               {t("marketing.footer.privacyPolicy", "Privacy Policy")}
             </Link>
             <Link
               to="/terms"
-              className="text-slate-400 hover:text-slate-200 transition-colors"
+              className="text-slate-300 hover:text-white transition-colors"
             >
               {t("marketing.footer.termsOfService", "Terms of Service")}
             </Link>

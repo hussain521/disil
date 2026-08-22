@@ -13,6 +13,10 @@ export default function NavLogo() {
       <img
         src="/logo.png"
         alt="Diziel Logo"
+        width={32}
+        height={32}
+        loading="lazy"
+        decoding="async"
         className="h-8 w-auto object-contain"
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = 'none';

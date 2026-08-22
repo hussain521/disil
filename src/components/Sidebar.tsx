@@ -75,6 +75,7 @@ export default function Sidebar({
                 type="button"
                 onClick={onCloseMobile}
                 title="Close Navigation"
+                aria-label="Close Navigation"
                 className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-admin-border bg-admin-card text-admin-muted transition hover:border-admin-accent hover:text-admin-accent hover:bg-admin-card-hover lg:hidden"
               >
                 ✕
@@ -84,6 +85,7 @@ export default function Sidebar({
                 type="button"
                 onClick={onToggleCollapse}
                 title="Collapse Sidebar"
+                aria-label="Collapse Sidebar"
                 className="hidden lg:flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-admin-border bg-admin-card text-admin-muted transition hover:border-admin-accent hover:text-admin-accent hover:bg-admin-card-hover"
               >
                 <PanelLeftClose className="h-4 w-4" />
@@ -96,6 +98,7 @@ export default function Sidebar({
               type="button"
               onClick={onToggleCollapse}
               title="Expand Sidebar"
+              aria-label="Expand Sidebar"
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-rose-600 to-rose-400 text-white shadow-lg glow-accent-sm transition hover:scale-105 hover:shadow-rose-500/30"
             >
               <span className="font-extrabold text-base leading-none">D</span>
@@ -118,7 +121,9 @@ export default function Sidebar({
             />
             {filterQuery && (
               <button
+                type="button"
                 onClick={() => setFilterQuery('')}
+                aria-label="Clear navigation search"
                 className="absolute right-2.5 top-2 text-xs text-admin-muted hover:text-admin-text"
               >
                 ✕

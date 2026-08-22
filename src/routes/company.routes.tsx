@@ -1,8 +1,10 @@
+import { lazy } from 'react';
 import { Navigate, Outlet, Route } from 'react-router-dom';
-import { CompanyAuthProvider, useCompanyAuth } from '../lib/auth';
-import CompanyLogin from '../pages/company/Login';
-import FleetTrack from '../pages/company/FleetTrack';
-import TripDetail from '../pages/company/TripDetail';
+import { CompanyAuthProvider } from '../lib/auth';
+
+const CompanyLogin = lazy(() => import('../pages/company/Login'));
+const FleetTrack = lazy(() => import('../pages/company/FleetTrack'));
+const TripDetail = lazy(() => import('../pages/company/TripDetail'));
 
 /** Auth check bypassed temporarily for company portal. */
 function RequireCompanyAuth() {

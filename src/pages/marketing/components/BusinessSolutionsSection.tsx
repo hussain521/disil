@@ -42,7 +42,7 @@ export default function BusinessSolutionsSection() {
         "
             >
               {/* Label */}
-              <span className="text-sm font-medium uppercase tracking-[0.16em] text-[#946000] dark:text-amber-400">
+              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-800 dark:text-amber-400">
                 {t("marketing.business.label", "Business Solutions")}
               </span>
 
@@ -52,10 +52,10 @@ export default function BusinessSolutionsSection() {
             mt-8
             max-w-xl
             text-4xl
-            font-medium
+            font-bold
             leading-[1.08]
             tracking-[-0.035em]
-            text-[#102746]
+            text-slate-900
             dark:text-white
             sm:text-5xl
           "
@@ -73,7 +73,7 @@ export default function BusinessSolutionsSection() {
             max-w-xl
             text-base
             leading-7
-            text-[#554b40]
+            text-slate-700
             dark:text-gray-300
             sm:text-lg
           "
@@ -88,14 +88,14 @@ export default function BusinessSolutionsSection() {
               <div className="mt-10 space-y-5">
                 {/* Feature 1 */}
                 <div className="flex items-center gap-4">
-                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#9a6500] dark:border-amber-400">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-amber-600 dark:border-amber-400">
                     <Check
-                      className="h-3.5 w-3.5 text-[#9a6500] dark:text-amber-400"
+                      className="h-3.5 w-3.5 text-amber-700 dark:text-amber-400"
                       strokeWidth={3}
                     />
                   </div>
 
-                  <span className="text-[15px] font-medium text-[#27231f] dark:text-gray-200 sm:text-base">
+                  <span className="text-[15px] font-medium text-slate-800 dark:text-gray-200 sm:text-base">
                     {t(
                       "marketing.business.features.credit",
                       "Flexible credit terms & invoicing",
@@ -105,14 +105,14 @@ export default function BusinessSolutionsSection() {
 
                 {/* Feature 2 */}
                 <div className="flex items-center gap-4">
-                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#9a6500] dark:border-amber-400">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-amber-600 dark:border-amber-400">
                     <Check
-                      className="h-3.5 w-3.5 text-[#9a6500] dark:text-amber-400"
+                      className="h-3.5 w-3.5 text-amber-700 dark:text-amber-400"
                       strokeWidth={3}
                     />
                   </div>
 
-                  <span className="text-[15px] font-medium text-[#27231f] dark:text-gray-200 sm:text-base">
+                  <span className="text-[15px] font-medium text-slate-800 dark:text-gray-200 sm:text-base">
                     {t(
                       "marketing.business.features.dashboard",
                       "Multi-user dashboard access",
@@ -122,14 +122,14 @@ export default function BusinessSolutionsSection() {
 
                 {/* Feature 3 */}
                 <div className="flex items-center gap-4">
-                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#9a6500] dark:border-amber-400">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-amber-600 dark:border-amber-400">
                     <Check
-                      className="h-3.5 w-3.5 text-[#9a6500] dark:text-amber-400"
+                      className="h-3.5 w-3.5 text-amber-700 dark:text-amber-400"
                       strokeWidth={3}
                     />
                   </div>
 
-                  <span className="text-[15px] font-medium text-[#27231f] dark:text-gray-200 sm:text-base">
+                  <span className="text-[15px] font-medium text-slate-800 dark:text-gray-200 sm:text-base">
                     {t(
                       "marketing.business.features.reporting",
                       "Custom reporting & analytics API",

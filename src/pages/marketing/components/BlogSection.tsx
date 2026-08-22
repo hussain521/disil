@@ -146,6 +146,10 @@ export default function BlogSection() {
                   <img
                     src={article.imageUrl}
                     alt={t(article.titleKey)}
+                    width={400}
+                    height={208}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />

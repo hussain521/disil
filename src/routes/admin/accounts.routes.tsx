@@ -1,9 +1,11 @@
+import { lazy } from 'react';
 import { Route } from 'react-router-dom';
-import Dashboards from '../../pages/admin/accounts/Dashboards';
-import Financial from '../../pages/admin/accounts/Financial';
-import PaymentDetails from '../../pages/admin/accounts/PaymentDetails';
-import Pricing from '../../pages/admin/accounts/Pricing';
-import Quotes from '../../pages/admin/accounts/Quotes';
+
+const Dashboards = lazy(() => import('../../pages/admin/accounts/Dashboards'));
+const Financial = lazy(() => import('../../pages/admin/accounts/Financial'));
+const PaymentDetails = lazy(() => import('../../pages/admin/accounts/PaymentDetails'));
+const Pricing = lazy(() => import('../../pages/admin/accounts/Pricing'));
+const Quotes = lazy(() => import('../../pages/admin/accounts/Quotes'));
 
 /**
  * OWNERSHIP: admin-accounts agent. You may freely edit this file and

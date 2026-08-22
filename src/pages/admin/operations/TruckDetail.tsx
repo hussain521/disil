@@ -93,7 +93,15 @@ function VehicleSection({
               return (
                 <div key={docKey} className="rounded-md border border-admin-border bg-admin-bg p-1.5">
                   <a href={img.url} target="_blank" rel="noreferrer">
-                    <img src={img.url} alt={img.label} className="h-20 w-full rounded-sm object-cover" />
+                    <img
+                      src={img.url}
+                      alt={img.label}
+                      width={180}
+                      height={80}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-20 w-full rounded-sm object-cover"
+                    />
                   </a>
                   <p className="mt-1 truncate text-[11px] text-admin-subtext">{img.label}</p>
                   {canReview ? (
@@ -313,7 +321,15 @@ export default function TruckDetail() {
               return (
                 <div key={url} className="rounded-md bg-admin-bg p-1.5">
                   <a href={url} target="_blank" rel="noreferrer">
-                    <img src={url} alt={`Truck ${index + 1}`} className="h-20 w-full rounded-sm object-cover" />
+                    <img
+                      src={url}
+                      alt={`Truck ${index + 1}`}
+                      width={180}
+                      height={80}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-20 w-full rounded-sm object-cover"
+                    />
                   </a>
                   <p className="mt-1 truncate text-[11px] text-admin-subtext">Photo #{index + 1}</p>
                   {canReview ? (

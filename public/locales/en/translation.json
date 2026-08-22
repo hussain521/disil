@@ -64,7 +64,9 @@
     "tagline": "Realtime Freight & Telemetry",
     "connected": "Connected",
     "show": "Show",
-    "hide": "Hide"
+    "hide": "Hide",
+    "list": "List",
+    "map": "Map"
   },
   "nav": {
     "home": "Home",
@@ -324,6 +326,9 @@
     },
     "hero": {
       "badge": "Live Network Tracking",
+      "titleMain": "Move Cargo Anywhere in Seconds,",
+      "titleHighlight": "Right From Your Phone",
+      "titleSub": "Instant Dispatch, Verified Carriers & Real-Time Tracking",
       "titleLine1": "Move Cargo",
       "titleLine2": "Anywhere in",
       "titleLine3": "Seconds.",
@@ -337,7 +342,16 @@
       "from": "Alexandria Port",
       "to": "6th of October",
       "mapAlt": "Diziel live radar telemetry map",
-      "routeDuration": "45 mins · Live Route"
+      "routeDuration": "45 mins · Live Route",
+      "interactiveMockupHint": "Interactive 3D Diziel Application Preview",
+      "stats": {
+        "trucksVal": "+12,000",
+        "trucksLabel": "Ready Trucks",
+        "speedVal": "< 30s",
+        "speedLabel": "Dispatch Speed",
+        "podVal": "100%",
+        "podLabel": "Verified Digital POD"
+      }
     },
     "process": {
       "label": "The Process",

@@ -497,6 +497,10 @@ export default function ContactAndTeam() {
                   <img
                     src={member.image}
                     alt={member.name}
+                    width={400}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src = "/man.png";

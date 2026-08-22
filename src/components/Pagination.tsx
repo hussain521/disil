@@ -51,6 +51,7 @@ export default function Pagination({
         type="button"
         disabled={page <= 1}
         onClick={() => onPageChange(page - 1)}
+        aria-label="Previous page"
         className={`${buttonClass(false)} disabled:cursor-not-allowed disabled:opacity-30`}
       >
         <ChevronLeft className="h-4 w-4" />
@@ -65,6 +66,8 @@ export default function Pagination({
             key={p}
             type="button"
             onClick={() => onPageChange(p as number)}
+            aria-label={`Page ${p}`}
+            aria-current={p === page ? 'page' : undefined}
             className={buttonClass(p === page)}
           >
             {p}
@@ -75,6 +78,7 @@ export default function Pagination({
         type="button"
         disabled={page >= totalPages}
         onClick={() => onPageChange(page + 1)}
+        aria-label="Next page"
         className={`${buttonClass(false)} disabled:cursor-not-allowed disabled:opacity-30`}
       >
         <ChevronRight className="h-4 w-4" />

@@ -11,7 +11,7 @@ export default function CoverageSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ================= HEADER ================= */}
         <div className="text-center">
-          <span className="text-sm font-medium uppercase tracking-[0.16em] text-[#946000] dark:text-amber-400">
+          <span className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-800 dark:text-amber-400">
             {t("marketing.coverage.label", "Coverage")}
           </span>
 
@@ -19,9 +19,9 @@ export default function CoverageSection() {
             className="
       mt-7
       text-4xl
-      font-medium
+      font-bold
       tracking-[-0.035em]
-      text-[#102746]
+      text-slate-900
       dark:text-white
       sm:text-5xl
       lg:text-[48px]
@@ -37,7 +37,7 @@ export default function CoverageSection() {
       max-w-3xl
       text-base
       leading-7
-      text-[#554B40]
+      text-slate-700
       dark:text-gray-300
       sm:text-lg
     "
@@ -67,6 +67,10 @@ export default function CoverageSection() {
           <img
             src="/map2.png"
             alt="Diziel regional logistics network"
+            width={1200}
+            height={625}
+            loading="lazy"
+            decoding="async"
             className="
       absolute
       inset-0
@@ -133,7 +137,7 @@ lg:gap-5
                 {t("marketing.coverage.stats.trips.value", "50k+")}
               </div>
 
-              <div className="mt-1 text-xs font-medium text-[#554B40] dark:text-gray-400 sm:mt-2 sm:text-sm lg:text-base">
+              <div className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-300 sm:mt-2 sm:text-sm lg:text-base">
                 {t(
                   "marketing.coverage.stats.trips.label",
                   "Trips Completed",
@@ -160,11 +164,11 @@ lg:gap-5
   sm:py-6
 "
             >
-              <div className="text-2xl font-bold tracking-[-0.03em] text-[#946000] dark:text-amber-400 sm:text-3xl lg:text-4xl">
+              <div className="text-2xl font-bold tracking-[-0.03em] text-amber-800 dark:text-amber-400 sm:text-3xl lg:text-4xl">
                 {t("marketing.coverage.stats.kilometers.value", "2.5M+")}
               </div>
 
-              <div className="mt-1 text-xs font-medium text-[#554B40] dark:text-gray-400 sm:mt-2 sm:text-sm lg:text-base">
+              <div className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-300 sm:mt-2 sm:text-sm lg:text-base">
                 {t(
                   "marketing.coverage.stats.kilometers.label",
                   "Kilometers Covered",
@@ -195,7 +199,7 @@ lg:gap-5
                 {t("marketing.coverage.stats.drivers.value", "12k+")}
               </div>
 
-              <div className="mt-1 text-xs font-medium text-[#554B40] dark:text-gray-400 sm:mt-2 sm:text-sm lg:text-base">
+              <div className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-300 sm:mt-2 sm:text-sm lg:text-base">
                 {t(
                   "marketing.coverage.stats.drivers.label",
                   "Active Drivers",
@@ -226,7 +230,7 @@ lg:gap-5
                 {t("marketing.coverage.stats.cities.value", "25+")}
               </div>
 
-              <div className="mt-1 text-xs font-medium text-[#554B40] dark:text-gray-400 sm:mt-2 sm:text-sm lg:text-base">
+              <div className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-300 sm:mt-2 sm:text-sm lg:text-base">
                 {t(
                   "marketing.coverage.stats.cities.label",
                   "Cities Covered",

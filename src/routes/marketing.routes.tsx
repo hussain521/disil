@@ -1,10 +1,12 @@
+import { lazy } from 'react';
 import { Route } from 'react-router-dom';
-import Landing from '../pages/marketing/Landing';
-import PricingPolicy from '../pages/marketing/PricingPolicy';
-import Terms from '../pages/marketing/Terms';
-import PrivacyPolicy from '../pages/marketing/PrivacyPolicy';
-import ContactAndTeam from '../pages/marketing/ContactAndTeam';
-import TrackShipment from '../pages/marketing/TrackShipment';
+
+const Landing = lazy(() => import('../pages/marketing/Landing'));
+const Terms = lazy(() => import('../pages/marketing/Terms'));
+const PricingPolicy = lazy(() => import('../pages/marketing/PricingPolicy'));
+const PrivacyPolicy = lazy(() => import('../pages/marketing/PrivacyPolicy'));
+const ContactAndTeam = lazy(() => import('../pages/marketing/ContactAndTeam'));
+const TrackShipment = lazy(() => import('../pages/marketing/TrackShipment'));
 
 /** Public marketing site route tree — mounted at `/`. No auth required. */
 export const marketingRoutes = (

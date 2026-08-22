@@ -30,6 +30,9 @@ export default function ImageZoomModal({ src, alt = '', onClose }: ImageZoomModa
       <img
         src={src}
         alt={alt}
+        width={1000}
+        height={800}
+        decoding="async"
         onClick={(e) => e.stopPropagation()}
         className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
       />

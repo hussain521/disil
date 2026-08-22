@@ -32,19 +32,24 @@ function getAllFiles(dir, exts = ['.ts', '.tsx']) {
 }
 
 const files = getAllFiles('src');
-// Match t('key') or t("key") only where t is from useTranslation
+// Match t('key') or t("key") or labelKey / titleKey etc.
 const keyRegex = /\bt\(\s*['"]([a-zA-Z0-9_.-]+)['"]/g;
+const propKeyRegex = /(?:labelKey|titleKey|badgeKey|descKey|subtitleKey|descriptionKey|quoteKey|authorKey|roleKey|companyKey|metricKey|tagKey|statusTextKey|categoryKey|dateKey|readTimeKey)\s*:\s*['"]([a-zA-Z0-9_.-]+)['"]/g;
 const missingEn = [];
 const missingAr = [];
 const foundKeys = new Set();
 
 for (const file of files) {
   const content = fs.readFileSync(file, 'utf8');
-  if (!content.includes('useTranslation') && !content.includes('i18n')) {
-    continue;
-  }
   let match;
   while ((match = keyRegex.exec(content)) !== null) {
+    const key = match[1];
+    if (key === '_' || key.includes('${') || key.endsWith('.')) continue;
+    foundKeys.add(key);
+    if (getNested(en, key) === undefined) missingEn.push({ key, file });
+    if (getNested(ar, key) === undefined) missingAr.push({ key, file });
+  }
+  while ((match = propKeyRegex.exec(content)) !== null) {
     const key = match[1];
     if (key === '_' || key.includes('${') || key.endsWith('.')) continue;
     foundKeys.add(key);

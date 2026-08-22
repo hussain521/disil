@@ -1,10 +1,12 @@
+import { lazy } from 'react';
 import { Route } from 'react-router-dom';
-import Admins from '../../pages/admin/misc/Admins';
-import Audit from '../../pages/admin/misc/Audit';
-import ContractNew from '../../pages/admin/misc/ContractNew';
-import Contracts from '../../pages/admin/misc/Contracts';
-import Notifications from '../../pages/admin/misc/Notifications';
-import VehicleTypes from '../../pages/admin/misc/VehicleTypes';
+
+const Admins = lazy(() => import('../../pages/admin/misc/Admins'));
+const Audit = lazy(() => import('../../pages/admin/misc/Audit'));
+const ContractNew = lazy(() => import('../../pages/admin/misc/ContractNew'));
+const Contracts = lazy(() => import('../../pages/admin/misc/Contracts'));
+const Notifications = lazy(() => import('../../pages/admin/misc/Notifications'));
+const VehicleTypes = lazy(() => import('../../pages/admin/misc/VehicleTypes'));
 
 /**
  * OWNERSHIP: admin-misc agent. You may freely edit this file and anything

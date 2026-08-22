@@ -1,5 +1,6 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, Suspense } from 'react';
 import { Link, Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import RouteLoadingFallback from '../../components/RouteLoadingFallback';
 import {
   Activity,
   Award,
@@ -315,7 +316,9 @@ export default function AdminLayout() {
         />
         <main className="flex-1 overflow-y-auto p-3 sm:p-6 lg:p-8">
           <div className="mx-auto max-w-7xl animation-fade-in pb-12">
-            <Outlet />
+            <Suspense fallback={<RouteLoadingFallback />}>
+              <Outlet />
+            </Suspense>
           </div>
         </main>
       </div>

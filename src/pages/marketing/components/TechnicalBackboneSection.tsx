@@ -14,10 +14,10 @@ export default function TechnicalBackboneSection() {
           <span
             className="
               text-sm
-              font-medium
+              font-semibold
               uppercase
               tracking-[0.16em]
-              text-[#946000]
+              text-amber-800
               dark:text-amber-400
             "
           >
@@ -28,9 +28,9 @@ export default function TechnicalBackboneSection() {
             className="
               mt-7
               text-4xl
-              font-medium
+              font-bold
               tracking-[-0.035em]
-              text-[#102746]
+              text-slate-900
               dark:text-white
               sm:text-5xl
               lg:text-[48px]
@@ -79,6 +79,10 @@ export default function TechnicalBackboneSection() {
               <img
                 src="/t (1).jpg"
                 alt="Secure warehousing"
+                width={400}
+                height={210}
+                loading="lazy"
+                decoding="async"
                 className="
                   aspect-[1.9/1]
                   w-full
@@ -111,7 +115,7 @@ export default function TechnicalBackboneSection() {
                 mt-5
                 text-base
                 leading-7
-                text-[#554B40]
+                text-slate-700
                 dark:text-gray-300
               "
             >
@@ -146,6 +150,10 @@ export default function TechnicalBackboneSection() {
               <img
                 src="/t (2).jpg"
                 alt="Smart fleet management"
+                width={400}
+                height={210}
+                loading="lazy"
+                decoding="async"
                 className="
                   aspect-[1.9/1]
                   w-full
@@ -178,7 +186,7 @@ export default function TechnicalBackboneSection() {
                 mt-5
                 text-base
                 leading-7
-                text-[#554B40]
+                text-slate-700
                 dark:text-gray-300
               "
             >
@@ -213,6 +221,10 @@ export default function TechnicalBackboneSection() {
               <img
                 src="/t (3).jpg"
                 alt="Customs and compliance"
+                width={400}
+                height={210}
+                loading="lazy"
+                decoding="async"
                 className="
                   aspect-[1.9/1]
                   w-full
@@ -245,7 +257,7 @@ export default function TechnicalBackboneSection() {
                 mt-5
                 text-base
                 leading-7
-                text-[#554B40]
+                text-slate-700
                 dark:text-gray-300
               "
             >

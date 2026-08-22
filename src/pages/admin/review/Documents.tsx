@@ -182,7 +182,15 @@ export default function Documents() {
       header: t('admin.documents.columns.preview'),
       render: (d) =>
         d.fileUrl ? (
-          <img src={fileUri(d.fileUrl) ?? undefined} alt={d.type} className="h-10 w-10 rounded object-cover" />
+          <img
+            src={fileUri(d.fileUrl) ?? undefined}
+            alt={d.type}
+            width={40}
+            height={40}
+            loading="lazy"
+            decoding="async"
+            className="h-10 w-10 rounded object-cover"
+          />
         ) : (
           <span className="text-admin-subtext">—</span>
         ),
@@ -282,6 +290,10 @@ export default function Documents() {
                 <img
                   src={fileUri(reviewingDoc.fileUrl) ?? undefined}
                   alt={humanizeDocType(reviewingDoc.type)}
+                  width={600}
+                  height={288}
+                  loading="lazy"
+                  decoding="async"
                   className="mx-auto max-h-72 w-full object-contain"
                 />
               </button>

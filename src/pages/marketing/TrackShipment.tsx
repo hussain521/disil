@@ -440,6 +440,7 @@ export default function TrackShipment() {
                   <button
                     type="button"
                     onClick={copyTrackingLink}
+                    aria-label="Share Tracking Link"
                     className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-amber-600 dark:hover:text-amber-400 transition"
                     title="Share Tracking Link"
                   >
@@ -536,6 +537,10 @@ export default function TrackShipment() {
                     <img
                       src="/map.png"
                       alt="Route Map"
+                      width={800}
+                      height={288}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover opacity-60 mix-blend-luminosity"
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).src = "/map2.png";
@@ -581,23 +586,27 @@ export default function TrackShipment() {
               <div className="lg:col-span-5 space-y-6">
                 {/* Driver & Truck Card */}
                 <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
                     {t("marketing.tracking.carrierInfo", "Driver & Vehicle Details")}
-                  </h3>
+                  </h2>
 
                   <div className="flex items-center gap-4 pb-5 border-b border-slate-100 dark:border-slate-800">
                     <img
                       src={shipment.driver.photo}
                       alt={shipment.driver.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      decoding="async"
                       className="h-16 w-16 rounded-2xl object-cover border border-slate-200 dark:border-slate-700"
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).src = "/man.png";
                       }}
                     />
                     <div className="space-y-1">
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                      <h3 className="text-base font-bold text-slate-900 dark:text-white">
                         {shipment.driver.name}
-                      </h4>
+                      </h3>
                       <p className="text-xs font-semibold text-amber-500">
                         {shipment.driver.rating} {isRtl ? "تقييم ممتاز" : "Top Rated Driver"}
                       </p>
@@ -640,9 +649,9 @@ export default function TrackShipment() {
 
                 {/* Cargo & Waybill Card */}
                 <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-4">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400">
                     {t("marketing.tracking.cargoDetails", "Cargo Specifications")}
-                  </h3>
+                  </h2>
 
                   <div className="space-y-3 text-xs">
                     <div className="flex justify-between items-center">
@@ -697,12 +706,12 @@ export default function TrackShipment() {
         ) : (
           <div className="py-20 text-center space-y-4 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8">
             <AlertCircle className="h-16 w-16 text-amber-500 mx-auto" />
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
               {t(
                 "marketing.tracking.notFound",
                 "No shipment matching this code was found. Please check the code or contact support.",
               )}
-            </h3>
+            </h2>
             <p className="text-sm text-slate-500 max-w-md mx-auto">
               {isRtl
                 ? "تأكد من إدخال كود الطلب الصحيح المسجل في رسالة التأكيد أو بوليصة الشحن الإلكترونية."

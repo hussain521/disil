@@ -60,7 +60,15 @@ function PhotoThumb({ url, label }: { url: string; label: string }) {
       className="group relative flex flex-1 min-w-[90px] flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80 p-2 text-center transition hover:border-amber-500/50 hover:bg-slate-900 shadow-sm"
     >
       <div className="relative h-20 w-full overflow-hidden rounded-lg bg-slate-900">
-        <img src={fullUrl} alt={label} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
+        <img
+          src={fullUrl}
+          alt={label}
+          width={180}
+          height={80}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+        />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
           <ExternalLink className="h-4 w-4 text-white" />
         </div>

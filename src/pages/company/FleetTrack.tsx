@@ -285,6 +285,7 @@ export default function FleetTrack() {
           <button
             type="button"
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+            aria-label={sidebarCollapsed ? "Show List" : "Show Map"}
             className="flex md:hidden items-center gap-1 rounded-xl border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 text-xs font-bold text-amber-400 transition hover:bg-amber-500/20"
             title={sidebarCollapsed ? "Show List" : "Show Map"}
           >
@@ -300,6 +301,7 @@ export default function FleetTrack() {
           <button
             type="button"
             onClick={() => void load()}
+            aria-label={t('common.refresh', 'Refresh telemetry')}
             title={t('common.refresh', 'Refresh telemetry')}
             className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-950/60 text-slate-400 transition hover:border-slate-700 hover:text-white"
           >
@@ -315,6 +317,7 @@ export default function FleetTrack() {
               logout();
               navigate('/company/login');
             }}
+            aria-label={t('topbar.logout', 'Sign Out')}
             title={t('topbar.logout', 'Sign Out')}
             className="flex items-center gap-1.5 rounded-xl border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 text-xs font-semibold text-rose-400 transition hover:bg-rose-500/20 hover:border-rose-500/40"
           >
@@ -474,6 +477,8 @@ export default function FleetTrack() {
           <button
             type="button"
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+            aria-label={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+            title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
             className="absolute -left-3.5 top-6 rtl:-left-auto rtl:-right-3.5 hidden md:flex h-7 w-7 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-slate-300 shadow-md transition hover:bg-slate-700 hover:text-white z-30"
           >
             {sidebarCollapsed ? (

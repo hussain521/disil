@@ -1,13 +1,15 @@
+import { lazy } from 'react';
 import { Outlet, Route } from 'react-router-dom';
 import { AdminAuthProvider } from '../lib/auth';
 import { AdminThemeProvider } from '../lib/adminTheme';
-import AdminLayout from '../pages/admin/Layout';
-import AdminLogin from '../pages/admin/Login';
 import { accountsRoutes } from './admin/accounts.routes';
 import { coreRoutes } from './admin/core.routes';
 import { miscRoutes } from './admin/misc.routes';
 import { operationsRoutes } from './admin/operations.routes';
 import { reviewRoutes } from './admin/review.routes';
+
+const AdminLayout = lazy(() => import('../pages/admin/Layout'));
+const AdminLogin = lazy(() => import('../pages/admin/Login'));
 
 /**
  * Admin portal route tree — mounted at `/admin/*`, wrapped in its own

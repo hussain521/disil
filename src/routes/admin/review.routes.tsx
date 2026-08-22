@@ -1,9 +1,11 @@
+import { lazy } from 'react';
 import { Route } from 'react-router-dom';
-import Approvals from '../../pages/admin/review/Approvals';
-import Categories from '../../pages/admin/review/Categories';
-import Complaints from '../../pages/admin/review/Complaints';
-import Documents from '../../pages/admin/review/Documents';
-import Ratings from '../../pages/admin/review/Ratings';
+
+const Approvals = lazy(() => import('../../pages/admin/review/Approvals'));
+const Categories = lazy(() => import('../../pages/admin/review/Categories'));
+const Complaints = lazy(() => import('../../pages/admin/review/Complaints'));
+const Documents = lazy(() => import('../../pages/admin/review/Documents'));
+const Ratings = lazy(() => import('../../pages/admin/review/Ratings'));
 
 /**
  * OWNERSHIP: admin-review agent. You may freely edit this file and anything

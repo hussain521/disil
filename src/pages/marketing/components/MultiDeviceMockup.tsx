@@ -160,6 +160,10 @@ export default function MultiDeviceMockup({
         <img
           src="/t (1).jpg"
           alt="Diziel Heavy Freight"
+          width={242}
+          height={250}
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-black/30" />
@@ -246,6 +250,10 @@ export default function MultiDeviceMockup({
               <img
                 src="/t (2).jpg"
                 alt="Truck Promo"
+                width={64}
+                height={64}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -310,6 +318,10 @@ export default function MultiDeviceMockup({
                 <img
                   src="/man.png"
                   alt="Driver"
+                  width={100}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
@@ -330,6 +342,10 @@ export default function MultiDeviceMockup({
                 <img
                   src="/t (3).jpg"
                   alt="Reefer"
+                  width={100}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -440,6 +456,10 @@ export default function MultiDeviceMockup({
                 <img
                   src="/t (1).jpg"
                   alt="Flatbed"
+                  width={100}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
                 <span className="absolute top-1 right-1 rounded bg-slate-950 text-white px-1.5 py-0.2 text-[6.5px] font-black">
@@ -461,6 +481,10 @@ export default function MultiDeviceMockup({
                 <img
                   src="/t (2).jpg"
                   alt="Jumbo"
+                  width={100}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
                 <span className="absolute top-1 right-1 rounded bg-blue-600 text-white px-1.5 py-0.2 text-[6.5px] font-black">

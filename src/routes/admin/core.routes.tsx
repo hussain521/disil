@@ -1,11 +1,13 @@
+import { lazy } from 'react';
 import { Route } from 'react-router-dom';
-import Dashboard from '../../pages/admin/core/Dashboard';
-import NewOffers from '../../pages/admin/core/NewOffers';
-import OrderDetail from '../../pages/admin/core/OrderDetail';
-import Orders from '../../pages/admin/core/Orders';
-import Profile from '../../pages/admin/core/Profile';
-import UserDetail from '../../pages/admin/core/UserDetail';
-import Users from '../../pages/admin/core/Users';
+
+const Dashboard = lazy(() => import('../../pages/admin/core/Dashboard'));
+const NewOffers = lazy(() => import('../../pages/admin/core/NewOffers'));
+const OrderDetail = lazy(() => import('../../pages/admin/core/OrderDetail'));
+const Orders = lazy(() => import('../../pages/admin/core/Orders'));
+const Profile = lazy(() => import('../../pages/admin/core/Profile'));
+const UserDetail = lazy(() => import('../../pages/admin/core/UserDetail'));
+const Users = lazy(() => import('../../pages/admin/core/Users'));
 
 /**
  * OWNERSHIP: admin-core agent. You may freely edit this file and anything

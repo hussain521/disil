@@ -36,13 +36,13 @@ export default function HeroSection() {
             {/* Harmonious Headline */}
             <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[42px] xl:text-[46px] leading-[1.2] text-white">
               <span className="inline font-black">
-                {t("marketing.hero.titleMain", "انقل بضائعك وشحناتك")}{" "}
+                {t("marketing.hero.titleMain")}{" "}
               </span>
               <span className="inline font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">
-                {t("marketing.hero.titleHighlight", "خلال ثوانٍ وبضغطة واحدة")}
+                {t("marketing.hero.titleHighlight" )}
               </span>
               <span className="block text-lg sm:text-xl lg:text-2xl font-medium text-slate-200 mt-1.5">
-                {t("marketing.hero.titleSub", "مباشرة من هاتفك المحمول")}
+                {t("marketing.hero.titleSub" )}
               </span>
             </h1>
 

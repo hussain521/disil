@@ -1,10 +1,12 @@
+import { lazy } from 'react';
 import { Route } from 'react-router-dom';
-import Fleet from '../../pages/admin/operations/Fleet';
-import OrderManagement from '../../pages/admin/operations/OrderManagement';
-import Search from '../../pages/admin/operations/Search';
-import Track from '../../pages/admin/operations/Track';
-import TruckDetail from '../../pages/admin/operations/TruckDetail';
-import Waybills from '../../pages/admin/operations/Waybills';
+
+const Fleet = lazy(() => import('../../pages/admin/operations/Fleet'));
+const OrderManagement = lazy(() => import('../../pages/admin/operations/OrderManagement'));
+const Search = lazy(() => import('../../pages/admin/operations/Search'));
+const Track = lazy(() => import('../../pages/admin/operations/Track'));
+const TruckDetail = lazy(() => import('../../pages/admin/operations/TruckDetail'));
+const Waybills = lazy(() => import('../../pages/admin/operations/Waybills'));
 
 /**
  * OWNERSHIP: admin-operations agent. You may freely edit this file and

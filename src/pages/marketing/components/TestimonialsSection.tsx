@@ -288,13 +288,13 @@ export default function TestimonialsSection() {
                     {item.avatarInitials}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h4 className="text-sm sm:text-base font-bold text-gray-950 dark:text-white truncate">
+                    <h3 className="text-sm sm:text-base font-bold text-gray-950 dark:text-white truncate">
                       {t(item.authorKey)}
-                    </h4>
-                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 truncate">
+                    </h3>
+                    <p className="text-xs font-medium text-gray-600 dark:text-gray-300 truncate">
                       {t(item.roleKey)}
                     </p>
-                    <p className="text-[11px] font-semibold text-amber-600 dark:text-amber-400 truncate mt-0.5">
+                    <p className="text-[11px] font-semibold text-amber-700 dark:text-amber-400 truncate mt-0.5">
                       {t(item.companyKey)}
                     </p>
                   </div>

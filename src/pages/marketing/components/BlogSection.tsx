@@ -83,7 +83,7 @@ export default function BlogSection() {
   return (
     <section
       id="blog"
-      className="relative overflow-hidden bg-white dark:bg-gray-950 py-20 sm:py-28 transition-colors duration-200 border-t border-gray-200/80 dark:border-gray-800/80"
+      className="relative overflow-hidden bg-white dark:bg-gray-950 py-20 sm:py-28 transition-colors duration-200 border-t border-gray-200/80 dark:border-gray-800/80 transform-gpu"
     >
       {/* Background Decorative Gradient Orbs */}
       <div className="pointer-events-none absolute top-1/4 right-10 h-80 w-80 rounded-full bg-blue-500/5 dark:bg-blue-500/10 blur-3xl" />
@@ -94,9 +94,7 @@ export default function BlogSection() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
             <BookOpen className="h-3.5 w-3.5" />
-            <span>
-              {t("marketing.blog.badge", "Logistics Knowledge Hub")}
-            </span>
+            <span>{t("marketing.blog.badge", "Logistics Knowledge Hub")}</span>
           </div>
 
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-gray-950 dark:text-white sm:text-4xl lg:text-5xl leading-tight">
@@ -179,9 +177,7 @@ export default function BlogSection() {
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Clock className="h-3.5 w-3.5" />
-                        <span>
-                          {t("marketing.blog.readTime", { mins })}
-                        </span>
+                        <span>{t("marketing.blog.readTime", { mins })}</span>
                       </div>
                     </div>
 

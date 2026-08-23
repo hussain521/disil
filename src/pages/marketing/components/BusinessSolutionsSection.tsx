@@ -9,7 +9,7 @@ export default function BusinessSolutionsSection() {
   return (
     <section
       id="business-solutions"
-      className="bg-[#f7f9fc] dark:bg-gray-900/40 py-16 sm:py-20 lg:py-24"
+      className="bg-[#f7f9fc] dark:bg-gray-900/40 py-16 sm:py-20 lg:py-24 transform-gpu"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -174,8 +174,8 @@ export default function BusinessSolutionsSection() {
             {/* ================= RIGHT PHONE MOCKUP (APP SCREENSHOTS) ================= */}
             <div className="relative flex min-h-[560px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#102746] via-[#0d1e35] to-[#071322] p-6 sm:p-10 lg:min-h-[720px]">
               {/* Background Ambient Aura */}
-              <div className="pointer-events-none absolute -top-24 right-0 h-80 w-80 rounded-full bg-amber-500/15 blur-[90px]" />
-              <div className="pointer-events-none absolute -bottom-24 left-0 h-80 w-80 rounded-full bg-blue-600/20 blur-[100px]" />
+              <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-amber-500/15 blur-2xl" />
+              <div className="pointer-events-none absolute -bottom-24 left-0 h-72 w-72 rounded-full bg-blue-600/15 blur-2xl" />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:20px_20px] opacity-40" />
 
               <AnimatedPhoneMockup
@@ -185,7 +185,9 @@ export default function BusinessSolutionsSection() {
                 interactive={true}
                 floatingBadges={true}
                 badgeTopSub={isRtl ? "بوابة الشركات" : "Enterprise Hub"}
-                badgeTopText={isRtl ? "فواتير إلكترونية معتمدة" : "Certified E-Invoice"}
+                badgeTopText={
+                  isRtl ? "فواتير إلكترونية معتمدة" : "Certified E-Invoice"
+                }
                 badgeBottomSub={isRtl ? "شاحنات مخصصة" : "Dedicated Fleet"}
                 badgeBottomText={isRtl ? "+٤٠ شاحنة فوراً" : "+40 Trucks Ready"}
               />

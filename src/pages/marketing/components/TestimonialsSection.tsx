@@ -132,7 +132,7 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 py-20 sm:py-28 transition-colors duration-200 border-t border-gray-200/80 dark:border-gray-800/80"
+      className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 py-20 sm:py-28 transition-colors duration-200 border-t border-gray-200/80 dark:border-gray-800/80 transform-gpu"
     >
       {/* Background Decorative Gradient Orbs */}
       <div className="pointer-events-none absolute -top-20 left-1/3 h-96 w-96 rounded-full bg-amber-500/5 dark:bg-amber-500/10 blur-3xl" />

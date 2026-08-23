@@ -24,8 +24,13 @@ export default function Landing() {
       const element =
         document.getElementById(hash) ||
         (hash === "how-it-works" ? document.getElementById("process") : null) ||
-        (hash === "truck-types" ? document.getElementById("how-it-works") || document.getElementById("process") : null) ||
-        (hash === "app-download" ? document.getElementById("app-screens") : null);
+        (hash === "truck-types"
+          ? document.getElementById("how-it-works") ||
+            document.getElementById("process")
+          : null) ||
+        (hash === "app-download"
+          ? document.getElementById("app-screens")
+          : null);
 
       if (element) {
         const headerOffset = 90;
@@ -47,36 +52,56 @@ export default function Landing() {
     <div className="flex min-h-screen flex-col bg-slate-50 dark:bg-black text-gray-900 dark:text-white transition-colors duration-200">
       <MarketingNav />
 
-      <main className="flex-1 mt-10">
+      <main className="flex-1 mt-10 section-contain">
         {/* ================= HERO SECTION ================= */}
-        <HeroSection />
+        <div className="section-contain">
+          <HeroSection />
+        </div>
 
         {/* ================= ABOUT US / VISION / MISSION SECTION ================= */}
-        <AboutSection />
+        <div className="section-contain">
+          <AboutSection />
+        </div>
 
         {/* ================= PROCESS SECTION ================= */}
-        <ProcessSection />
+        <div className="section-contain">
+          <ProcessSection />
+        </div>
 
         {/* ================= APP SCREENSHOTS MOCKUP SLIDER ================= */}
-        <AppScreenshotsSlider />
+        <div className="section-contain">
+          <AppScreenshotsSlider />
+        </div>
 
         {/* ================= BUSINESS SOLUTIONS ================= */}
-        <BusinessSolutionsSection />
+        <div className="section-contain">
+          <BusinessSolutionsSection />
+        </div>
 
         {/* ================= COVERAGE SECTION ================= */}
-        <CoverageSection />
+        <div className="section-contain">
+          <CoverageSection />
+        </div>
 
         {/* ================= DRIVER SPOTLIGHT ================= */}
-        <DriverSpotlightSection />
+        <div className="section-contain">
+          <DriverSpotlightSection />
+        </div>
 
         {/* ================= TESTIMONIALS / CLIENT REVIEWS SECTION ================= */}
-        <TestimonialsSection />
+        <div className="section-contain">
+          <TestimonialsSection />
+        </div>
 
         {/* ================= BLOG / KNOWLEDGE HUB SECTION ================= */}
-        <BlogSection />
+        <div className="section-contain">
+          <BlogSection />
+        </div>
 
         {/* ================= TECHNICAL BACKBONE ================= */}
-        <TechnicalBackboneSection />
+        <div className="section-contain">
+          <TechnicalBackboneSection />
+        </div>
       </main>
 
       <MarketingFooter />

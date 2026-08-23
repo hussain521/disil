@@ -6,7 +6,7 @@ export default function CoverageSection() {
   return (
     <section
       id="coverage"
-      className="bg-white dark:bg-gray-950 py-20 sm:py-24 lg:py-28"
+      className="bg-white dark:bg-gray-950 py-20 sm:py-24 lg:py-28 transform-gpu"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ================= HEADER ================= */}
@@ -138,10 +138,7 @@ lg:gap-5
               </div>
 
               <div className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-300 sm:mt-2 sm:text-sm lg:text-base">
-                {t(
-                  "marketing.coverage.stats.trips.label",
-                  "Trips Completed",
-                )}
+                {t("marketing.coverage.stats.trips.label", "Trips Completed")}
               </div>
             </div>
 
@@ -200,10 +197,7 @@ lg:gap-5
               </div>
 
               <div className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-300 sm:mt-2 sm:text-sm lg:text-base">
-                {t(
-                  "marketing.coverage.stats.drivers.label",
-                  "Active Drivers",
-                )}
+                {t("marketing.coverage.stats.drivers.label", "Active Drivers")}
               </div>
             </div>
 
@@ -231,10 +225,7 @@ lg:gap-5
               </div>
 
               <div className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-300 sm:mt-2 sm:text-sm lg:text-base">
-                {t(
-                  "marketing.coverage.stats.cities.label",
-                  "Cities Covered",
-                )}
+                {t("marketing.coverage.stats.cities.label", "Cities Covered")}
               </div>
             </div>
           </div>

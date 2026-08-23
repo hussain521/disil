@@ -19,7 +19,7 @@ export default function AboutSection() {
   return (
     <section
       id="about-us"
-      className="relative overflow-hidden py-20 sm:py-28 bg-white dark:bg-gray-950 border-b border-gray-200/80 dark:border-gray-800/80"
+      className="relative overflow-hidden py-20 sm:py-28 bg-white dark:bg-gray-950 border-b border-gray-200/80 dark:border-gray-800/80 transform-gpu"
     >
       {/* Subtle Ambient Background */}
       <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-96 w-full max-w-7xl bg-gradient-to-b from-amber-500/5 via-blue-500/5 to-transparent blur-3xl" />
@@ -52,10 +52,7 @@ export default function AboutSection() {
           {[
             {
               value: t("marketing.about.stats.tripsCount", "+50,000"),
-              label: t(
-                "marketing.about.stats.trips",
-                "Completed Shipments",
-              ),
+              label: t("marketing.about.stats.trips", "Completed Shipments"),
               icon: TrendingUp,
               color: "text-amber-500",
               bg: "bg-amber-500/10",
@@ -79,10 +76,7 @@ export default function AboutSection() {
             },
             {
               value: t("marketing.about.stats.uptimeCount", "99.4%"),
-              label: t(
-                "marketing.about.stats.uptime",
-                "On-Time Dispatch Rate",
-              ),
+              label: t("marketing.about.stats.uptime", "On-Time Dispatch Rate"),
               icon: Award,
               color: "text-indigo-500",
               bg: "bg-indigo-500/10",
@@ -145,9 +139,7 @@ export default function AboutSection() {
 
             <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 flex items-center gap-2 text-xs font-semibold text-amber-600 dark:text-amber-400">
               <CheckCircle2 className="h-4 w-4" />
-              <span>
-                {t("marketing.hero.badge", "Live Network Tracking")}
-              </span>
+              <span>{t("marketing.hero.badge", "Live Network Tracking")}</span>
             </div>
           </div>
 

@@ -6,7 +6,7 @@ export default function TechnicalBackboneSection() {
   return (
     <section
       id="technical-backbone"
-      className="bg-[#fff1e4] dark:bg-gray-950 px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28 transition-colors duration-200"
+      className="bg-[#fff1e4] dark:bg-gray-950 px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28 transition-colors duration-200 transform-gpu"
     >
       <div className="mx-auto max-w-[1480px]">
         {/* ================= HEADER ================= */}

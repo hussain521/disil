@@ -159,13 +159,13 @@ export default function AppScreenshotsSlider() {
   return (
     <section
       id="app-download"
-      className="relative overflow-hidden bg-slate-900 py-24 sm:py-32 text-white"
+      className="relative overflow-hidden bg-slate-900 py-24 sm:py-32 text-white transform-gpu"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Dynamic Background Glow Elements */}
-      <div className="pointer-events-none absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full bg-amber-500/10 blur-[130px]" />
-      <div className="pointer-events-none absolute -bottom-40 right-1/4 h-[500px] w-[500px] rounded-full bg-blue-600/15 blur-[140px]" />
+      <div className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] opacity-60" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -270,7 +270,9 @@ export default function AppScreenshotsSlider() {
                   <ShieldCheck className="h-5 w-5" />
                 </div>
                 <h3 className="font-bold text-white text-base">
-                  {isRtl ? "بوليصة رقمية وتسوية فورية" : "Digital POD & Payouts"}
+                  {isRtl
+                    ? "بوليصة رقمية وتسوية فورية"
+                    : "Digital POD & Payouts"}
                 </h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   {isRtl
@@ -288,7 +290,9 @@ export default function AppScreenshotsSlider() {
                 className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-500 to-amber-400 px-8 py-3.5 text-sm font-extrabold text-slate-950 shadow-xl shadow-amber-500/20 transition hover:scale-105 hover:shadow-amber-500/30"
               >
                 <Apple className="h-5 w-5" />
-                <span>{isRtl ? "تحميل تطبيق الآيفون (iOS)" : "Download for iPhone"}</span>
+                <span>
+                  {isRtl ? "تحميل تطبيق الآيفون (iOS)" : "Download for iPhone"}
+                </span>
               </a>
 
               <a
@@ -297,7 +301,11 @@ export default function AppScreenshotsSlider() {
                 className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-extrabold text-white transition hover:bg-white/10 hover:border-white/40"
               >
                 <Smartphone className="h-5 w-5 text-amber-400" />
-                <span>{isRtl ? "تحميل للأندرويد (Google Play)" : "Download for Android"}</span>
+                <span>
+                  {isRtl
+                    ? "تحميل للأندرويد (Google Play)"
+                    : "Download for Android"}
+                </span>
               </a>
             </div>
           </div>
@@ -404,8 +412,14 @@ export default function AppScreenshotsSlider() {
                       )}
                       <span>
                         {platform === "ios"
-                          ? t("marketing.nav.downloadForIos", "Download for iPhone")
-                          : t("marketing.nav.downloadForAndroid", "Download App")}
+                          ? t(
+                              "marketing.nav.downloadForIos",
+                              "Download for iPhone",
+                            )
+                          : t(
+                              "marketing.nav.downloadForAndroid",
+                              "Download App",
+                            )}
                       </span>
                       <ArrowUpRight
                         className={`h-4 w-4 ${isRtl ? "-scale-x-100" : ""}`}
@@ -427,14 +441,18 @@ export default function AppScreenshotsSlider() {
                       activeSlide.screenType === "booking"
                         ? "select-truck"
                         : activeSlide.screenType === "tracking"
-                        ? "live-map"
-                        : activeSlide.screenType === "waybill"
-                        ? "waybill"
-                        : activeSlide.screenType === "wallet"
-                        ? "wallet"
-                        : "driver-radar"
+                          ? "live-map"
+                          : activeSlide.screenType === "waybill"
+                            ? "waybill"
+                            : activeSlide.screenType === "wallet"
+                              ? "wallet"
+                              : "driver-radar"
                     }
-                    pose={currentSlide % 2 === 0 ? "floating-tilt" : "floating-tilt-reverse"}
+                    pose={
+                      currentSlide % 2 === 0
+                        ? "floating-tilt"
+                        : "floating-tilt-reverse"
+                    }
                     size="lg"
                     interactive={true}
                     floatingBadges={true}

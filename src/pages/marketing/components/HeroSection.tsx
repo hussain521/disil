@@ -1,5 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { ArrowDownToLine, QrCode, Apple, Smartphone, Sparkles, Activity } from "lucide-react";
+import {
+  ArrowDownToLine,
+  QrCode,
+  Apple,
+  Smartphone,
+  Sparkles,
+  Activity,
+} from "lucide-react";
 import { useAppDownload } from "../../../lib/appDownload";
 import MultiDeviceMockup from "./MultiDeviceMockup";
 import AnimatedPhoneMockup from "./AnimatedPhoneMockup";
@@ -17,7 +24,7 @@ export default function HeroSection() {
         : t("marketing.hero.ctaDownload", "Download App");
 
   return (
-    <section className="relative overflow-hidden rounded-b-[60px] sm:rounded-b-[86px] bg-[#102746] dark:bg-[#0b1b30] text-white">
+    <section className="relative overflow-hidden rounded-b-[60px] sm:rounded-b-[86px] bg-[#102746] dark:bg-[#0b1b30] text-white transform-gpu">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-10">
         <div className="grid items-center gap-8 lg:grid-cols-[1.25fr_1fr] lg:gap-8 xl:gap-12">
           {/* ================= LEFT CONTENT: WIDER HORIZONTAL BALANCED TYPOGRAPHY ================= */}
@@ -39,10 +46,10 @@ export default function HeroSection() {
                 {t("marketing.hero.titleMain")}{" "}
               </span>
               <span className="inline font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">
-                {t("marketing.hero.titleHighlight" )}
+                {t("marketing.hero.titleHighlight")}
               </span>
               <span className="block text-lg sm:text-xl lg:text-2xl font-medium text-slate-200 mt-1.5">
-                {t("marketing.hero.titleSub" )}
+                {t("marketing.hero.titleSub")}
               </span>
             </h1>
 

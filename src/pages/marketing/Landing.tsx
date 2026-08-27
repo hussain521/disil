@@ -33,13 +33,15 @@ export default function Landing() {
           : null);
 
       if (element) {
-        const headerOffset = 90;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
+        const headerEl = document.querySelector("header");
+        const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 60;
+        const headerOffset = headerHeight + 20;
+
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
 
         window.scrollTo({
-          top: offsetPosition,
+          top: Math.max(0, offsetPosition),
           behavior: "smooth",
         });
       }

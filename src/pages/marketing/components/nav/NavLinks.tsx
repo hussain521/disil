@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDownload } from "../../../../lib/appDownload";
+import { scrollToSection } from "../../../../lib/scroll";
 
 export interface NavItem {
   id: string;
@@ -66,23 +67,7 @@ export default function NavLinks({
       return;
     }
 
-    const element =
-      document.getElementById(sectionId) ||
-      (sectionId === "how-it-works" ? document.getElementById("process") : null) ||
-      (sectionId === "truck-types" ? document.getElementById("how-it-works") || document.getElementById("process") : null) ||
-      (sectionId === "app-download" ? document.getElementById("app-screens") : null);
-
-    if (element) {
-      const headerOffset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
+    scrollToSection(sectionId);
   };
 
   return (

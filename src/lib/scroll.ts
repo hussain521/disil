@@ -4,6 +4,20 @@
  * to align target section at the top of the viewport under the navbar.
  */
 
+export function getDynamicNavbarOffset(extraPadding = 12): number {
+  const headerEl = document.querySelector("header");
+  if (!headerEl) return 90;
+
+  const rect = headerEl.getBoundingClientRect();
+  const computedStyle = window.getComputedStyle(headerEl);
+  
+  // Account for position top offset (e.g., top-4 = 16px, top-6 = 24px)
+  const topPos = parseFloat(computedStyle.top) || 0;
+  
+  // Total height from viewport top = header height + top offset + small professional padding
+  return Math.round(rect.height + topPos + extraPadding);
+}
+
 export function scrollToSection(sectionId: string, onComplete?: () => void) {
   // 1. Resolve element target
   let element = document.getElementById(sectionId);
@@ -27,19 +41,8 @@ export function scrollToSection(sectionId: string, onComplete?: () => void) {
     return;
   }
 
-  // 2. Calculate dynamic navbar offset
-  // The header is sticky at top-4 (16px) or sm:top-6 (24px)
-  const headerEl = document.querySelector("header");
-  let headerOffset = 84; // Safe default estimate
-
-  if (headerEl) {
-    const rect = headerEl.getBoundingClientRect();
-    const computedStyle = window.getComputedStyle(headerEl);
-    const topMargin = parseFloat(computedStyle.top) || 16;
-    
-    // Total offset = Header height + top margin + 12px clean breathing space
-    headerOffset = Math.round(rect.height + topMargin + 12);
-  }
+  // 2. Calculate dynamic navbar offset accurately
+  const headerOffset = getDynamicNavbarOffset(12);
 
   // 3. Absolute element position in document
   const elementRect = element.getBoundingClientRect();

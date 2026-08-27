@@ -31,6 +31,10 @@ export interface AnimatedPhoneMockupProps {
   size?: "sm" | "md" | "lg";
   interactive?: boolean;
   floatingBadges?: boolean;
+  badgeTopSub?: string;
+  badgeTopText?: string;
+  badgeBottomSub?: string;
+  badgeBottomText?: string;
   className?: string;
 }
 
@@ -89,7 +93,7 @@ export default function AnimatedPhoneMockup({
   const isRtl = i18n.language?.startsWith("ar");
   const [activeTab, setActiveTab] = useState<MockupScreenType>(screen);
   const [isFading, setIsFading] = useState(false);
-  const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const fadeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const changeTabWithFade = (newTab: MockupScreenType) => {
     if (newTab === activeTab) return;

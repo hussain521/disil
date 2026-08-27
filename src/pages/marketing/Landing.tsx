@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { scrollToSection } from "../../lib/scroll";
 import MarketingNav from "./components/MarketingNav";
 import MarketingFooter from "./components/MarketingFooter";
 import HeroSection from "./components/HeroSection";
@@ -21,30 +22,7 @@ export default function Landing() {
     if (!hash) return;
 
     const timer = setTimeout(() => {
-      const element =
-        document.getElementById(hash) ||
-        (hash === "how-it-works" ? document.getElementById("process") : null) ||
-        (hash === "truck-types"
-          ? document.getElementById("how-it-works") ||
-            document.getElementById("process")
-          : null) ||
-        (hash === "app-download"
-          ? document.getElementById("app-screens")
-          : null);
-
-      if (element) {
-        const headerEl = document.querySelector("header");
-        const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 60;
-        const headerOffset = headerHeight + 20;
-
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerOffset;
-
-        window.scrollTo({
-          top: Math.max(0, offsetPosition),
-          behavior: "smooth",
-        });
-      }
+      scrollToSection(hash);
     }, 150);
 
     return () => clearTimeout(timer);

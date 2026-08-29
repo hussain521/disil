@@ -31,6 +31,12 @@ html {
   background-color: #f8fafc;
   -webkit-overflow-scrolling: touch;
   text-rendering: optimizeLegibility;
+  scroll-padding-top: 90px;
+}
+
+section,
+[id] {
+  scroll-margin-top: 90px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -171,7 +177,6 @@ body.no-scrollbar,
 
 /* Fast scrolling optimizations */
 .section-contain {
-  contain: paint layout;
   content-visibility: visible;
 }
 

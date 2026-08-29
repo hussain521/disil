@@ -192,7 +192,8 @@ export default function BlogSection() {
                     </p>
                   </div>
 
-                  {/* Read More Footer */}
+                  {/* Read More Footer (Stopped as requested) */}
+                  {/*
                   <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between text-xs sm:text-sm font-bold text-blue-600 dark:text-amber-400">
                     <span className="inline-flex items-center gap-1.5 group-hover:underline">
                       <span>
@@ -209,6 +210,7 @@ export default function BlogSection() {
                       {article.readCount} {isRtl ? "مشاهدة" : "reads"}
                     </span>
                   </div>
+                  */}
                 </div>
               </article>
             );

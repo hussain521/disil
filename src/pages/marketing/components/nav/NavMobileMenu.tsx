@@ -7,6 +7,7 @@ import ThemeToggle from '../../../../components/ThemeToggle';
 import { MARKETING_NAV_ITEMS } from './NavLinks';
 import NavDownloadButton from './NavDownloadButton';
 import { useAppDownload } from '../../../../lib/appDownload';
+import { scrollToSection } from '../../../../lib/scroll';
 
 export default function NavMobileMenu() {
   const { t } = useTranslation();
@@ -28,22 +29,7 @@ export default function NavMobileMenu() {
       return;
     }
 
-    const element =
-      document.getElementById(sectionId) ||
-      (sectionId === 'how-it-works' ? document.getElementById('process') : null) ||
-      (sectionId === 'truck-types' ? document.getElementById('how-it-works') || document.getElementById('process') : null) ||
-      (sectionId === 'app-download' ? document.getElementById('app-screens') : null);
-
-    if (element) {
-      const headerOffset = 90;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
+    scrollToSection(sectionId);
   };
 
   return (

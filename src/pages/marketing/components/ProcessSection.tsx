@@ -56,7 +56,7 @@ export default function ProcessSection() {
   return (
     <section
       id="how-it-works"
-      className="bg-[#f7f9fc] dark:bg-gray-900/50 py-20 sm:py-24 lg:py-28 transition-colors duration-200 overflow-hidden transform-gpu"
+      className="bg-[#f7f9fc] dark:bg-gray-900/50 py-10 sm:py-14 lg:py-16 transition-colors duration-200 overflow-hidden transform-gpu"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ================= SECTION HEADER ================= */}

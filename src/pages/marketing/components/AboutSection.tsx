@@ -19,7 +19,7 @@ export default function AboutSection() {
   return (
     <section
       id="about-us"
-      className="relative overflow-hidden py-20 sm:py-28 bg-white dark:bg-gray-950 border-b border-gray-200/80 dark:border-gray-800/80 transform-gpu"
+      className="relative overflow-hidden py-10 sm:py-14 bg-white dark:bg-gray-950 border-b border-gray-200/80 dark:border-gray-800/80 transform-gpu"
     >
       {/* Subtle Ambient Background */}
       <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-96 w-full max-w-7xl bg-gradient-to-b from-amber-500/5 via-blue-500/5 to-transparent blur-3xl" />

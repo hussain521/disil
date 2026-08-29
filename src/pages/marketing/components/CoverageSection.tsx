@@ -6,7 +6,7 @@ export default function CoverageSection() {
   return (
     <section
       id="coverage"
-      className="bg-white dark:bg-gray-950 py-20 sm:py-24 lg:py-28 transform-gpu"
+      className="bg-white dark:bg-gray-950 py-10 sm:py-14 lg:py-16 transform-gpu"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ================= HEADER ================= */}

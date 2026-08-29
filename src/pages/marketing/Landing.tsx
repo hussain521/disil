@@ -32,7 +32,7 @@ export default function Landing() {
     <div className="flex min-h-screen flex-col bg-slate-50 dark:bg-black text-gray-900 dark:text-white transition-colors duration-200">
       <MarketingNav />
 
-      <main className="flex-1 mt-10 section-contain">
+      <main className="flex-1 mt-4 section-contain">
         {/* ================= HERO SECTION ================= */}
         <div className="section-contain">
           <HeroSection />

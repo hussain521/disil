@@ -109,23 +109,20 @@ export default function AnimatedPhoneMockup({
     changeTabWithFade(screen);
   }, [screen]);
 
-  // Auto-switch images every 2 seconds with fade-out
+  // Auto-switch images every 3 seconds with smooth fade transition
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveTab((prev) => {
-        const currentIndex = AUTO_ROTATE_SCREENS.indexOf(prev);
-        const nextIndex =
-          currentIndex === -1 ? 0 : (currentIndex + 1) % AUTO_ROTATE_SCREENS.length;
-        const nextTab = AUTO_ROTATE_SCREENS[nextIndex];
-        
-        setIsFading(true);
-        setTimeout(() => {
-          setIsFading(false);
-        }, 180);
-
-        return nextTab;
-      });
-    }, 2000);
+      setIsFading(true);
+      fadeTimeoutRef.current = setTimeout(() => {
+        setActiveTab((prev) => {
+          const currentIndex = AUTO_ROTATE_SCREENS.indexOf(prev);
+          const nextIndex =
+            currentIndex === -1 ? 0 : (currentIndex + 1) % AUTO_ROTATE_SCREENS.length;
+          return AUTO_ROTATE_SCREENS[nextIndex];
+        });
+        setIsFading(false);
+      }, 200);
+    }, 3200);
 
     return () => {
       clearInterval(timer);
@@ -151,7 +148,7 @@ export default function AnimatedPhoneMockup({
         return "animate-float-smooth";
       case "upright":
       default:
-        return "transition-transform duration-500 hover:scale-[1.02]";
+        return "";
     }
   };
 
@@ -218,17 +215,17 @@ export default function AnimatedPhoneMockup({
           </div>
 
           {/* Screen Content Container with Smooth Fade Out / Fade In */}
-          <div className="relative flex-1 overflow-hidden bg-slate-950">
+          <div className="relative flex-1 overflow-hidden bg-slate-900">
             <div
               className={`h-full w-full transition-opacity duration-300 ease-in-out ${
-                isFading ? "opacity-0 scale-98" : "opacity-100 scale-100"
+                isFading ? "opacity-20" : "opacity-100"
               }`}
             >
               <img
                 src={currentImageInfo.src}
                 alt={currentImageInfo.alt}
-                className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
-                loading="lazy"
+                className="h-full w-full object-cover object-top"
+                loading="eager"
                 decoding="async"
               />
             </div>
@@ -243,28 +240,30 @@ export default function AnimatedPhoneMockup({
 
       {/* Interactive Buttons OUTSIDE the phone bar */}
       {interactive && (
-        <div className="mt-5 z-40 flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-2 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl rounded-full border border-slate-700/80 shadow-2xl">
-          {buttonsList.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeTab === item.id;
-            return (
-              <button
-                key={item.id}
-                type="button"
-                aria-label={item.label}
-                title={item.label}
-                onClick={() => changeTabWithFade(item.id)}
-                className={`h-8 sm:h-9 px-3 rounded-full flex items-center gap-1.5 text-xs font-bold transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? "bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 scale-105"
-                    : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
-                }`}
-              >
-                <Icon className="h-3.5 w-3.5" />
-                <span>{item.label}</span>
-              </button>
-            );
-          })}
+        <div className="mt-5 z-40 max-w-full overflow-x-auto no-scrollbar px-2 py-1">
+          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 px-3 py-2 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl rounded-full border border-slate-700/80 shadow-2xl min-w-max mx-auto">
+            {buttonsList.map((item) => {
+              const Icon = item.icon;
+              const isActive = activeTab === item.id;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  aria-label={item.label}
+                  title={item.label}
+                  onClick={() => changeTabWithFade(item.id)}
+                  className={`h-8 sm:h-9 px-2.5 sm:px-3 rounded-full flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 ${
+                    isActive
+                      ? "bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/30"
+                      : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
+                  }`}
+                >
+                  <Icon className="h-3.5 w-3.5 shrink-0" />
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>

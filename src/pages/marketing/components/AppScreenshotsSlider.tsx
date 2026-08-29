@@ -159,7 +159,7 @@ export default function AppScreenshotsSlider() {
   return (
     <section
       id="app-download"
-      className="relative overflow-hidden bg-slate-900 py-24 sm:py-32 text-white transform-gpu"
+      className="relative overflow-hidden bg-slate-900 py-12 sm:py-16 text-white transform-gpu"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

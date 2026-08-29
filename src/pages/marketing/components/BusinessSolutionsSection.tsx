@@ -9,7 +9,7 @@ export default function BusinessSolutionsSection() {
   return (
     <section
       id="business-solutions"
-      className="bg-[#f7f9fc] dark:bg-gray-900/40 py-16 sm:py-20 lg:py-24 transform-gpu"
+      className="bg-[#f7f9fc] dark:bg-gray-900/40 py-8 sm:py-12 lg:py-14 transform-gpu"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
@@ -32,8 +32,8 @@ export default function BusinessSolutionsSection() {
           flex
           flex-col
           justify-center
-          px-8
-          py-14
+          px-5
+          py-8
           sm:px-12
           sm:py-16
           lg:px-20
@@ -172,7 +172,7 @@ export default function BusinessSolutionsSection() {
             </div>
 
             {/* ================= RIGHT PHONE MOCKUP (APP SCREENSHOTS) ================= */}
-            <div className="relative flex min-h-[560px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#102746] via-[#0d1e35] to-[#071322] p-6 sm:p-10 lg:min-h-[720px]">
+            <div className="relative flex min-h-[500px] xs:min-h-[540px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#102746] via-[#0d1e35] to-[#071322] px-2 py-8 sm:p-10 lg:min-h-[720px]">
               {/* Background Ambient Aura */}
               <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-amber-500/15 blur-2xl" />
               <div className="pointer-events-none absolute -bottom-24 left-0 h-72 w-72 rounded-full bg-blue-600/15 blur-2xl" />

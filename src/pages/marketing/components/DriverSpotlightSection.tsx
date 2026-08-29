@@ -18,12 +18,12 @@ export default function DriverSpotlightSection() {
           lg:rounded-t-[80px]
           bg-[#10294b]
           px-4
-          py-10
+          py-6
           xs:px-6
           sm:px-10
-          sm:py-14
+          sm:py-8
           lg:px-16
-          lg:py-16
+          lg:py-10
         "
       >
         <div

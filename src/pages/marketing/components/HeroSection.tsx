@@ -20,8 +20,8 @@ export default function HeroSection() {
         : t("marketing.hero.ctaDownload", "Download App");
 
   return (
-    <section className="relative overflow-hidden rounded-b-[60px] sm:rounded-b-[86px] bg-[#102746] dark:bg-[#0b1b30] text-white transform-gpu">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-10">
+    <section className="relative mt-8 overflow-hidden rounded-b-[60px] sm:rounded-b-[86px] bg-[#102746] dark:bg-[#0b1b30] text-white transform-gpu">
+      <div className="mx-auto  max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-10">
         <div className="grid items-center gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-10 xl:gap-14">
           {/* ================= LEFT CONTENT: WIDER HORIZONTAL BALANCED TYPOGRAPHY ================= */}
           <div className="w-full text-center lg:text-left rtl:lg:text-right z-10 flex flex-col items-center lg:items-start">

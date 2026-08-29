@@ -40,17 +40,17 @@ export default function ThemeToggle({ variant = 'topbar', className = '' }: Them
         onClick={toggleTheme}
         title={titleText}
         aria-label={titleText}
-        className={`flex items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-3 py-1.5 text-xs font-bold text-gray-800 dark:text-gray-100 shadow-xs transition hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer ${className}`}
+        className={`flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-100 shadow-xs transition hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer ${className}`}
       >
         {isDark ? (
           <>
-            <Moon className="h-4 w-4 text-indigo-400" />
-            <span className="hidden sm:inline">🌙 {t('topbar.themeDark', 'Dark')}</span>
+            <Moon className="h-4 w-4 text-indigo-400 transition-transform duration-200" />
+            <span className="hidden sm:inline">{t('topbar.themeDark', 'Dark')}</span>
           </>
         ) : (
           <>
-            <Sun className="h-4 w-4 text-amber-500" />
-            <span className="hidden sm:inline">☀️ {t('topbar.themeLight', 'Light')}</span>
+            <Sun className="h-4 w-4 text-amber-500 transition-transform duration-200" />
+            <span className="hidden sm:inline">{t('topbar.themeLight', 'Light')}</span>
           </>
         )}
       </button>

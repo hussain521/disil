@@ -24,6 +24,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import ThemeToggle from '../../components/ThemeToggle';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
+import { useTheme } from '../../lib/theme';
 import { useGoogleMapsLoader } from '../../lib/googleMaps';
 import { useCompanyAuth } from '../../lib/auth';
 import { getDirectionsRoute, getTrips, type Trip } from '../../lib/api/trips';
@@ -32,6 +33,32 @@ import { ACTIVE_TRIP_STATUSES, formatPlateDisplay, StatusBadge, tripStatusColor,
 
 const CAIRO_CENTER = { lat: 30.0444, lng: 31.2357 };
 const POLL_INTERVAL_MS = 10000;
+
+const DARK_MAP_STYLES = [
+  { elementType: 'geometry', stylers: [{ color: '#1e293b' }] },
+  { elementType: 'labels.text.stroke', stylers: [{ color: '#0f172a' }] },
+  { elementType: 'labels.text.fill', stylers: [{ color: '#94a3b8' }] },
+  { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#cbd5e1' }] },
+  { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{ color: '#64748b' }] },
+  { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#334155' }] },
+  { featureType: 'road', elementType: 'geometry.stroke', stylers: [{ color: '#1e293b' }] },
+  { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#94a3b8' }] },
+  { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#475569' }] },
+  { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#0f172a' }] },
+];
+
+const LIGHT_MAP_STYLES = [
+  { elementType: 'geometry', stylers: [{ color: '#f8fafc' }] },
+  { elementType: 'labels.text.stroke', stylers: [{ color: '#ffffff' }] },
+  { elementType: 'labels.text.fill', stylers: [{ color: '#334155' }] },
+  { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#0f172a' }] },
+  { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{ color: '#64748b' }] },
+  { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#e2e8f0' }] },
+  { featureType: 'road', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }] },
+  { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#475569' }] },
+  { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#cbd5e1' }] },
+  { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#bae6fd' }] },
+];
 
 interface DriverLoc {
   lat: number;
@@ -46,6 +73,7 @@ interface SelectedEta {
 
 export default function FleetTrack() {
   const { t, i18n } = useTranslation();
+  const { isDark } = useTheme();
   const isRtl = i18n.language === 'ar';
   const { token, user, logout } = useCompanyAuth();
   const navigate = useNavigate();
@@ -257,24 +285,24 @@ export default function FleetTrack() {
   const companyName = user?.fullName || (isRtl ? 'شركة الشحن المؤسسية' : 'Enterprise Logistics');
 
   return (
-    <div className="flex h-screen w-full flex-col bg-slate-950 text-slate-100 font-sans overflow-hidden">
+    <div className="flex h-screen w-full flex-col bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans overflow-hidden transition-colors duration-200">
       {/* Top Navbar */}
-      <header className="flex h-16 shrink-0 items-center justify-between border-b border-slate-800/80 bg-slate-900/90 px-3 sm:px-6 backdrop-blur-md z-30">
+      <header className="flex h-16 shrink-0 items-center justify-between border-b border-slate-200 dark:border-slate-800/80 bg-white/90 dark:bg-slate-900/90 px-3 sm:px-6 backdrop-blur-md z-30">
         <div className="flex items-center gap-2.5 sm:gap-4 min-w-0">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 to-amber-400 text-slate-950 shadow-md shadow-amber-500/20 font-bold">
             <Building2 className="h-5 w-5" />
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <h1 className="text-sm sm:text-base font-bold text-white tracking-tight leading-none truncate">
+              <h1 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white tracking-tight leading-none truncate">
                 {t('company.fleetTrack.title', 'Live Fleet Radar')}
               </h1>
-              <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-400 shrink-0">
-                <Radio className="h-2.5 w-2.5 animate-pulse text-amber-400" />
+              <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-600 dark:text-amber-400 shrink-0">
+                <Radio className="h-2.5 w-2.5 animate-pulse text-amber-500 dark:text-amber-400" />
                 {t('company.tripDetail.live', 'Live GPS')}
               </span>
             </div>
-            <p className="text-[11px] sm:text-xs text-slate-400 mt-0.5 truncate max-w-[140px] sm:max-w-md">
+            <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate max-w-[140px] sm:max-w-md">
               {companyName}
             </p>
           </div>
@@ -286,15 +314,15 @@ export default function FleetTrack() {
             type="button"
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
             aria-label={sidebarCollapsed ? "Show List" : "Show Map"}
-            className="flex md:hidden items-center gap-1 rounded-xl border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 text-xs font-bold text-amber-400 transition hover:bg-amber-500/20"
+            className="flex md:hidden items-center gap-1 rounded-xl border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 transition hover:bg-amber-500/20 cursor-pointer"
             title={sidebarCollapsed ? "Show List" : "Show Map"}
           >
             <SlidersHorizontal className="h-3.5 w-3.5" />
             <span>{sidebarCollapsed ? t('common.list', 'List') : t('common.map', 'Map')}</span>
           </button>
 
-          <div className="hidden sm:flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-950/60 px-3.5 py-1.5 text-xs text-slate-300">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+          <div className="hidden sm:flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 px-3.5 py-1.5 text-xs text-slate-700 dark:text-slate-300">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-ping" />
             <span>{t('company.fleetTrack.activeTrips', { count: activeTrips.length })}</span>
           </div>
 
@@ -303,9 +331,9 @@ export default function FleetTrack() {
             onClick={() => void load()}
             aria-label={t('common.refresh', 'Refresh telemetry')}
             title={t('common.refresh', 'Refresh telemetry')}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-950/60 text-slate-400 transition hover:border-slate-700 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 text-slate-600 dark:text-slate-400 transition hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-900 dark:hover:text-white cursor-pointer"
           >
-            <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin text-amber-400' : ''}`} />
+            <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin text-amber-500' : ''}`} />
           </button>
 
           <LanguageSwitcher variant="marketing" />
@@ -319,7 +347,7 @@ export default function FleetTrack() {
             }}
             aria-label={t('topbar.logout', 'Sign Out')}
             title={t('topbar.logout', 'Sign Out')}
-            className="flex items-center gap-1.5 rounded-xl border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 text-xs font-semibold text-rose-400 transition hover:bg-rose-500/20 hover:border-rose-500/40"
+            className="flex items-center gap-1.5 rounded-xl border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 text-xs font-semibold text-rose-600 dark:text-rose-400 transition hover:bg-rose-500/20 hover:border-rose-500/40 cursor-pointer"
           >
             <LogOut className="h-3.5 w-3.5" />
             <span className="hidden md:inline">{t('topbar.logout', 'Sign Out')}</span>
@@ -330,21 +358,21 @@ export default function FleetTrack() {
       {/* Main Content View (Map + Sidebar) */}
       <div className="relative flex min-h-0 flex-1 overflow-hidden">
         {/* Left/Main: Map View */}
-        <div className="relative min-w-0 flex-1 bg-slate-900">
+        <div className="relative min-w-0 flex-1 bg-slate-200 dark:bg-slate-900">
           {loadError ? (
-            <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center text-slate-400">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950 p-4">
-                <TruckIcon className="h-10 w-10 text-rose-400" />
+            <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center text-slate-500 dark:text-slate-400">
+              <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-4">
+                <TruckIcon className="h-10 w-10 text-rose-500 dark:text-rose-400" />
               </div>
-              <p className="font-semibold text-white">{t('company.fleetTrack.failedMaps', 'Unable to load Google Maps')}</p>
+              <p className="font-semibold text-slate-900 dark:text-white">{t('company.fleetTrack.failedMaps', 'Unable to load Google Maps')}</p>
               <p className="text-xs text-slate-500 max-w-sm">
                 {t('company.fleetTrack.mapsCheckKey', 'Please verify your Google Maps API key and network connection.')}
               </p>
             </div>
           ) : !isLoaded ? (
-            <div className="flex h-full flex-col items-center justify-center gap-3 bg-slate-950 text-slate-400">
+            <div className="flex h-full flex-col items-center justify-center gap-3 bg-slate-100 dark:bg-slate-950 text-slate-500 dark:text-slate-400">
               <div className="h-8 w-8 animate-spin rounded-full border-2 border-amber-500 border-t-transparent" />
-              <p className="text-xs font-medium text-slate-300">{t('common.loadingMap', 'Initializing GPS Telemetry Engine...')}</p>
+              <p className="text-xs font-medium text-slate-700 dark:text-slate-300">{t('common.loadingMap', 'Initializing GPS Telemetry Engine...')}</p>
             </div>
           ) : (
             <GoogleMap
@@ -359,18 +387,7 @@ export default function FleetTrack() {
                 mapTypeControl: false,
                 fullscreenControl: false,
                 zoomControl: true,
-                styles: [
-                  { elementType: 'geometry', stylers: [{ color: '#1e293b' }] },
-                  { elementType: 'labels.text.stroke', stylers: [{ color: '#0f172a' }] },
-                  { elementType: 'labels.text.fill', stylers: [{ color: '#94a3b8' }] },
-                  { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#cbd5e1' }] },
-                  { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{ color: '#64748b' }] },
-                  { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#334155' }] },
-                  { featureType: 'road', elementType: 'geometry.stroke', stylers: [{ color: '#1e293b' }] },
-                  { featureType: 'road', elementType: 'labels.text.fill', stylers: [{ color: '#94a3b8' }] },
-                  { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#475569' }] },
-                  { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#0f172a' }] },
-                ],
+                styles: isDark ? DARK_MAP_STYLES : LIGHT_MAP_STYLES,
               }}
             >
               {markers.map(({ trip, loc }) => {
@@ -397,8 +414,8 @@ export default function FleetTrack() {
 
           {/* Map Overlay Badge */}
           {isLoaded && (
-            <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4 z-10 flex items-center gap-2 rounded-2xl border border-slate-800/80 bg-slate-950/80 px-4 py-2 text-xs font-semibold text-slate-200 shadow-xl backdrop-blur-md">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4 z-10 flex items-center gap-2 rounded-2xl border border-slate-200 dark:border-slate-800/80 bg-white/90 dark:bg-slate-950/80 px-4 py-2 text-xs font-semibold text-slate-800 dark:text-slate-200 shadow-xl backdrop-blur-md">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
               <span>
                 {markers.length > 0
                   ? t('company.fleetTrack.signalsActive', { count: markers.length, defaultValue: `${markers.length} live units streaming` })
@@ -409,7 +426,7 @@ export default function FleetTrack() {
 
           {/* Quick Selected Trip Card Float on Map */}
           {selectedTrip && (
-            <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-md z-10 animate-fade-in-up rounded-2xl border border-slate-800 bg-slate-950/95 p-4 shadow-2xl backdrop-blur-xl">
+            <div className="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-md z-10 animate-fade-in-up rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 p-4 shadow-2xl backdrop-blur-xl">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-2.5">
                   <div
@@ -423,13 +440,13 @@ export default function FleetTrack() {
                     <Truck className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                       <span>{selectedTrip.driver?.fullName || 'Driver'}</span>
-                      <span className="text-xs font-normal text-slate-400 font-mono">
+                      <span className="text-xs font-normal text-slate-500 dark:text-slate-400 font-mono">
                         ({formatPlateDisplay(selectedTrip.truck?.plateNumber)})
                       </span>
                     </h4>
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
                       {selectedTrip.order?.orderCode || selectedTrip.orderId} · {selectedTrip.truck?.type}
                     </p>
                   </div>
@@ -439,7 +456,7 @@ export default function FleetTrack() {
               </div>
 
               {selectedEta && (
-                <div className="mt-3 flex items-center justify-between rounded-xl border border-amber-500/20 bg-amber-500/10 px-3 py-2 text-xs font-semibold text-amber-300">
+                <div className="mt-3 flex items-center justify-between rounded-xl border border-amber-500/20 bg-amber-500/10 px-3 py-2 text-xs font-semibold text-amber-700 dark:text-amber-300">
                   <span className="flex items-center gap-1.5">
                     <Clock className="h-3.5 w-3.5" />
                     <span>{t('company.fleetTrack.eta', { hours: (selectedEta.minutes / 60).toFixed(1), km: selectedEta.km.toFixed(0) })}</span>
@@ -448,16 +465,16 @@ export default function FleetTrack() {
                 </div>
               )}
 
-              <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-800 pt-3">
-                <div className="flex items-center gap-1 text-xs text-slate-400 truncate">
-                  <MapPin className="h-3.5 w-3.5 text-slate-500 shrink-0" />
+              <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-200 dark:border-slate-800 pt-3">
+                <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 truncate">
+                  <MapPin className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500 shrink-0" />
                   <span className="truncate">{selectedTrip.order?.delivery?.address || 'Destination'}</span>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => navigate(`/company/track/${selectedTrip.orderId}`)}
-                  className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-bold text-slate-950 transition hover:bg-amber-400"
+                  className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-bold text-slate-950 transition hover:bg-amber-400 cursor-pointer"
                 >
                   <span>{t('common.viewDetails', 'View Trip')}</span>
                   {isRtl ? <ChevronLeft className="h-3.5 w-3.5" /> : <ChevronRight className="h-3.5 w-3.5" />}
@@ -469,7 +486,7 @@ export default function FleetTrack() {
 
         {/* Right: Modern Sidebar Feed */}
         <aside
-          className={`relative flex flex-col border-l rtl:border-l-0 rtl:border-r border-slate-800/80 bg-slate-900/95 backdrop-blur-xl transition-all duration-300 z-20 ${
+          className={`relative flex flex-col border-l rtl:border-l-0 rtl:border-r border-slate-200 dark:border-slate-800/80 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl transition-all duration-300 z-20 ${
             sidebarCollapsed ? 'w-0 overflow-hidden md:w-16' : 'w-full sm:w-96 md:w-[26rem]'
           }`}
         >
@@ -479,7 +496,7 @@ export default function FleetTrack() {
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
             aria-label={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
             title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-            className="absolute -left-3.5 top-6 rtl:-left-auto rtl:-right-3.5 hidden md:flex h-7 w-7 items-center justify-center rounded-full border border-slate-700 bg-slate-800 text-slate-300 shadow-md transition hover:bg-slate-700 hover:text-white z-30"
+            className="absolute -left-3.5 top-6 rtl:-left-auto rtl:-right-3.5 hidden md:flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-md transition hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white cursor-pointer z-30"
           >
             {sidebarCollapsed ? (
               isRtl ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />
@@ -491,13 +508,13 @@ export default function FleetTrack() {
           {!sidebarCollapsed && (
             <>
               {/* Search & Filter Header */}
-              <div className="border-b border-slate-800/80 p-4 space-y-3 shrink-0">
+              <div className="border-b border-slate-200 dark:border-slate-800/80 p-4 space-y-3 shrink-0">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    <h2 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                       {t('company.fleetTrack.trips', 'Shipments Dispatch Feed')}
                     </h2>
-                    <span className="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] font-bold text-slate-300">
+                    <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-bold text-slate-700 dark:text-slate-300">
                       {filteredTrips.length}
                     </span>
                   </div>
@@ -509,13 +526,13 @@ export default function FleetTrack() {
 
                 {/* Search Input */}
                 <div className="relative">
-                  <Search className="pointer-events-none absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
+                  <Search className="pointer-events-none absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 dark:text-slate-500" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={t('common.searchPlaceholder', isRtl ? 'بحث بالسائق، اللوحة، الطلب...' : 'Search driver, plate, destination...')}
-                    className="w-full rounded-xl border border-slate-800 bg-slate-950/80 py-2 pl-9 pr-3 rtl:pl-3 rtl:pr-9 text-xs font-medium text-white placeholder-slate-500 transition focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/80 py-2 pl-9 pr-3 rtl:pl-3 rtl:pr-9 text-xs font-medium text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 transition focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20"
                   />
                 </div>
 
@@ -524,10 +541,10 @@ export default function FleetTrack() {
                   <button
                     type="button"
                     onClick={() => setStatusFilter('all')}
-                    className={`rounded-lg px-2.5 py-1 font-semibold transition ${
+                    className={`rounded-lg px-2.5 py-1 font-semibold transition cursor-pointer ${
                       statusFilter === 'all'
                         ? 'bg-amber-500 text-slate-950 font-bold'
-                        : 'bg-slate-800/70 text-slate-400 hover:bg-slate-800 hover:text-white'
+                        : 'bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
                     {t('common.all', 'All')}
@@ -535,10 +552,10 @@ export default function FleetTrack() {
                   <button
                     type="button"
                     onClick={() => setStatusFilter('active')}
-                    className={`rounded-lg px-2.5 py-1 font-semibold transition ${
+                    className={`rounded-lg px-2.5 py-1 font-semibold transition cursor-pointer ${
                       statusFilter === 'active'
                         ? 'bg-amber-500 text-slate-950 font-bold'
-                        : 'bg-slate-800/70 text-slate-400 hover:bg-slate-800 hover:text-white'
+                        : 'bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
                     {t('common.active', 'Active')}
@@ -546,10 +563,10 @@ export default function FleetTrack() {
                   <button
                     type="button"
                     onClick={() => setStatusFilter('in_transit')}
-                    className={`rounded-lg px-2.5 py-1 font-semibold transition ${
+                    className={`rounded-lg px-2.5 py-1 font-semibold transition cursor-pointer ${
                       statusFilter === 'in_transit'
                         ? 'bg-amber-500 text-slate-950 font-bold'
-                        : 'bg-slate-800/70 text-slate-400 hover:bg-slate-800 hover:text-white'
+                        : 'bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
                     {t('status.in_transit', 'In Transit')}
@@ -557,10 +574,10 @@ export default function FleetTrack() {
                   <button
                     type="button"
                     onClick={() => setStatusFilter('at_pickup')}
-                    className={`rounded-lg px-2.5 py-1 font-semibold transition ${
+                    className={`rounded-lg px-2.5 py-1 font-semibold transition cursor-pointer ${
                       statusFilter === 'at_pickup'
                         ? 'bg-amber-500 text-slate-950 font-bold'
-                        : 'bg-slate-800/70 text-slate-400 hover:bg-slate-800 hover:text-white'
+                        : 'bg-slate-100 dark:bg-slate-800/70 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
                     {t('status.at_pickup', 'At Pickup')}
@@ -576,10 +593,10 @@ export default function FleetTrack() {
                     <p className="text-xs">{t('common.loading', 'Loading live trips…')}</p>
                   </div>
                 ) : filteredTrips.length === 0 ? (
-                  <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-800 p-8 text-center text-slate-500">
-                    <Truck className="h-8 w-8 text-slate-600 mb-2" />
-                    <p className="text-xs font-semibold text-slate-400">{t('company.fleetTrack.noTrips', 'No matching shipments found')}</p>
-                    <p className="text-[11px] text-slate-600 mt-1">
+                  <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 dark:border-slate-800 p-8 text-center text-slate-500">
+                    <Truck className="h-8 w-8 text-slate-400 dark:text-slate-600 mb-2" />
+                    <p className="text-xs font-semibold text-slate-700 dark:text-slate-400">{t('company.fleetTrack.noTrips', 'No matching shipments found')}</p>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-600 mt-1">
                       {searchQuery ? t('common.clearFilters', 'Try resetting filters or search terms.') : t('company.fleetTrack.waitingDispatches', 'New dispatches will appear automatically.')}
                     </p>
                   </div>
@@ -601,7 +618,7 @@ export default function FleetTrack() {
                         className={`group relative w-full cursor-pointer rounded-2xl border p-3.5 text-left rtl:text-right transition-all duration-200 ${
                           isSelected
                             ? 'border-amber-500 bg-amber-500/10 shadow-lg shadow-amber-500/5 ring-1 ring-amber-500/30'
-                            : 'border-slate-800/80 bg-slate-950/60 hover:border-slate-700 hover:bg-slate-950/90'
+                            : 'border-slate-200 dark:border-slate-800/80 bg-slate-50/80 dark:bg-slate-950/60 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-950/90'
                         }`}
                       >
                         {/* Top Line: Driver, Truck Plate & Badge */}
@@ -618,10 +635,10 @@ export default function FleetTrack() {
                               <Truck className="h-4 w-4" />
                             </div>
                             <div className="min-w-0">
-                              <p className="truncate text-xs font-bold text-white group-hover:text-amber-400 transition-colors">
+                              <p className="truncate text-xs font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                                 {trip.driver?.fullName || 'Driver'}
                               </p>
-                              <p className="truncate text-[11px] font-mono text-slate-400">
+                              <p className="truncate text-[11px] font-mono text-slate-500 dark:text-slate-400">
                                 {formatPlateDisplay(trip.truck?.plateNumber)} · {trip.truck?.type}
                               </p>
                             </div>
@@ -632,23 +649,23 @@ export default function FleetTrack() {
 
                         {/* Route Summary */}
                         {trip.order && (
-                          <div className="mt-3 space-y-1 rounded-xl bg-slate-900/60 p-2 text-xs border border-slate-800/50">
-                            <div className="flex items-center gap-1.5 text-slate-300 truncate">
-                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                          <div className="mt-3 space-y-1 rounded-xl bg-slate-100/80 dark:bg-slate-900/60 p-2 text-xs border border-slate-200/60 dark:border-slate-800/50">
+                            <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300 truncate">
+                              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 shrink-0" />
                               <span className="truncate">{trip.order.pickup?.address || 'Pickup'}</span>
                             </div>
-                            <div className="flex items-center gap-1.5 text-slate-300 truncate">
-                              <span className="h-1.5 w-1.5 rounded-full bg-rose-400 shrink-0" />
+                            <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300 truncate">
+                              <span className="h-1.5 w-1.5 rounded-full bg-rose-500 dark:bg-rose-400 shrink-0" />
                               <span className="truncate">{trip.order.delivery?.address || 'Delivery'}</span>
                             </div>
                           </div>
                         )}
 
                         {/* Cargo & Coordinates Footer */}
-                        <div className="mt-2.5 flex items-center justify-between text-[11px] text-slate-500 pt-1 border-t border-slate-800/40">
+                        <div className="mt-2.5 flex items-center justify-between text-[11px] text-slate-500 pt-1 border-t border-slate-200/60 dark:border-slate-800/40">
                           {trip.order?.cargo ? (
-                            <span className="flex items-center gap-1 text-slate-400 truncate">
-                              <Box className="h-3 w-3 shrink-0 text-slate-500" />
+                            <span className="flex items-center gap-1 text-slate-600 dark:text-slate-400 truncate">
+                              <Box className="h-3 w-3 shrink-0 text-slate-400 dark:text-slate-500" />
                               <span className="truncate">{trip.order.cargo.type} ({trip.order.cargo.weight}t)</span>
                             </span>
                           ) : (
@@ -661,7 +678,7 @@ export default function FleetTrack() {
                               e.stopPropagation();
                               navigate(`/company/track/${trip.orderId}`);
                             }}
-                            className="inline-flex items-center gap-1 font-bold text-amber-400 hover:text-amber-300 group-hover:underline"
+                            className="inline-flex items-center gap-1 font-bold text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 group-hover:underline cursor-pointer"
                           >
                             <span>{t('company.fleetTrack.viewDetails', 'Details')}</span>
                             {isRtl ? <ChevronLeft className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}

@@ -23,6 +23,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import ThemeToggle from '../../components/ThemeToggle';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
+import { useTheme } from '../../lib/theme';
 import { useCompanyAuth } from '../../lib/auth';
 import { getDirectionsRoute, getTripByOrder, type Trip, type TripLocation } from '../../lib/api/trips';
 import { useGoogleMapsLoader } from '../../lib/googleMaps';
@@ -50,6 +51,19 @@ const DARK_MAP_STYLES = [
   { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#020617' }] },
 ];
 
+const LIGHT_MAP_STYLES = [
+  { elementType: 'geometry', stylers: [{ color: '#f8fafc' }] },
+  { elementType: 'labels.text.stroke', stylers: [{ color: '#ffffff' }] },
+  { elementType: 'labels.text.fill', stylers: [{ color: '#334155' }] },
+  { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#0f172a' }] },
+  { featureType: 'poi', elementType: 'all', stylers: [{ visibility: 'off' }] },
+  { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#e2e8f0' }] },
+  { featureType: 'road', elementType: 'geometry.stroke', stylers: [{ color: '#ffffff' }] },
+  { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#cbd5e1' }] },
+  { featureType: 'transit', elementType: 'all', stylers: [{ visibility: 'off' }] },
+  { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#bae6fd' }] },
+];
+
 function PhotoThumb({ url, label }: { url: string; label: string }) {
   const fullUrl = resolveAssetUrl(url);
   return (
@@ -57,9 +71,9 @@ function PhotoThumb({ url, label }: { url: string; label: string }) {
       href={fullUrl}
       target="_blank"
       rel="noreferrer"
-      className="group relative flex flex-1 min-w-[90px] flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80 p-2 text-center transition hover:border-amber-500/50 hover:bg-slate-900 shadow-sm"
+      className="group relative flex flex-1 min-w-[90px] flex-col items-center gap-1.5 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/80 p-2 text-center transition hover:border-amber-500/50 hover:bg-slate-100 dark:hover:bg-slate-900 shadow-sm"
     >
-      <div className="relative h-20 w-full overflow-hidden rounded-lg bg-slate-900">
+      <div className="relative h-20 w-full overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-900">
         <img
           src={fullUrl}
           alt={label}
@@ -73,7 +87,7 @@ function PhotoThumb({ url, label }: { url: string; label: string }) {
           <ExternalLink className="h-4 w-4 text-white" />
         </div>
       </div>
-      <span className="text-[11px] font-semibold text-slate-300 truncate w-full">{label}</span>
+      <span className="text-[11px] font-semibold text-slate-700 dark:text-slate-300 truncate w-full">{label}</span>
     </a>
   );
 }

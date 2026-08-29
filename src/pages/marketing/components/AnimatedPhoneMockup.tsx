@@ -92,43 +92,28 @@ export default function AnimatedPhoneMockup({
   const { i18n } = useTranslation();
   const isRtl = i18n.language?.startsWith("ar");
   const [activeTab, setActiveTab] = useState<MockupScreenType>(screen);
-  const [isFading, setIsFading] = useState(false);
-  const fadeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const changeTabWithFade = (newTab: MockupScreenType) => {
-    if (newTab === activeTab) return;
-    setIsFading(true);
-    if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
-    fadeTimeoutRef.current = setTimeout(() => {
-      setActiveTab(newTab);
-      setIsFading(false);
-    }, 150);
-  };
 
   useEffect(() => {
-    changeTabWithFade(screen);
+    setActiveTab(screen);
   }, [screen]);
 
-  // Auto-switch images every 3 seconds with smooth fade transition
+  // Auto-switch images smoothly every 3.5 seconds without any blank/black frame
   useEffect(() => {
     const timer = setInterval(() => {
-      setIsFading(true);
-      fadeTimeoutRef.current = setTimeout(() => {
-        setActiveTab((prev) => {
-          const currentIndex = AUTO_ROTATE_SCREENS.indexOf(prev);
-          const nextIndex =
-            currentIndex === -1 ? 0 : (currentIndex + 1) % AUTO_ROTATE_SCREENS.length;
-          return AUTO_ROTATE_SCREENS[nextIndex];
-        });
-        setIsFading(false);
-      }, 200);
-    }, 3200);
+      setActiveTab((prev) => {
+        const currentIndex = AUTO_ROTATE_SCREENS.indexOf(prev);
+        const nextIndex =
+          currentIndex === -1 ? 0 : (currentIndex + 1) % AUTO_ROTATE_SCREENS.length;
+        return AUTO_ROTATE_SCREENS[nextIndex];
+      });
+    }, 3500);
 
-    return () => {
-      clearInterval(timer);
-      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
-    };
+    return () => clearInterval(timer);
   }, []);
+
+  const changeTabWithFade = (newTab: MockupScreenType) => {
+    setActiveTab(newTab);
+  };
 
   const sizeClasses = {
     sm: "w-[240px] h-[490px] sm:w-[260px] sm:h-[530px]",
@@ -185,7 +170,7 @@ export default function AnimatedPhoneMockup({
 
   return (
     <div
-      className={`relative flex flex-col items-center justify-center select-none perspective-1500 ${className}`}
+      className={`relative flex flex-col items-center justify-center select-none perspective-1500 w-full max-w-full ${className}`}
     >
       {/* Background Dynamic Glow */}
       <div className="pointer-events-none absolute -inset-6 rounded-[50px] bg-gradient-to-tr from-amber-500/15 via-blue-500/10 to-emerald-500/15 blur-2xl opacity-70" />
@@ -214,21 +199,23 @@ export default function AnimatedPhoneMockup({
             </div>
           </div>
 
-          {/* Screen Content Container with Smooth Fade Out / Fade In */}
-          <div className="relative flex-1 overflow-hidden bg-slate-900">
-            <div
-              className={`h-full w-full transition-opacity duration-300 ease-in-out ${
-                isFading ? "opacity-20" : "opacity-100"
-              }`}
-            >
-              <img
-                src={currentImageInfo.src}
-                alt={currentImageInfo.alt}
-                className="h-full w-full object-cover object-top"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
+          {/* Screen Content Container with Continuous Cross-Fade Layers (No black screen gap) */}
+          <div className="relative flex-1 overflow-hidden bg-[#102746]">
+            {Object.entries(screenImageMap).map(([key, info]) => {
+              const isActive = activeTab === key;
+              return (
+                <img
+                  key={key}
+                  src={info.src}
+                  alt={info.alt}
+                  className={`absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-700 ease-in-out ${
+                    isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
+                  loading="eager"
+                  decoding="async"
+                />
+              );
+            })}
           </div>
 
           {/* Bottom Home Bar */}
@@ -240,8 +227,8 @@ export default function AnimatedPhoneMockup({
 
       {/* Interactive Buttons OUTSIDE the phone bar */}
       {interactive && (
-        <div className="mt-5 z-40 max-w-full overflow-x-auto no-scrollbar px-2 py-1">
-          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 px-3 py-2 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl rounded-full border border-slate-700/80 shadow-2xl min-w-max mx-auto">
+        <div className="mt-5 z-40 w-full max-w-full overflow-x-auto no-scrollbar px-2 py-1 flex justify-center">
+          <div className="flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl rounded-full border border-slate-700/80 shadow-2xl max-w-full overflow-x-auto no-scrollbar">
             {buttonsList.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab === item.id;
@@ -252,13 +239,13 @@ export default function AnimatedPhoneMockup({
                   aria-label={item.label}
                   title={item.label}
                   onClick={() => changeTabWithFade(item.id)}
-                  className={`h-8 sm:h-9 px-2.5 sm:px-3 rounded-full flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 ${
+                  className={`h-7 sm:h-9 px-2 sm:px-3 rounded-full flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-bold transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 ${
                     isActive
-                      ? "bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/30"
+                      ? "bg-amber-500 text-slate-950 shadow-md shadow-amber-500/30"
                       : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
                   }`}
                 >
-                  <Icon className="h-3.5 w-3.5 shrink-0" />
+                  <Icon className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" />
                   <span>{item.label}</span>
                 </button>
               );

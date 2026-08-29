@@ -197,23 +197,23 @@ export default function Track() {
           <div className="flex items-center gap-2">
             <Radio className="h-4 w-4 text-rose-500 animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-wider text-rose-500">
-              Live Fleet Telemetry
+              {t('admin.track.liveTelemetry')}
             </span>
           </div>
           <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-admin-text">
-            Active GPS Tracking
+            {t('admin.track.title')}
           </h1>
           <p className="mt-1 text-xs text-admin-subtext">
-            Realtime satellite positioning and route diversion request control.
+            {t('admin.track.subtitle')}
           </p>
         </div>
         <div className="flex gap-2">
           <span className="rounded-xl border border-admin-accent/30 bg-admin-accent/15 px-3.5 py-1.5 text-xs font-bold text-admin-accent glow-accent-sm">
-            {activeCount} Active Units
+            {t('admin.track.activeUnits', { count: activeCount })}
           </span>
           {destChangeCount > 0 ? (
             <span className="rounded-xl border border-amber-400/40 bg-amber-400/15 px-3.5 py-1.5 text-xs font-bold text-amber-400">
-              {destChangeCount} Destination Change{destChangeCount === 1 ? '' : 's'}
+              {t('admin.track.destChanges', { count: destChangeCount })}
             </span>
           ) : null}
         </div>
@@ -221,9 +221,9 @@ export default function Track() {
 
       <FilterTabs
         tabs={[
-          { value: 'active', label: 'Active Shipments', count: activeCount },
-          { value: 'dest_changes', label: 'Route Diversions', count: destChangeCount },
-          { value: 'all', label: 'All Registered' },
+          { value: 'active', label: t('admin.track.tabs.active'), count: activeCount },
+          { value: 'dest_changes', label: t('admin.track.tabs.dest_changes'), count: destChangeCount },
+          { value: 'all', label: t('admin.track.tabs.all') },
         ]}
         active={filter}
         onChange={(v) => setFilter(v as FilterValue)}
@@ -301,14 +301,14 @@ export default function Track() {
         {/* Trips Live Feed Sidebar */}
         <aside className="flex w-full lg:w-96 flex-shrink-0 flex-col overflow-hidden rounded-2xl border border-admin-border bg-admin-bg/60">
           <div className="border-b border-admin-border p-3.5 text-xs font-bold uppercase tracking-wider text-admin-muted">
-            Live Units Feed ({displayTrips.length})
+            {t('admin.track.liveUnitsFeed', { count: displayTrips.length })}
           </div>
 
           <div className="flex-1 overflow-y-auto">
             {loading ? (
               <div className="p-8 text-center text-xs text-admin-muted">Loading telemetry…</div>
             ) : displayTrips.length === 0 ? (
-              <div className="p-8 text-center text-xs text-admin-muted">No shipments found.</div>
+              <div className="p-8 text-center text-xs text-admin-muted">{t('admin.track.noShipments')}</div>
             ) : (
               <ul className="divide-y divide-admin-border">
                 {displayTrips.map((trip) => {

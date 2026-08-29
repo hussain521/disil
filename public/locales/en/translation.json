@@ -1122,11 +1122,15 @@
       "logoutAdmin": "Log out of Admin Portal"
     },
     "fleet": {
+      "fleetOperations": "Fleet Operations",
       "title": "Fleet Vehicles",
+      "loading": "Loading fleet data…",
       "subtitle": "{{count}} Total Registered Vehicles",
       "advancedSearch": "Advanced Search",
       "liveMap": "Live GPS Map",
-      "searchPlaceholder": "Plate number or truck code...",
+      "searchPlaceholder": "Plate number or truck code…",
+      "search": "Search",
+      "noTrucks": "No trucks found matching this filter.",
       "tabs": {
         "approved": "Approved Fleet",
         "pending_review": "KYC Pending",
@@ -1162,10 +1166,12 @@
       "resultsCount": "{{count}} matching trucks"
     },
     "track": {
+      "liveTelemetry": "Live Fleet Telemetry",
       "title": "Active GPS Tracking",
       "subtitle": "Realtime satellite positioning and route diversion request control.",
       "activeUnits": "{{count}} Active Units",
       "destChanges": "{{count}} Destination Changes",
+      "noShipments": "No shipments found.",
       "tabs": {
         "active": "Active Shipments",
         "dest_changes": "Route Diversions",
@@ -1873,5 +1879,43 @@
     "cargoType": "Cargo Classification",
     "cargoWeight": "Certified Weight",
     "description": "Manifest Description"
+  },
+  "nav": {
+    "groups": {
+      "core": "Core Operations",
+      "operations": "Dispatch & Fleet",
+      "review": "Review & Quality",
+      "accounts": "Financial & Pricing",
+      "misc": "Platform Administration"
+    },
+    "companyPortal": "Company Portal",
+    "items": {
+      "dashboard": "Dashboard",
+      "new-offers": "New Offers",
+      "newOffers": "New Offers",
+      "orders": "Orders Management",
+      "users": "User Directory",
+      "profile": "Admin Profile",
+      "order-management": "Order Dispatch",
+      "track": "Live Tracking",
+      "fleet": "Fleet Registry",
+      "search": "Advanced Search",
+      "waybills": "Waybill Control",
+      "documents": "Document Verification",
+      "approvals": "KYC & Approvals",
+      "complaints": "Support & Disputes",
+      "ratings": "Ratings & Reviews",
+      "categories": "Cargo Categories",
+      "financial": "Financial Balance",
+      "dashboards": "Revenue Analytics",
+      "payment-details": "Payout Details",
+      "pricing": "Pricing Matrix",
+      "quotes": "Quote Requests",
+      "admins": "Admin Team",
+      "audit": "Audit Trail",
+      "contracts": "Contracts Hub",
+      "vehicle-types": "Vehicle Specs",
+      "notifications": "Broadcasts & Alerts"
+    }
   }
 }

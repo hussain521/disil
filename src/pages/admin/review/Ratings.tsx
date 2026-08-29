@@ -49,8 +49,8 @@ export default function Ratings() {
   return (
     <div className="space-y-4">
       <div>
-        <h1 className="text-lg font-semibold text-admin-text">Quality &amp; Ratings</h1>
-        <p className="mt-1 text-sm text-admin-subtext">Leaderboard of top-rated drivers, trucks and agents</p>
+        <h1 className="text-lg font-semibold text-admin-text">{t('admin.ratings.title')}</h1>
+        <p className="mt-1 text-sm text-admin-subtext">{t('admin.ratings.subtitle')}</p>
       </div>
 
       <FilterTabs tabs={SUBJECTS} active={subject} onChange={(v) => setSubject(v as RatingSubjectType)} />

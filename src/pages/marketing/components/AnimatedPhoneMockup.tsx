@@ -1,12 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  Truck,
-  MapPin,
-  Wallet,
-  Sparkles,
-  Layers,
-} from "lucide-react";
+import { Truck, MapPin, Wallet, Sparkles, Layers } from "lucide-react";
 
 export type MockupScreenType =
   | "live-map"
@@ -92,19 +86,27 @@ export default function AnimatedPhoneMockup({
   const { i18n } = useTranslation();
   const isRtl = i18n.language?.startsWith("ar");
   const [activeTab, setActiveTab] = useState<MockupScreenType>(screen);
+  const [prevTab, setPrevTab] = useState<MockupScreenType>(screen);
 
   useEffect(() => {
-    setActiveTab(screen);
+    if (screen !== activeTab) {
+      setPrevTab(activeTab);
+      setActiveTab(screen);
+    }
   }, [screen]);
 
   // Auto-switch images smoothly every 3.5 seconds without any blank/black frame
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveTab((prev) => {
-        const currentIndex = AUTO_ROTATE_SCREENS.indexOf(prev);
+      setActiveTab((currentActive) => {
+        const currentIndex = AUTO_ROTATE_SCREENS.indexOf(currentActive);
         const nextIndex =
-          currentIndex === -1 ? 0 : (currentIndex + 1) % AUTO_ROTATE_SCREENS.length;
-        return AUTO_ROTATE_SCREENS[nextIndex];
+          currentIndex === -1
+            ? 0
+            : (currentIndex + 1) % AUTO_ROTATE_SCREENS.length;
+        const nextTab = AUTO_ROTATE_SCREENS[nextIndex];
+        setPrevTab(currentActive);
+        return nextTab;
       });
     }, 3500);
 
@@ -112,7 +114,10 @@ export default function AnimatedPhoneMockup({
   }, []);
 
   const changeTabWithFade = (newTab: MockupScreenType) => {
-    setActiveTab(newTab);
+    if (newTab !== activeTab) {
+      setPrevTab(activeTab);
+      setActiveTab(newTab);
+    }
   };
 
   const sizeClasses = {
@@ -177,12 +182,12 @@ export default function AnimatedPhoneMockup({
 
       {/* Main 3D Phone Chassis (Clean without any floating badges) */}
       <div
-        className={`relative ${sizeClasses} rounded-[48px] bg-gradient-to-b from-slate-700 via-slate-800 to-slate-950 p-[9px] mockup-3d-shadow border border-slate-600/70 ring-1 ring-black ${getPoseClass()}`}
+        className={`relative ${sizeClasses} rounded-[48px] sm:rounded-[54px] bg-gradient-to-b from-slate-700 via-slate-800 to-slate-950 p-[8px] sm:p-[10px] mockup-3d-shadow border border-slate-600/70 ring-1 ring-black ${getPoseClass()}`}
       >
         {/* Screen Bezel & Display Screen */}
-        <div className="relative h-full w-full overflow-hidden rounded-[39px] bg-slate-950 text-white border border-black flex flex-col justify-between shadow-inner">
+        <div className="relative h-full w-full overflow-hidden rounded-[40px] sm:rounded-[44px] bg-slate-950 text-white border border-black flex flex-col justify-between shadow-inner">
           {/* Glass Reflection Sweep Accent */}
-          <div className="pointer-events-none absolute inset-0 z-30 overflow-hidden rounded-[39px]">
+          <div className="pointer-events-none absolute inset-0 z-30 overflow-hidden rounded-[40px] sm:rounded-[44px]">
             <div className="absolute -top-10 -left-20 h-[140%] w-24 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer-glass pointer-events-none" />
           </div>
 
@@ -199,18 +204,25 @@ export default function AnimatedPhoneMockup({
             </div>
           </div>
 
-          {/* Screen Content Container with Continuous Cross-Fade Layers (No black screen gap) */}
-          <div className="relative flex-1 overflow-hidden bg-[#102746]">
+          {/* Screen Content Container with Smooth Fade In / Fade Out Transitions */}
+          <div className="relative flex-1 overflow-hidden bg-slate-950 flex items-center justify-center p-1">
             {Object.entries(screenImageMap).map(([key, info]) => {
               const isActive = activeTab === key;
+              const isPrev = prevTab === key;
+
+              let layerStyle = "opacity-0 z-0 pointer-events-none";
+              if (isActive) {
+                layerStyle = "opacity-100 z-20 transition-opacity duration-700 ease-in-out";
+              } else if (isPrev) {
+                layerStyle = "opacity-100 z-10";
+              }
+
               return (
                 <img
                   key={key}
                   src={info.src}
                   alt={info.alt}
-                  className={`absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-700 ease-in-out ${
-                    isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                  }`}
+                  className={`absolute inset-0 h-full w-full object-contain object-center ${layerStyle}`}
                   loading="eager"
                   decoding="async"
                 />
